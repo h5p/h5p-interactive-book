@@ -25,6 +25,11 @@ class PageContent extends H5P.EventDispatcher {
     this.chapters = [];
     this.l10n = config.l10n;
 
+    // Retrieve previous state
+    this.previousState = (contentData.previousState && Object.keys(contentData.previousState).length > 0) ?
+      contentData.previousState :
+      null;
+
     if (parent.hasValidChapters()) {
       const startChapter = this.createColumns(config, contentId, contentData);
       this.preloadChapter(startChapter);
@@ -106,11 +111,13 @@ class PageContent extends H5P.EventDispatcher {
   /**
    * Create page read checkbox.
    *
+   * @param {boolean} checked True, if box should be checked.
    * @return {HTMLElement} Checkbox for marking a chapter as read.
    */
-  createChapterReadCheckbox() {
+  createChapterReadCheckbox(checked) {
     const checkbox = document.createElement('input');
     checkbox.setAttribute('type', 'checkbox');
+    checkbox.checked = checked;
     checkbox.onclick = (event) => {
       this.parent.setChapterRead(undefined, event.target.checked);
     };
@@ -180,7 +187,10 @@ class PageContent extends H5P.EventDispatcher {
       this.injectSectionId(chapter.sections, columnNode);
 
       if (this.behaviour.progressIndicators && !this.behaviour.progressAuto) {
-        columnNode.appendChild(this.createChapterReadCheckbox());
+        const checked = (this.previousState) ?
+          this.previousState.chapters[chapterIndex].completed :
+          false;
+        columnNode.appendChild(this.createChapterReadCheckbox(checked));
       }
 
       chapter.isInitialized = true;
@@ -197,7 +207,16 @@ class PageContent extends H5P.EventDispatcher {
    */
   createColumns(config, contentId, contentData) {
     contentData = Object.assign({}, contentData);
-    const urlFragments = URLTools.extractFragmentsFromURL(this.parent.validateFragments, this.parent.hashWindow);
+
+    // Restore previous state
+    const previousState = (contentData.previousState && Object.keys(contentData.previousState).length > 0) ?
+      contentData.previousState :
+      null;
+    let urlFragments = URLTools.extractFragmentsFromURL(this.parent.validateFragments, this.parent.hashWindow);
+    if (Object.keys(urlFragments).length === 0 && contentData && previousState && previousState.urlFragments) {
+      urlFragments = previousState.urlFragments;
+    }
+
     const chapters = [];
     this.chapters = chapters;
 
@@ -210,7 +229,8 @@ class PageContent extends H5P.EventDispatcher {
         ...contentData,
         metadata: {
           ...contentData.metadata,
-        }
+        },
+        previousState: (previousState) ? previousState.chapters[i].state : {}
       };
       const newInstance = H5P.newRunnable(config.chapters[i], contentId, undefined, undefined, instanceContentData);
       this.parent.bubbleUp(newInstance, 'resize', this.parent);
@@ -219,8 +239,8 @@ class PageContent extends H5P.EventDispatcher {
         isInitialized: false,
         instance: newInstance,
         title: config.chapters[i].metadata.title,
-        completed: false,
-        tasksLeft: 0,
+        completed: (previousState) ? previousState.chapters[i].completed : false,
+        tasksLeft: (previousState) ? previousState.chapters[i].tasksLeft : 0,
         isSummary: false,
         sections: newInstance.getInstances().map((instance, contentIndex) => ({
           content: config.chapters[i].params.content[contentIndex].content,
@@ -233,18 +253,20 @@ class PageContent extends H5P.EventDispatcher {
       columnNode.id = `h5p-interactive-book-chapter-${newInstance.subContentId}`;
 
       // Find sections with tasks and tracks them
-      chapter.sections.forEach(section => {
+      chapter.sections.forEach((section, index) => {
         if (H5P.Column.isTask(section.instance)) {
           section.isTask = true;
 
           if (this.behaviour.progressIndicators) {
-            section.taskDone = false;
-            chapter.tasksLeft += 1;
+            section.taskDone = (previousState) ? previousState.chapters[i].sections[index].taskDone : false;
+            if (!previousState) {
+              chapter.tasksLeft += 1;
+            }
           }
         }
       });
 
-      chapter.maxTasks = chapter.tasksLeft;
+      chapter.maxTasks = (previousState) ? previousState.chapters[i].maxTasks : chapter.tasksLeft;
 
       // Register both the HTML-element and the H5P-element
       chapters.push(chapter);
@@ -277,11 +299,9 @@ class PageContent extends H5P.EventDispatcher {
       this.columnNodes.push(columnNode);
     }
 
-    // First chapter should be visible, except if the URL says otherwise.
-    let startChapter = 0;
+    // First chapter should be visible, except if the URL of previous state says otherwise.
     if (urlFragments.chapter && urlFragments.h5pbookid == this.parent.contentId) {
       const chapterIndex = this.findChapterIndex(urlFragments.chapter);
-      startChapter = chapterIndex;
       this.parent.setActiveChapter(chapterIndex);
       const headerNumber = urlFragments.headerNumber;
 
@@ -293,9 +313,11 @@ class PageContent extends H5P.EventDispatcher {
           }
         }, 1000);
       }
+
+      return chapterIndex;
     }
 
-    return startChapter;
+    return 0;
   }
 
   /**
