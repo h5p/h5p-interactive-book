@@ -86,14 +86,6 @@
           "options": [
             "H5P.Column 1.13"
           ]
-        },
-        {
-          "label": "Page audio",
-          "name": "page_audio",
-          "type": "library",
-          "options": [
-            "H5P.Audio 1.4"
-          ]
         }
       ]
     }
