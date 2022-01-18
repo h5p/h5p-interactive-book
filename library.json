@@ -3,7 +3,7 @@
   "description": "An interactive book which displays content in pages and sections",
   "majorVersion": 1,
   "minorVersion": 3,
-  "patchVersion": 6,
+  "patchVersion": 7,
   "runnable": 1,
   "fullscreen": 1,
   "author": "Joubel",
@@ -32,11 +32,6 @@
       "machineName": "H5P.JoubelUI",
       "majorVersion": 1,
       "minorVersion": 3
-    },
-    {
-      "machineName": "H5P.Audio",
-      "majorVersion": 1,
-      "minorVersion": 4
     }
   ],
   "editorDependencies": [
