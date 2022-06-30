@@ -1,6 +1,5 @@
 import "../styles/main.scss";
 import "../styles/style.scss";
-import 'babel-polyfill';
 import InteractiveBook from "../scripts/app";
 
 // Load library

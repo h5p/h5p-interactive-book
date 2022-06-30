@@ -54,5 +54,6 @@
       "event"
     ],
     "react/prop-types": 0
-  }
+  },
+  "ignorePatterns": ["webpack.config.js"]
 }

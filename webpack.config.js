@@ -4,9 +4,19 @@ const TerserPlugin = require('terser-webpack-plugin');
 
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isProd = (nodeEnv === 'production');
+const libraryName = process.env.npm_package_name;
 
 module.exports = {
   mode: nodeEnv,
+  context: path.resolve(__dirname, 'src'),
+  entry: {
+    dist: './entries/main.js'
+  },
+  devtool: (isProd) ? undefined : 'eval-cheap-module-source-map',
+  output: {
+    filename: `${libraryName}.js`,
+    path: path.resolve(__dirname, 'dist')
+  },
   optimization: {
     minimize: isProd,
     minimizer: [
@@ -18,18 +28,6 @@ module.exports = {
         }
       }),
     ],
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'h5p-interactive-book.css'
-    })
-  ],
-  entry: {
-    dist: './src/entries/main.js'
-  },
-  output: {
-    filename: 'h5p-interactive-book.js',
-    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
@@ -65,8 +63,12 @@ module.exports = {
     children: true,
     errorDetails: true
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: `${libraryName}.css`
+    })
+  ],
   externals: {
     jquery: 'H5P.jQuery'
   },
-  devtool: (isProd) ? undefined : 'eval-cheap-module-source-map'
 };
