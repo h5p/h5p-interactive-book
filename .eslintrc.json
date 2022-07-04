@@ -57,3 +57,4 @@
   },
   "ignorePatterns": ["webpack.config.js"]
 }
+
