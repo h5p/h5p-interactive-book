@@ -12,8 +12,8 @@
           "description": "Šis teksts būs jūsu grāmatas apraksts."
         },
         {
-          "label": "Cover medium",
-          "description": "Optional medium for the introduction."
+          "label": "Vāka multivide",
+          "description": "Neobligāta multivide ievadam."
         }
       ]
     },
@@ -38,21 +38,21 @@
       "label": "Uzvedības iestatītjumi",
       "fields": [
         {
-          "label": "Base color",
-          "description": "Set the base color that will define the overall color scheme of the book. Please ensure a high enough contrast.",
+          "label": "Pamata krāsa",
+          "description": "Iestatiet pamatkrāsu, kas noteiks grāmatas kopējo krāsu shēmu. Lūdzu, nodrošiniet pietiekami augstu kontrastu.",
           "default": "#1768c4"
         },
         {
-          "label": "Kā noklusējuma rādīt satura rādītāju",
+          "label": "Pēc noklusējuma rādīt satura rādītāju",
           "description": "Kad iespējots, atverot grāmatu, tiek parādīts satura rādītājs"
         },
         {
           "label": "Parādīt progresa indikatorus",
-          "description": "Kad iespējots, katrā lappusē būs indikatori, kas lietotājam rādīs, vai viņš ir pabeidzis ar lappusi."
+          "description": "Kad iespējots, katrā lappusē būs indikatori, kas lietotājam rādīs, vai viņš lappusi ir pabeidzis."
         },
         {
           "label": "Iespējot automātisko progresu",
-          "description": "Ja iespējots, lappuse bez uzdevumiem tiek uzskatīta par pabeigtu, kad tiek skatīta. Lappuse ar uzdevumiem, kad visi uzdevumi ir paveikti. Ja atspējots, katras lapas apakšā būs poga, uz kuras lietotājs var noklikšķināt, kad būs pabeidzis lappusi."
+          "description": "Ja iespējots, lappuse bez uzdevumiem tiek uzskatīta par pabeigtu, kad tiek skatīta. Lappuse ar uzdevumiem - kad visi uzdevumi ir paveikti. Ja atspējots, katras lapas apakšā būs poga, uz kuras lietotājs var noklikšķināt, kad būs pabeidzis lappusi."
         },
         {
           "label": "Parādīt kopsavilkumu",
