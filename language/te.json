@@ -18,24 +18,24 @@
       ]
     },
     {
-      "label": "Pages",
+      "label": "పేజీలు",
       "entity": "Page",
       "widgets": [
         {
-          "label": "Default"
+          "label": "డిఫాల్ట్"
         }
       ],
       "field": {
         "label": "Item",
         "fields": [
           {
-            "label": "Page"
+            "label": "పేజీ"
           }
         ]
       }
     },
     {
-      "label": "Behavioural settings",
+      "label": "బిహేవియరల్ సెట్టింగ్ లు",
       "fields": [
         {
           "label": "Base color",
@@ -55,49 +55,49 @@
           "description": "If enabled a page without tasks is considered done when viewed. A page with tasks when all tasks are done. If disabled there will be a button at the bottom of every page for the user to click when done with the page."
         },
         {
-          "label": "Display summary",
-          "description": "When enabled the user can see a summary and submit the progress/answers"
+          "label": "సమ్మరీ చూపించు",
+          "description": "ఎనేబుల్ అయి ఉన్నపుడు  యూజర్ సమ్మరీను చూడగలరు మరియు ప్రోగ్రెస్ /సమాధానాలను సమర్పించగలరు"
         }
       ]
     },
     {
-      "label": "Translation for \"Read\"",
-      "default": "Read"
+      "label": "\"Read\" కై అనువాదం",
+      "default": "చదవండి"
     },
     {
-      "label": "Translation for \"Display 'Table of contents'\"",
-      "default": "Display 'Table of contents'"
+      "label": "\"Display 'Table of contents'\" కై అనువాదం",
+      "default": "విషయ సూచిక ని చూపించు"
     },
     {
-      "label": "Translation for \"Hide 'Table of contents'\"",
-      "default": "Hide 'Table of contents'"
+      "label": "\"Hide 'Table of contents'\" కైఅనువాదం",
+      "default": "'Table of contents' ను దాచి ఉంచు"
     },
     {
-      "label": "Translation for \"Next page\"",
-      "default": "Next page"
+      "label": "\"Next page\"కై అనువాదం",
+      "default": "తరువాతి పేజీ"
     },
     {
-      "label": "Translation for \"Previous page\"",
-      "default": "Previous page"
+      "label": "\"Previous page\"కై అనువాదం",
+      "default": "ముందు పేజి"
     },
     {
-      "label": "Translation for \"Page completed!\"",
-      "default": "Page completed!"
+      "label": "\"Page completed!\" కై అనువాదం",
+      "default": "పేజీ పూర్తయింది!"
     },
     {
-      "label": "Translation for \"@pages of @total completed\" (@pages and @total will be replaced by actual values)",
-      "default": "@pages of @total completed"
+      "label": "\"@pages of @total completed\" (@pages and @total will be replaced by actual values)కై అనువాదం",
+      "default": "@మొత్తం పేజీల్లో @పేజీలు పూర్తి చేసారు"
     },
     {
-      "label": "Translation for \"Incomplete page\"",
-      "default": "Incomplete page"
+      "label": "\"Incomplete page\"కై అనువాదం",
+      "default": "అసంపూర్ణ పేజీ"
     },
     {
-      "label": "Translation for \"Navigate to the top\"",
-      "default": "Navigate to the top"
+      "label": "\"Navigate to the top\"కై అనువాదం",
+      "default": "పైకి నావిగేట్ చేయండి"
     },
     {
-      "label": "Translation for \"I have finished this page\"",
+      "label": "\"I have finished this page\"కై అనువాదం",
       "default": "I have finished this page"
     },
     {
