@@ -12,8 +12,8 @@
           "description": "Deze tekst wordt de beschrijving van je boek."
         },
         {
-          "label": "Cover medium",
-          "description": "Optional medium for the introduction."
+          "label": "Kaft medium",
+          "description": "Optioneel medium voor de introductie."
         }
       ]
     },
@@ -38,8 +38,8 @@
       "label": "Gedragsinstellingen",
       "fields": [
         {
-          "label": "Base color",
-          "description": "Set the base color that will define the overall color scheme of the book. Please ensure a high enough contrast.",
+          "label": "Basiskleur",
+          "description": "Stel de basiskleur in die het kleurenschema van het boek bepaalt. Let er op dat je voor een hoog contrast kiest.",
           "default": "#1768c4"
         },
         {
