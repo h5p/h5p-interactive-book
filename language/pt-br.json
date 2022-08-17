@@ -12,8 +12,8 @@
           "description": "Texto que será exibido como descrição do livro."
         },
         {
-          "label": "Cover medium",
-          "description": "Optional medium for the introduction."
+          "label": "Capa média",
+          "description": "Mídia opcional para a introdução."
         }
       ]
     },
@@ -38,8 +38,8 @@
       "label": "Configurações comportamentais",
       "fields": [
         {
-          "label": "Base color",
-          "description": "Set the base color that will define the overall color scheme of the book. Please ensure a high enough contrast.",
+          "label": "Cor base",
+          "description": "Defina a cor base que definirá o esquema geral de cores do livro. Certifique-se de um contraste alto o suficiente.",
           "default": "#1768c4"
         },
         {
@@ -141,7 +141,7 @@
     {
       "label": "Pontuação",
       "description": "\"@score\" será substituído pela pontuação atual, e \"@maxscore\" será substituído pela pontuação máxima possível",
-      "default": "@score / @maxscore"
+      "default": "@score/@maxscore"
     },
     {
       "label": "Conclusão de interações por página",
@@ -158,7 +158,7 @@
     },
     {
       "label": "Rótulo para o botão \"Resumo &amp; Enviar\"",
-      "default": "Resumo &amp; Enviar"
+      "default": "Resumo &amp; enviar"
     },
     {
       "label": "Tradução para \"Você não interagiu com nenhuma página.\"",
