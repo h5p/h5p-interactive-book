@@ -2,7 +2,7 @@
   "semantics": [
     {
       "description": "A cover that shows info regarding the book before access",
-      "label": "Enable book cover"
+      "label": "אפשר כריכת ספר"
     },
     {
       "fields": [
