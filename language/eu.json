@@ -12,8 +12,8 @@
           "description": "Testu hau zure liburuaren deskribapena izango da."
         },
         {
-          "label": "Cover medium",
-          "description": "Optional medium for the introduction."
+          "label": "Portadarako euskarria",
+          "description": "Aurkezpenerako aukerako euskarriak."
         }
       ]
     },
@@ -38,8 +38,8 @@
       "label": "Portaeren ezarpenak",
       "fields": [
         {
-          "label": "Base color",
-          "description": "Set the base color that will define the overall color scheme of the book. Please ensure a high enough contrast.",
+          "label": "Oinarrizko kolorea",
+          "description": "Ezarri liburuaren kolore-eskema orokorra definituko duen oinarrizko kolorea. Mesedez, ziurtatu nahikoa kontraste altua.",
           "default": "#1768c4"
         },
         {
