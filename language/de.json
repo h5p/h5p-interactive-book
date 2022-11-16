@@ -12,8 +12,8 @@
           "description": "Dieser Text wird zur Beschreibung des Buchs unter dem eigentlichen Titel angezeigt."
         },
         {
-          "label": "Cover medium",
-          "description": "Optional medium for the introduction."
+          "label": "Medium für die Titelseite",
+          "description": "Optionales Medium für die Einleitung."
         }
       ]
     },
@@ -38,8 +38,8 @@
       "label": "Verhaltenseinstellungen",
       "fields": [
         {
-          "label": "Base color",
-          "description": "Set the base color that will define the overall color scheme of the book. Please ensure a high enough contrast.",
+          "label": "Basisfarbe",
+          "description": "Setze die Basisfarbe für das Farbschema im Buch. Bitte denke an einen ausreichend hohen Kontrast.",
           "default": "#1768c4"
         },
         {
