@@ -12,7 +12,7 @@
           "description": "هذا النص سيكون وصف كتابك."
         },
         {
-          "label": "Cover medium",
+          "label": "غلاف متوسط",
           "description": "Optional medium for the introduction."
         }
       ]
@@ -29,7 +29,7 @@
         "label": "عنصر",
         "fields": [
           {
-            "label": "فصل"
+            "label": "صفحة"
           }
         ]
       }
@@ -38,59 +38,59 @@
       "label": "الإعدادات السلوكية",
       "fields": [
         {
-          "label": "Base color",
-          "description": "Set the base color that will define the overall color scheme of the book. Please ensure a high enough contrast.",
+          "label": "اللون الأساسي",
+          "description": "عيّن اللون الأساسي الذي سيحدد نظام الألوان العام للكتاب. يرجى التأكد من وجود تباين عالٍ بدرجة كافية.",
           "default": "#1768c4"
         },
         {
-          "label": "عرض جدول المحتويات كافتراضي",
-          "description": "عند التفعيل ، يتم عرض جدول المحتويات عند فتح الكتاب"
+          "label": "عرض الفهرس افتراضياً",
+          "description": "عند التفعيل سيتم عرض الفهرس عند فتح الكتاب"
         },
         {
           "label": "عرض مؤشرات التقدم",
-          "description": "عند التمكين ، ستظهر مؤشرات في كل صفحة توضح ما إذا كان المستخدم قد انتهى من الصفحة أم لا."
+          "description": "عند تفعيل هذا الخيار ستظهر مؤشرات في كل صفحة توضح ما إذا كان المستخدم قد انتهى من الصفحة أم لا."
         },
         {
-          "label": "تمكين التقدم التلقائي",
+          "label": "تفعيل التقدم التلقائي",
           "description": "في حالة التمكين ، يتم اعتبار الصفحة بدون مهام عند عرضها. صفحة بها مهام عند الانتهاء من جميع المهام. في حالة التعطيل ، سيكون هناك زر في أسفل كل صفحة لينقر عليها المستخدم عند الانتهاء من الصفحة."
         },
         {
-          "label": "Display summary",
-          "description": "When enabled the user can see a summary and submit the progress/answers"
+          "label": "عرض الملخّص",
+          "description": "عند تفعيل هذا الخيار سيتمكن المستخدم من رؤية الملخّص وإرسال التقدم/الإجابات"
         }
       ]
     },
     {
-      "label": "ترجمة تتعلق بـ \"القراءاة\"",
-      "default": "القراءاة"
+      "label": "ترجمة \"قراءة\"",
+      "default": "قراءة"
     },
     {
-      "label": "ترجمة تتعلق بـ \"عرض 'جدول المحتويات'\"",
+      "label": "ترجمة \"عرض 'جدول المحتويات'\"",
       "default": "عرض 'جدول المحتويات'"
     },
     {
-      "label": "ترجمة تتعلق بـ \"إخفاء 'جدول  المحتويات'\"",
-      "default": "إخفاء  'جدول المحتويات'"
+      "label": "ترجمة \"إخفاء 'جدول المحتويات'\"",
+      "default": "إخفاء 'جدول المحتويات'"
     },
     {
-      "label": "ترجمة تتعلق بـ \"الصفحة التالية\"",
+      "label": "ترجمة \"الصفحة التالية\"",
       "default": "الصفحة التالية"
     },
     {
-      "label": "ترجمة تتعلق بـ \"الصفحة السابقة\"",
+      "label": "ترجمة \"الصفحة السابقة\"",
       "default": "الصفحة السابقة"
     },
     {
-      "label": "ترجمة تتعلق بـ \"الانتهاء من الفصل!\"",
-      "default": "الانتهاء من الفصل!"
+      "label": "ترجمة \"تم إكمال الصفحة!\"",
+      "default": "تم إكمال الصفحة!"
     },
     {
       "label": "ترجمة تتعلق بـ \"@pages من @total منتهي\" (@pages و @total سيتم استبدال القيم الفعلية)",
       "default": "@pages من @total منتهي"
     },
     {
-      "label": "ترجمة تتعلق بـ \"فصل غير منتهي\"",
-      "default": "فصل غير منتهي"
+      "label": "ترجمة \"صفحة غير مكتملة\"",
+      "default": "صفحة غير مكتملة"
     },
     {
       "label": "ترجمة تتعلق بـ \"الذهاب إلى الأعلى\"",
@@ -110,86 +110,86 @@
     },
     {
       "label": "Page progress in book",
-      "description": "\"@count\" will be replaced by page count, and \"@total\" with the total number of pages",
-      "default": "@count of @total pages"
+      "description": "سيتم استبدال \"count@\" بعدد الصفحات و \"total@\" بإجمالي عدد الصفحات",
+      "default": "@count من أصل @total صفحات"
     },
     {
-      "label": "Interaction progress",
-      "description": "\"@count\" will be replaced by interaction count, and \"@total\" with the total number of interactions",
-      "default": "@count of @total interactions"
+      "label": "تقدّم التفاعل",
+      "description": "سيتم استبدال \"count@\" بعدد التفاعلات، و \"total@\" بإجمالي عدد التفاعلات",
+      "default": "@count من أصل @total تفاعلات"
     },
     {
-      "label": "Translation for \"Submit report\"",
-      "default": "Submit Report"
+      "label": "ترجمة \"إرسال التقرير\"",
+      "default": "إرسال التقرير"
     },
     {
-      "label": "Label for \"restart\" button",
-      "default": "Restart"
+      "label": "تسمية زر \"إعادة البدء\"",
+      "default": "إعادة البدء"
     },
     {
-      "label": "Summary header",
-      "default": "Summary"
+      "label": "عنوان الملخّص",
+      "default": "الملخّص"
     },
     {
-      "label": "Translation for \"All interactions\"",
-      "default": "All interactions"
+      "label": "ترجمة \"جميع التفاعلات\"",
+      "default": "جميع التفاعلات"
     },
     {
-      "label": "Translation for \"Unanswered interactions\"",
-      "default": "Unanswered interactions"
+      "label": "ترجمة \"التفاعلات التي لم يتم الرد عليها\"",
+      "default": "التفاعلات التي لم يتم الرد عليها"
     },
     {
-      "label": "Score",
-      "description": "\"@score\" will be replaced with current score, and \"@maxscore\" will be replaced with max achievable score",
+      "label": "النتيجة",
+      "description": "سيتم استبدال \"score@\" بالنتيجة الحالية، وسيتم استبدال \"maxscore@\" بأقصى نتيجة يمكن تحقيقها",
       "default": "@score / @maxscore"
     },
     {
-      "label": "Per page interactions completion",
-      "description": "\"@left\" will be replaced with remaining interactions, and \"@max\" will be replaced with total number of interactions on the page",
-      "default": "@left of @max interactions completed"
+      "label": "إتمام التفاعلات لكل صفحة",
+      "description": "سيتم استبدال \"left@\" بالتفاعلات المتبقية، وسيتم استبدال \"max@\" بإجمالي عدد التفاعلات في الصفحة",
+      "default": "تم إكمال @left من أصل @max تفاعلات"
     },
     {
-      "label": "Translation for \"No interactions\"",
-      "default": "No interactions"
+      "label": "ترجمة \"لا يوجد أي تفاعل\"",
+      "default": "لا يوجد أي تفاعل"
     },
     {
-      "label": "Translation for \"Score\"",
-      "default": "Score"
+      "label": "ترجمة \"النتيجة\"",
+      "default": "النتيجة"
     },
     {
-      "label": "Label for \"Summary &amp; submit\" button",
-      "default": "Summary &amp; submit"
+      "label": "تسمية زر \"الملخص وإرسال\"",
+      "default": "الملخّص وإرسال"
     },
     {
-      "label": "Translation for \"You have not interacted with any pages.\"",
-      "default": "You have not interacted with any pages."
+      "label": "ترجمة \"لم تقم بالتفاعل مع أي صفحات.\"",
+      "default": "لم تقم بالتفاعل مع أي صفحات."
     },
     {
-      "label": "Translation for \"You have to interact with at least one page before you can see the summary.\"",
-      "default": "You have to interact with at least one page before you can see the summary."
+      "label": "ترجمة \"يجب أن تتفاعل مع صفحة واحدة على الأقل قبل أن تتمكن من رؤية الملخّص.\"",
+      "default": "يجب أن تتفاعل مع صفحة واحدة على الأقل قبل أن تتمكن من رؤية الملخّص."
     },
     {
-      "label": "Translation for \"Your answers are submitted for review!\"",
-      "default": "Your answers are submitted for review!"
+      "label": "ترجمة \"تم إرسال إجاباتك للمراجعة!\"",
+      "default": "تم إرسال إجاباتك للمراجعة!"
     },
     {
-      "label": "Summary progress label",
-      "default": "Book progress"
+      "label": "تسمية \"ملخّص التقدّم\"",
+      "default": "تقدم الكتاب"
     },
     {
-      "label": "Interactions progress label",
-      "default": "Interactions progress"
+      "label": "تسمية \"تقدّم التفاعلات\"",
+      "default": "تقدّم التفاعلات"
     },
     {
-      "label": "Total score label",
-      "default": "Total score"
+      "label": "تسمية \"المجموع\"",
+      "default": "المجموع"
     },
     {
-      "label": "إمكانية الوصول للنصوص",
+      "label": "نصوص إمكانية الوصول",
       "fields": [
         {
-          "label": "تقدم الصفحة النصية البديلة",
-          "description": "نص بديل للتقدم في الصفحة المرئية. @page و @total ومتغيرات  المتاحة.",
+          "label": "تقدم الصفحة (البديل النصّي)",
+          "description": "نص بديل لتقدّم الصفحة المرئي. المتغيرات @page و @total متاحة.",
           "default": "صفحة @page من @total."
         },
         {
