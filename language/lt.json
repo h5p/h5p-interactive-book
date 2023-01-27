@@ -12,8 +12,8 @@
           "description": "Šis tekstas bus jūsų knygos aprašymas."
         },
         {
-          "label": "Cover medium",
-          "description": "Optional medium for the introduction."
+          "label": "Viršelio nustatymai",
+          "description": "Pasirenkamas įžangos nustatymas"
         }
       ]
     },
