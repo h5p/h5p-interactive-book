@@ -1,32 +1,32 @@
 {
   "semantics": [
     {
-      "label": "పుస్తకం  ముఖచిత్రాన్ని ఎనేబుల్ చేయండి",
-      "description": "పుస్తకం యాక్సెస్ చేసే ముందు కవర్ / ముఖచిత్రం పుస్తకం గురించి  సమాచారం తెలియచేస్తుంది"
+      "label": "పుస్తకం ముఖచిత్రాన్ని ఎనేబుల్ చేయండి",
+      "description": "పుస్తకం యాక్సెస్ చేసే ముందు కవర్ / ముఖచిత్రం పుస్తకం గురించి సమాచారం తెలియచేస్తుంది"
     },
     {
-      "label": "ముఖచిత్రం  పేజీ",
+      "label": "ముఖచిత్రం పేజీ",
       "fields": [
         {
-          "label": "కవర్ /ముఖచిత్రం  వివరణ",
-          "description": "ఈ టెక్స్ట్  మీ పుస్తకం యొక్క వివరణ"
+          "label": "కవర్ /ముఖచిత్రం వివరణ",
+          "description": "ఈ టెక్స్ట్ మీ పుస్తకం యొక్క వివరణ."
         },
         {
-          "label": "Cover medium",
-          "description": "Optional medium for the introduction."
+          "label": "కవర్ మీడియం",
+          "description": "పరిచయం కోసం ఐచ్ఛిక (ఆప్షనల్) మీడియం."
         }
       ]
     },
     {
       "label": "పేజీలు",
-      "entity": "Page",
+      "entity": "పేజీ",
       "widgets": [
         {
           "label": "డిఫాల్ట్"
         }
       ],
       "field": {
-        "label": "Item",
+        "label": "ఐటమ్",
         "fields": [
           {
             "label": "పేజీ"
@@ -38,25 +38,25 @@
       "label": "బిహేవియరల్ సెట్టింగ్ లు",
       "fields": [
         {
-          "label": "Base color",
-          "description": "Set the base color that will define the overall color scheme of the book. Please ensure a high enough contrast.",
+          "label": "ప్రాథమిక రంగు లేదా బేస్ కలర్",
+          "description": "పుస్తకం యొక్క మొత్తం రంగు పథకాన్ని నిర్వచించే ప్రాథమిక రంగును సెట్ చేయండి. దయచేసి తగినంత అధిక కాంట్రాస్ట్ ఉండేలా చూసుకోండి.",
           "default": "#1768c4"
         },
         {
-          "label": "Display table of contents as default",
-          "description": "When enabled the table of contents is showed when opening the book"
+          "label": "డిఫాల్ట్‌గా విషయాల పట్టికను ప్రదర్శించు",
+          "description": "ఎనేబుల్ చేసిఉన్నప్పుడు, పుస్తకాన్ని తెరిచేటప్పుడు విషయాల పట్టిక చూపబడుతుంది"
         },
         {
-          "label": "Display Progress Indicators",
-          "description": "When enabled there will be indicators per page showing the user if he is done with the page or not."
+          "label": "ప్రోగ్రెస్ సూచికలను ప్రదర్శించు",
+          "description": "ఎనేబుల్ చేసిఉన్నప్పుడు, యూజర్ కి ప్రతీ పేజీలోనూ ఆ పేజీని పూర్తి చేసినట్టా కాదా అనే సూచనలు ఉంటాయి."
         },
         {
-          "label": "Enable automatic progress",
-          "description": "If enabled a page without tasks is considered done when viewed. A page with tasks when all tasks are done. If disabled there will be a button at the bottom of every page for the user to click when done with the page."
+          "label": "ఆటోమేటిక్ ప్రోగ్రెస్ ను ఎనేబుల్ చెయ్యి",
+          "description": "ఎనేబుల్ చేసిఉన్నట్లయితే టాస్క్‌లు లేని పేజీని యూజర్ చూసినప్పుడు పూర్తయినట్లు పరిగణించబడుతుంది.టాస్క్‌లతో కూడిన పేజీ అయితే ఆ టాస్క్‌లు అన్నీ పూర్తయితే పేజీ పూర్తయినట్లు పరిగణించబడుతుంది. డిసేబుల్ చేసి ఉన్నట్లయితే పేజీని పూర్తి చేసినప్పుడు యూజరు క్లిక్ చేయడానికి ప్రతి పేజీ దిగువన పూర్తయినట్లు పరిగణించడానికి ఒక బటన్ ఉంటుంది."
         },
         {
           "label": "సమ్మరీ చూపించు",
-          "description": "ఎనేబుల్ అయి ఉన్నపుడు  యూజర్ సమ్మరీను చూడగలరు మరియు ప్రోగ్రెస్ /సమాధానాలను సమర్పించగలరు"
+          "description": "ఎనేబుల్ అయి ఉన్నపుడు యూజర్ సమ్మరీను చూడగలరు మరియు ప్రోగ్రెస్ /సమాధానాలను సమర్పించగలరు"
         }
       ]
     },
@@ -98,103 +98,103 @@
     },
     {
       "label": "\"I have finished this page\"కై అనువాదం",
-      "default": "I have finished this page"
+      "default": "నేను ఈ పేజీ పూర్తి చేసాను"
     },
     {
-      "label": "Fullscreen button label",
-      "default": "Fullscreen"
+      "label": "Fullscreen బటన్ లేబుల్",
+      "default": "ఫుల్ స్క్రీన్"
     },
     {
-      "label": "Exit fullscreen button label",
-      "default": "Exit fullscreen"
+      "label": "fullscreen బటన్ లేబుల్ నుంచి బయటకు",
+      "default": "fullscreen నుంచి బయటకు"
     },
     {
-      "label": "Page progress in book",
-      "description": "\"@count\" will be replaced by page count, and \"@total\" with the total number of pages",
-      "default": "@count of @total pages"
+      "label": "బుక్ / పుస్తకంలో లో పేజీల ప్రోగ్రెస్",
+      "description": "\"@count\" అనేది పేజీ సంఖ్యతో భర్తీ చేయబడుతుంది, మరియు \"@total\" అనేది మొత్తం పేజీల సంఖ్యతో భర్తీ చేయబడుతుంది",
+      "default": "@coసంఖ్య @మొత్తం పేజీలు"
     },
     {
-      "label": "Interaction progress",
-      "description": "\"@count\" will be replaced by interaction count, and \"@total\" with the total number of interactions",
-      "default": "@count of @total interactions"
+      "label": "ఇంటరాక్షన్ ప్రోగ్రెస్",
+      "description": "\"@count\" అనేది ఇంటరాక్షన్ సంఖ్యతో , మరియు \"@total\" అనేది మొత్తం ఇంటరాక్షన్ల సంఖ్య తో భర్తీ చేయబడుతుంది",
+      "default": "@సంఖ్య @మొత్తం ఇంటరాక్షన్లు"
     },
     {
-      "label": "Translation for \"Submit report\"",
-      "default": "Submit Report"
+      "label": "\"సబ్ మిట్ రిపోర్ట్\" కై అనువాదం",
+      "default": "సబ్ మిట్ రిపోర్ట్"
     },
     {
-      "label": "Label for \"restart\" button",
-      "default": "Restart"
+      "label": "\"restart\" బటన్ కైలేబుల్",
+      "default": "తిరిగి ప్రారంభించండి"
     },
     {
-      "label": "Summary header",
-      "default": "Summary"
+      "label": "సారాంశం శీర్షిక",
+      "default": "సారాంశం"
     },
     {
-      "label": "Translation for \"All interactions\"",
-      "default": "All interactions"
+      "label": "\"అన్ని ఇంటరాక్షన్లు\" కై అనువాదం",
+      "default": "అన్ని ఇంటరాక్షన్లు"
     },
     {
-      "label": "Translation for \"Unanswered interactions\"",
-      "default": "Unanswered interactions"
+      "label": "\"జవాబు ఇవ్వని ఇంటరాక్షన్లు\" కై అనువాదం",
+      "default": "జవాబు ఇవ్వని ఇంటరాక్షన్లు"
     },
     {
-      "label": "Score",
-      "description": "\"@score\" will be replaced with current score, and \"@maxscore\" will be replaced with max achievable score",
-      "default": "@score / @maxscore"
+      "label": "స్కోర్",
+      "description": "\"@score\" \"అనేది ప్రస్తుత స్కోర్ తో , మరియు \"@maxscore\" అనేది గరిష్టంగా సాధించగల్గిన స్కోర్ తో భర్తీ చేయబడుతుంది",
+      "default": "@స్కోర్ / @గరిష్ట స్కోర్"
     },
     {
-      "label": "Per page interactions completion",
-      "description": "\"@left\" will be replaced with remaining interactions, and \"@max\" will be replaced with total number of interactions on the page",
-      "default": "@left of @max interactions completed"
+      "label": "ఒక్కో పేజీ ఇంటరాక్షన్ కంప్లీషన్ వివరాలు",
+      "description": "\"@left\" మిగిలిన ఇంటరాక్షన్స్ తో భర్తీ చేయబడతాయి, మరియు \"@గరిష్టం\" పేజీలోని మొత్తం ఇంటరాక్షన్స్ సంఖ్యతో భర్తీ చేయబడుతుంది",
+      "default": "@మిగిలినవి @గరిష్టంగా పూరిచేయబడ్డ ఇంటరాక్షన్స్"
     },
     {
-      "label": "Translation for \"No interactions\"",
-      "default": "No interactions"
+      "label": "\"ఇంటరాక్షన్లు లేవు\" కై అనువాదం",
+      "default": "ఇంటరాక్షన్లు లేవు"
     },
     {
-      "label": "Translation for \"Score\"",
-      "default": "Score"
+      "label": "\"స్కోర్\" కై అనువాదం",
+      "default": "స్కోర్"
     },
     {
-      "label": "Label for \"Summary &amp; submit\" button",
-      "default": "Summary &amp; submit"
+      "label": "\"సమ్మరీ &amp; సబ్ మిట్\" బటన్ కై లేబుల్",
+      "default": "సమ్మరీ &amp; సబ్ మిట్"
     },
     {
-      "label": "Translation for \"You have not interacted with any pages.\"",
-      "default": "You have not interacted with any pages."
+      "label": "\"మీరు ఏ పేజీతోనూ ఇంటరాక్ట్ అవ్వలేదు\" కై అనువాదం",
+      "default": "మీరు ఏ పేజీతోనూ ఇంటరాక్ట్ అవ్వలేదు."
     },
     {
-      "label": "Translation for \"You have to interact with at least one page before you can see the summary.\"",
-      "default": "You have to interact with at least one page before you can see the summary."
+      "label": "\"సమ్మరీ చూసేముందు కనీసం ఒక్క పేజీ తోనైనా ఇంటరాక్ట్ అవ్వాలి.\" కై అనువాదం",
+      "default": "సమ్మరీ చూసేముందు కనీసం ఒక్క పేజీ తోనైనా ఇంటరాక్ట్ అవ్వాలి."
     },
     {
-      "label": "Translation for \"Your answers are submitted for review!\"",
-      "default": "Your answers are submitted for review!"
+      "label": "\"మీ సమాధానాలు రివ్యూకై సబ్ మిట్ చేయబడ్డాయి\"కై అనువాదం",
+      "default": "మీ సమాధానాలు రివ్యూకై సబ్ మిట్ చేయబడ్డాయి!"
     },
     {
-      "label": "Summary progress label",
-      "default": "Book progress"
+      "label": "సమ్మరీ ప్రోగ్రెస్ లేబుల్",
+      "default": "బుక్ ప్రోగ్రెస్"
     },
     {
-      "label": "Interactions progress label",
-      "default": "Interactions progress"
+      "label": "ఇంటరాక్షన్స్ ప్రోగ్రెస్ లేబుల్",
+      "default": "ఇంటరాక్షన్స్ ప్రోగ్రెస్"
     },
     {
-      "label": "Total score label",
-      "default": "Total score"
+      "label": "మొత్తం స్కోర్ లేబుల్",
+      "default": "మొత్తం స్కోర్"
     },
     {
-      "label": "Accessibility texts",
+      "label": "యాక్సెసబిలిటీ టెక్స్ట్స్",
       "fields": [
         {
-          "label": "Page progress textual alternative",
-          "description": "An alternative text for the visual page progress. @page and @total variables available.",
-          "default": "Page @page of @total."
+          "label": "పేజీ ప్రోగ్రెస్ కై టెక్స్ట్ ప్రత్యామ్నాయం",
+          "description": "An alternative text for the విజువల్ పేజీ ప్రోగ్రెస్ కై ప్రత్యామ్నాయ టెక్స్ట్. @పేజీ మరియు @మొత్తం అందుబాటులోనున్న వేరియబుల్స్.",
+          "default": "@పేజీ యొక్క@మొత్తం."
         },
         {
-          "label": "Label for expanding/collapsing navigation menu",
-          "default": "Toggle navigation menu"
+          "label": "నావిగేషన్ మెను విస్తరణ/కనుమరగవడం కోసం లేబుల్",
+          "default": "నావిగేషన్ మెనుని టాగుల్ చేయండి"
         }
       ]
     }
