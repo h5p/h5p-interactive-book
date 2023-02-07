@@ -438,10 +438,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
 
     this.on('toggleMenu', (event) => {
       // Set nav focus flag to avoid auto-scroll in content list page
-      let focusNav = true;
-      if (event.data && event.data.shouldNotFocusNav) {
-        focusNav = false;
-      }
+      const focusNav = !event.data?.shouldNotFocusNav;
       this.pageContent.toggleNavigationMenu();
 
       // Update the menu button
