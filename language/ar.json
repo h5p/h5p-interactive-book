@@ -13,7 +13,7 @@
         },
         {
           "label": "غلاف متوسط",
-          "description": "Optional medium for the introduction."
+          "description": "Optional media to display on the cover."
         }
       ]
     },

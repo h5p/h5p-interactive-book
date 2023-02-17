@@ -12,8 +12,8 @@
           "description": "Tämä teksti näkyy pienemmässä koossa pääotsikon alapuolella."
         },
         {
-          "label": "Cover medium",
-          "description": "Optional medium for the introduction."
+          "label": "Cover media",
+          "description": "Optional media to display on the cover."
         }
       ]
     },

@@ -12,8 +12,8 @@
           "description": "Ce texte sera la description de votre livre"
         },
         {
-          "label": "Cover medium",
-          "description": "Optional medium for the introduction."
+          "label": "Media de couverture",
+          "description": "Média facultatif à afficher sur la couverture."
         }
       ]
     },

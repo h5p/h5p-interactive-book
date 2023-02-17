@@ -15,8 +15,8 @@ class Cover extends H5P.EventDispatcher {
     this.container = this.createContainer();
 
     // Visual header
-    if (params.coverMedium) {
-      this.visuals = this.createVisualsElement(params.coverMedium);
+    if (params.coverMedia) {
+      this.visuals = this.createVisualsElement(params.coverMedia);
       if (this.visuals) {
         this.container.appendChild(this.visuals);
       }
@@ -70,21 +70,21 @@ class Cover extends H5P.EventDispatcher {
    * already.
    */
   initMedia() {
-    if (!this.visuals || !this.params.coverMedium) {
+    if (!this.visuals || !this.params.coverMedia) {
       return;
     }
 
-    const coverMedium = this.params.coverMedium;
+    const coverMedia = this.params.coverMedia;
 
     // Preparation
-    if ((coverMedium.library || '').split(' ')[0] === 'H5P.Video') {
-      coverMedium.params.visuals.fit = false;
+    if ((coverMedia.library || '').split(' ')[0] === 'H5P.Video') {
+      coverMedia.params.visuals.fit = false;
     }
 
-    H5P.newRunnable(coverMedium, this.contentId, H5P.jQuery(this.visuals), false, { metadata: coverMedium.medatata } );
+    H5P.newRunnable(coverMedia, this.contentId, H5P.jQuery(this.visuals), false, { metadata: coverMedia.medatata });
 
     // Postparation
-    if ((coverMedium.library || '').split(' ')[0] === 'H5P.Image') {
+    if ((coverMedia.library || '').split(' ')[0] === 'H5P.Image') {
       const image = this.visuals.querySelector('img') || this.visuals.querySelector('.h5p-placeholder');
       image.style.height = 'auto';
       image.style.width = 'auto';

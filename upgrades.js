@@ -26,7 +26,7 @@ H5PUpgrades['H5P.InteractiveBook'] = (function () {
                 decorative: false
               },
               subContentId: 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (char) {
-                const random = Math.random()*16|0, newChar = char === 'x' ? random : (random&0x3|0x8);
+                const random = Math.random() * 16 | 0, newChar = char === 'x' ? random : (random & 0x3 | 0x8);
                 return newChar.toString(16);
               })
             };
@@ -75,13 +75,13 @@ H5PUpgrades['H5P.InteractiveBook'] = (function () {
           };
 
           if (bookCover.coverAltText || bookCover.coverImage) {
-            bookCover.coverMedium = convertToImageParams(bookCover.coverImage, bookCover.coverAltText);
+            bookCover.coverMedia = convertToImageParams(bookCover.coverImage, bookCover.coverAltText);
           }
 
           delete bookCover.coverImage;
           delete bookCover.coverAltText;
         }
-        
+
         if (parameters && parameters.bookCover && parameters.bookCover.coverDescription) {
           if (parameters.bookCover.coverDescription.substr(0, 2) !== '<p') {
             parameters.bookCover.coverDescription = '<p style="text-align: center;">' + parameters.bookCover.coverDescription + '</p>'; // was plain text

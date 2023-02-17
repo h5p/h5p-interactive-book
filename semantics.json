@@ -61,10 +61,10 @@
         }
       },
       {
-        "name": "coverMedium",
+        "name": "coverMedia",
         "type": "library",
-        "label": "Cover medium",
-        "description": "Optional medium for the introduction.",
+        "label": "Cover media",
+        "description": "Optional media to display on the cover.",
         "optional": true,
         "options": [
           "H5P.Image 1.1",

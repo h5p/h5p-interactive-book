@@ -12,8 +12,8 @@
           "description": "ఈ టెక్స్ట్  మీ పుస్తకం యొక్క వివరణ"
         },
         {
-          "label": "Cover medium",
-          "description": "Optional medium for the introduction."
+          "label": "Cover media",
+          "description": "Optional media to display on the cover."
         }
       ]
     },
