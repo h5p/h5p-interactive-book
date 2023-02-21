@@ -9,7 +9,7 @@ H5PUpgrades['H5P.InteractiveBook'] = (function () {
        * @param {function} finished Callback.
        * @param {object} extras Metadata.
        */
-      7: function (parameters, finished, extras) {
+      6: function (parameters, finished, extras) {
         if (parameters && parameters.bookCover) {
           const bookCover = parameters.bookCover;
 
@@ -75,7 +75,7 @@ H5PUpgrades['H5P.InteractiveBook'] = (function () {
           };
 
           if (bookCover.coverAltText || bookCover.coverImage) {
-            bookCover.coverMedia = convertToImageParams(bookCover.coverImage, bookCover.coverAltText);
+            bookCover.coverMedium = convertToImageParams(bookCover.coverImage, bookCover.coverAltText);
           }
 
           delete bookCover.coverImage;
