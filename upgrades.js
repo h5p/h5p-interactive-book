@@ -9,7 +9,7 @@ H5PUpgrades['H5P.InteractiveBook'] = (function () {
        * @param {function} finished Callback.
        * @param {object} extras Metadata.
        */
-      6: function (parameters, finished, extras) {
+      7: function (parameters, finished, extras) {
         if (parameters && parameters.bookCover) {
           const bookCover = parameters.bookCover;
 
