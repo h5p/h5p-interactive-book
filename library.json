@@ -3,7 +3,7 @@
   "description": "An interactive book which displays content in pages and sections",
   "majorVersion": 1,
   "minorVersion": 6,
-  "patchVersion": 8,
+  "patchVersion": 9,
   "runnable": 1,
   "fullscreen": 1,
   "author": "Joubel",
