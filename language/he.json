@@ -1,202 +1,202 @@
 {
   "semantics": [
     {
-      "description": "A cover that shows info regarding the book before access",
+      "description": "עמוד־פתיחה המציג מידע על הספר לפני הגישה אליו",
       "label": "אפשר כריכת ספר"
     },
     {
       "fields": [
         {
-          "label": "Cover description",
-          "description": "This text will be the description of your book."
+          "label": "תיאור עמוד־פתיחה",
+          "description": "טקסט זה יהיה התיאור של הספר שלך."
         },
         {
-          "label": "Cover medium",
-          "description": "Optional medium for the introduction."
+          "label": "עמוד־פתיחה בינוני",
+          "description": "מדיום חלופי עבור ההקדמה."
         }
       ],
-      "label": "Cover Page"
+      "label": "עמוד־פתיחה"
     },
     {
-      "label": "Pages",
+      "label": "דפים",
       "widgets": [
         {
-          "label": "Default"
+          "label": "בְּרִירַת מֶחדָל"
         }
       ],
       "field": {
         "fields": [
           {
-            "label": "Page"
+            "label": "עמוד"
           }
         ],
-        "label": "Item"
+        "label": "פריט"
       },
-      "entity": "Page"
+      "entity": "עמוד"
     },
     {
       "fields": [
         {
-          "label": "Base color",
+          "label": "צבע בסיסי",
           "default": "#1768c4",
-          "description": "Set the base color that will define the overall color scheme of the book. Please ensure a high enough contrast."
+          "description": "הגדרת צבע הבסיס שיגדיר את ערכת הצבעים הכוללת של הספר. נא לוודא ניגודיות גבוהה מספיק."
         },
         {
-          "description": "When enabled the table of contents is showed when opening the book",
-          "label": "Display table of contents as default"
+          "description": "כאשר מופעל, תוכן העניינים מוצג בעת פתיחת הספר",
+          "label": "הצגת תוכן העניינים כברירת מחדל"
         },
         {
-          "description": "When enabled there will be indicators per page showing the user if he is done with the page or not.",
-          "label": "Display Progress Indicators"
+          "description": "כאשר מופעל יהיו מחוונים לכל עמוד המראים למשתמש אם הוא סיים עם הדף או לא.",
+          "label": "הצגת מחווני התקדמות"
         },
         {
-          "description": "If enabled a page without tasks is considered done when viewed. A page with tasks when all tasks are done. If disabled there will be a button at the bottom of every page for the user to click when done with the page.",
-          "label": "Enable automatic progress"
+          "description": "אם מופעל, דף ללא משימות נחשב כבוצע בעת הצפייה. דף עם משימות כאשר כל המשימות מבוצעות. אם הוא מושבת, יהיה כפתור בתחתית כל עמוד עבור המשתמש ללחוץ עליו כאשר סיים את העמוד.",
+          "label": "אפשר התקדמות אוטומטית"
         },
         {
-          "description": "When enabled the user can see a summary and submit the progress/answers",
-          "label": "Display summary"
+          "description": "כאשר מופעל המשתמש יכול לראות תקציר ולשלוח את ההתקדמות/תשובות",
+          "label": "הצגת סיכום"
         }
       ],
-      "label": "Behavioural settings"
+      "label": "הגדרות התנהגות"
     },
     {
-      "default": "Read",
-      "label": "Translation for \"Read\""
+      "default": "קריאה",
+      "label": "תרגום ל\"קריאה\""
     },
     {
-      "default": "Display 'Table of contents'",
-      "label": "Translation for \"Display 'Table of contents'\""
+      "default": "הצגת 'תוכן עניינים'",
+      "label": "תרגום ל\"הצגת 'תוכן עניינים'\""
     },
     {
-      "default": "Hide 'Table of contents'",
-      "label": "Translation for \"Hide 'Table of contents'\""
+      "default": "הסתרת 'תוכן עניינים'",
+      "label": "תרגום ל\"הסתר את 'תוכן עניינים'\""
     },
     {
-      "default": "Next page",
-      "label": "Translation for \"Next page\""
+      "default": "עמוד הבא",
+      "label": "תרגום ל\"עמוד הבא\""
     },
     {
-      "default": "Previous page",
-      "label": "Translation for \"Previous page\""
+      "default": "עמוד קודם",
+      "label": "תרגום לדף הקודם"
     },
     {
-      "default": "Page completed!",
-      "label": "Translation for \"Page completed!\""
+      "default": "עמוד הושלם!",
+      "label": "התרגום לעמוד הושלם"
     },
     {
-      "default": "@pages of @total completed",
-      "label": "Translation for \"@pages of @total completed\" (@pages and @total will be replaced by actual values)"
+      "default": "@pages מתוך @total הושלמו",
+      "label": "תרגום עבור \"@pages מתוך @total הושלמו\" (@pages ו-@total יוחלפו בערכים בפועל)"
     },
     {
-      "default": "Incomplete page",
-      "label": "Translation for \"Incomplete page\""
+      "default": "עמוד לא הושלם",
+      "label": "תרגום ל\"דף לא שלם\""
     },
     {
-      "default": "Navigate to the top",
-      "label": "Translation for \"Navigate to the top\""
+      "default": "נווט למעלה",
+      "label": "תרגום ל\"נווט לראש הדף\""
     },
     {
-      "default": "I have finished this page",
-      "label": "Translation for \"I have finished this page\""
+      "default": "אני השלמתי עמוד זה",
+      "label": "תרגום ל\"סיימתי את הדף הזה\""
     },
     {
-      "default": "Fullscreen",
-      "label": "Fullscreen button label"
+      "default": "מסך מלא",
+      "label": "תווית כפתור מסך מלא"
     },
     {
-      "default": "Exit fullscreen",
-      "label": "Exit fullscreen button label"
+      "default": "יציאה ממסך מלא",
+      "label": "תווית כפתור יציאה ממסך מלא"
     },
     {
-      "description": "\"@count\" will be replaced by page count, and \"@total\" with the total number of pages",
-      "label": "Page progress in book",
-      "default": "@count of @total pages"
+      "description": "\"@count\" יוחלף בספירת עמודים, ו-\"@total\" במספר הכולל של עמודים",
+      "label": "התקדמות בעמודי הספר",
+      "default": "@count מתוך @total עמודים"
     },
     {
-      "label": "Interaction progress",
-      "default": "@count of @total interactions",
-      "description": "\"@count\" will be replaced by interaction count, and \"@total\" with the total number of interactions"
+      "label": "התקדמות הפעילות",
+      "default": "@count מתוך @total פעילויות",
+      "description": "\"@count\" יוחלף בספירת פעילויות, ו-\"@total\" במספר הכולל של פעילויות"
     },
     {
-      "default": "Submit Report",
-      "label": "Translation for \"Submit report\""
+      "default": "הגשת דוח",
+      "label": "תרגום ל\"שלח דוח\""
     },
     {
-      "default": "Restart",
-      "label": "Label for \"restart\" button"
+      "default": "אתחול",
+      "label": "תווית לכפתור \"הפעל מחדש\""
     },
     {
-      "default": "Summary",
-      "label": "Summary header"
+      "default": "סיכום",
+      "label": "כותרת סיכום"
     },
     {
-      "default": "All interactions",
-      "label": "Translation for \"All interactions\""
+      "default": "כל הפעילויות",
+      "label": "תרגום ל\"כל הפעילויות\""
     },
     {
-      "default": "Unanswered interactions",
-      "label": "Translation for \"Unanswered interactions\""
+      "default": "פעילויות ללא מענה",
+      "label": "תרגום ל\"פעילויות ללא מענה\""
     },
     {
-      "description": "\"@score\" will be replaced with current score, and \"@maxscore\" will be replaced with max achievable score",
-      "label": "Score",
+      "description": "\"@score\" יוחלף בניקוד הנוכחי, ו-\"@maxscore\" יוחלף בציון מרבי שניתן להשיג",
+      "label": "ציון",
       "default": "@score / @maxscore"
     },
     {
-      "label": "Per page interactions completion",
-      "default": "@left of @max interactions completed",
-      "description": "\"@left\" will be replaced with remaining interactions, and \"@max\" will be replaced with total number of interactions on the page"
+      "label": "השלמת פעילות לפי עמוד",
+      "default": "@left מ@max פעילויות הושלמו",
+      "description": "\"@left\" יוחלף באינטראקציות הנותרות, ו-\"@max\" יוחלף במספר הכולל של אינטראקציות בדף"
     },
     {
-      "default": "No interactions",
-      "label": "Translation for \"No interactions\""
+      "default": "אין פעילויות",
+      "label": "תרגום ל'אין פעילויות"
     },
     {
-      "default": "Score",
-      "label": "Translation for \"Score\""
+      "default": "ציון",
+      "label": "תרגום ל'ציון'"
     },
     {
-      "default": "Summary &amp; submit",
-      "label": "Label for \"Summary &amp; submit\" button"
+      "default": "סיכום ושמירה",
+      "label": "תווית לכפתור \"סיכום ושלח\""
     },
     {
-      "default": "You have not interacted with any pages.",
-      "label": "Translation for \"You have not interacted with any pages.\""
+      "default": "לא יצרת פעילות אף עמוד.",
+      "label": "תרגום ל\"לא יצרת פעילות באף עמוד.\""
     },
     {
-      "default": "You have to interact with at least one page before you can see the summary.",
-      "label": "Translation for \"You have to interact with at least one page before you can see the summary.\""
+      "default": "עליך ליצור פעילות עם עמוד אחד לפחות לפני שתוכל לראות את הסיכום.",
+      "label": "תרגום ל\"עליך ליצור פעילות בעמוד אחד לפחות לפני שתוכל לראות את הסיכום.\""
     },
     {
-      "default": "Your answers are submitted for review!",
-      "label": "Translation for \"Your answers are submitted for review!\""
+      "default": "התשובות שלך נשלחות לבדיקה!",
+      "label": "תרגום ל\"תשובותיך נשלחות לבדיקה!\""
     },
     {
-      "default": "Book progress",
-      "label": "Summary progress label"
+      "default": "התקדמות בספר",
+      "label": "תווית התקדמות סיכום"
     },
     {
-      "default": "Interactions progress",
-      "label": "Interactions progress label"
+      "default": "התקדמות בפעילויות",
+      "label": "תווית התקדמות בפעילויות"
     },
     {
-      "default": "Total score",
-      "label": "Total score label"
+      "default": "ציון סופי",
+      "label": "תווית ציון סופי"
     },
     {
       "fields": [
         {
-          "label": "Page progress textual alternative",
-          "default": "Page @page of @total.",
-          "description": "An alternative text for the visual page progress. @page and @total variables available."
+          "label": "חלופת תוכן להתקדמות הדף",
+          "default": "עמוד @page מתוך @total.",
+          "description": "טקסט חלופי להתקדמות הדף החזותי. משתנים @page ו-@total זמינים."
         },
         {
-          "default": "Toggle navigation menu",
-          "label": "Label for expanding/collapsing navigation menu"
+          "default": "הצגת/הסתרת תפריט הניווט",
+          "label": "תווית להרחבה/צמצום של תפריט הניווט"
         }
       ],
-      "label": "Accessibility texts"
+      "label": "הנחיות נגישות"
     }
   ]
 }
