@@ -252,7 +252,7 @@ class PageContent extends H5P.EventDispatcher {
 
       // Find sections with tasks and tracks them
       chapter.sections.forEach((section, index) => {
-        if (H5P.Column.isTask(section.instance)) {
+        if (H5P.ActiveReaderChapter.isTask(section.instance)) {
           section.isTask = true;
           chapter.maxTasks++;
           chapter.tasksLeft++;

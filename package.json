@@ -1,7 +1,7 @@
 {
-  "name": "h5p-interactive-book",
-  "version": "1.6.1",
-  "description": "An interactive book which displays content in pages and sections",
+  "name": "h5p-active-reader",
+  "version": "1.0.0",
+  "description": "An active reader which displays content in pages and sections",
   "scripts": {
     "dev": "cross-env NODE_ENV='development' webpack",
     "build": "cross-env NODE_ENV='production' webpack",

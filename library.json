@@ -1,25 +1,25 @@
 {
-  "title": "Interactive Book",
-  "description": "An interactive book which displays content in pages and sections",
+  "title": "Active Reader",
+  "description": "An active reader which displays content in pages and sections",
   "majorVersion": 1,
-  "minorVersion": 7,
-  "patchVersion": 3,
+  "minorVersion": 0,
+  "patchVersion": 0,
   "runnable": 1,
   "fullscreen": 1,
   "author": "Joubel",
   "license": "MIT",
-  "machineName": "H5P.InteractiveBook",
+  "machineName": "H5P.ActiveReader",
   "embedTypes": [
     "iframe"
   ],
   "preloadedJs": [
     {
-      "path": "dist/h5p-interactive-book.js"
+      "path": "dist/h5p-active-reader.js"
     }
   ],
   "preloadedCss": [
     {
-      "path": "dist/h5p-interactive-book.css"
+      "path": "dist/h5p-active-reader.css"
     }
   ],
   "preloadedDependencies": [
@@ -29,7 +29,7 @@
       "minorVersion": 5
     },
     {
-      "machineName": "H5P.Column",
+      "machineName": "H5P.ActiveReaderChapter",
       "majorVersion": 1,
       "minorVersion": 16
     },

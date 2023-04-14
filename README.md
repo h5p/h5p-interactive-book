@@ -1,6 +1,6 @@
-# H5P Interactive Book
+# H5P Active Reader
 
-Interactive Book is an H5P-component, giving users a central knowledge base which utilizes the [H5P Framework](https://github.com/h5p)
+Active Reader is an H5P-component, giving users a central knowledge base which utilizes the [H5P Framework](https://github.com/h5p)
 
 ## Getting started
 

@@ -1,7 +1,7 @@
 import "../styles/main.scss";
 import "../styles/style.scss";
-import InteractiveBook from "../scripts/app";
+import ActiveReader from "../scripts/app";
 
 // Load library
 H5P = H5P || {};
-H5P.InteractiveBook = InteractiveBook;
+H5P.ActiveReader = ActiveReader;

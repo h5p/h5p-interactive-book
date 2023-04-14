@@ -6,7 +6,7 @@ import PageContent from './pagecontent';
 import 'element-scroll-polyfill';
 import Colors from './colors';
 
-export default class InteractiveBook extends H5P.EventDispatcher {
+export default class ActiveReader extends H5P.EventDispatcher {
   /**
    * @constructor
    *
@@ -42,7 +42,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
 
     this.completed = false;
 
-    this.params = InteractiveBook.sanitizeConfig(config);
+    this.params = ActiveReader.sanitizeConfig(config);
     this.l10n = this.params.l10n;
     this.params.behaviour = this.params.behaviour || {};
     this.mainWrapper = null;
