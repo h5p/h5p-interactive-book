@@ -12,8 +12,8 @@
           "description": "이 텍스트는 당신의 책에 대한 설명이 될 겁니다."
         },
         {
-          "label": "Cover medium",
-          "description": "Optional medium for the introduction."
+          "label": "Cover media",
+          "description": "Optional media to display on the cover."
         }
       ]
     },

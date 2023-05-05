@@ -12,8 +12,8 @@
           "description": "Этот текст содержит описание книги."
         },
         {
-          "label": "Cover medium",
-          "description": "Optional medium for the introduction."
+          "label": "Cover media",
+          "description": "Optional media to display on the cover."
         }
       ]
     },

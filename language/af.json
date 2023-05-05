@@ -12,8 +12,8 @@
           "description": "Hierdie teks sal die beskrywing van jou boek wees."
         },
         {
-          "label": "Cover medium",
-          "description": "Optional medium for the introduction."
+          "label": "Cover media",
+          "description": "Optional media to display on the cover."
         }
       ]
     },
