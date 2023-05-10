@@ -437,6 +437,11 @@ export default class InteractiveBook extends H5P.EventDispatcher {
     this.on('resize', this.resize, this);
 
     this.on('toggleMenu', (event) => {
+      // Resize content when we are done changing the sidebar + pagecontent width.
+      this.sideBar.container.addEventListener('transitionend', () => {
+        this.trigger('resize');
+      });
+
       // Set nav focus flag to avoid auto-scroll in content list page
       const focusNav = !event.data?.shouldNotFocusNav;
       this.pageContent.toggleNavigationMenu();
@@ -448,12 +453,6 @@ export default class InteractiveBook extends H5P.EventDispatcher {
       if (this.pageContent.sidebarIsOpen && focusNav) {
         this.sideBar.focus();
       }
-
-      // We need to resize the whole book since the interactions are getting
-      // more width and those with a static ratio will increase their height.
-      setTimeout(() => {
-        this.trigger('resize');
-      }, 150);
     });
 
     this.on('scrollToTop', () => {
