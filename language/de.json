@@ -173,8 +173,8 @@
       "default": "Deine Antworten wurden zur Begutachtung versendet!"
     },
     {
-      "label": "Beschriftung für Buchfortschritt in der Zusammenfassung",
-      "default": "Buchfortschritt"
+      "label": "Summary progress label",
+      "default": "Article progress"
     },
     {
       "label": "Beschriftung für Interaktionsfortschritt in der Zusammenfassung",

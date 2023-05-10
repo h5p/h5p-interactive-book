@@ -173,8 +173,8 @@
       "default": "Majibu yako yamewasilishwa kwa ukaguzi!"
     },
     {
-      "label": "Lebo ya maendeleo ya muhtasari",
-      "default": "Maendeleo ya kitabu"
+      "label": "Summary progress label",
+      "default": "Article progress"
     },
     {
       "label": "Lebo ya maendeleo ya maingiliano",

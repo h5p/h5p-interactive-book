@@ -370,12 +370,7 @@
 
   .h5p-interactive-book-summary-overview-section-details {
     display: flex;
-    border-top: 1px solid #ebebeb;
-    padding: 0.25rem;
-
-    &:hover {
-      background: #f3f3f3;
-    }
+    flex-direction: column;
 
     & .h5p-interactive-book-summary-section-title {
       font-size: 0.875rem;
@@ -391,6 +386,36 @@
       margin-left: auto;
       white-space: nowrap;
       font-size: 0.875rem;
+    }
+  }
+
+  .h5p-interactive-book-summary-overview-section-container {
+    display: flex;
+    width: 100%;
+    padding: 0.25rem;
+    border-top: 1px solid #ebebeb;
+
+    &:hover {
+      background: #f3f3f3;
+    }
+  }
+
+  .h5p-interactive-book-summary-text-toggle {
+    border: 1px solid #ebebeb;
+    padding: 0 0.5em;
+    margin: 1em 0;
+    transition: 0.2s all linear;
+    opacity: 1;
+    max-height:100%;
+
+    &.hidden {
+      opacity: 0;
+      transition: 0.2s all linear;
+      max-height: 0;
+      overflow:hidden;
+      padding: 0;
+      margin: 0;
+      border: 0;
     }
   }
 

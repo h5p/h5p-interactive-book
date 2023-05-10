@@ -173,8 +173,8 @@
       "default": "Le tue risposte sono state inviate per la verifica!"
     },
     {
-      "label": "Etichetta di progresso del sommario",
-      "default": "Avanzamento nel libro"
+      "label": "Summary progress label",
+      "default": "Article progress"
     },
     {
       "label": "Etichetta del progresso delle interazioni",

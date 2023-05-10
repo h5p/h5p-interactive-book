@@ -173,8 +173,8 @@
       "default": "پاسخ‌های شما برای بازنگری ارسال شدند!"
     },
     {
-      "label": "برچسب پیشرفت جمع‌بندی",
-      "default": "پیشرفت کتاب"
+      "label": "Summary progress label",
+      "default": "Article progress"
     },
     {
       "label": "برچسب پیشرفت تعاملات",

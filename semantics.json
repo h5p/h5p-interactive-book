@@ -433,7 +433,7 @@
     "type": "text",
     "importance": "low",
     "label": "Summary progress label",
-    "default": "Book progress",
+    "default": "Article progress",
     "common": true,
     "optional": true
   },

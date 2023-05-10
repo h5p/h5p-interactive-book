@@ -173,8 +173,8 @@
       "default": "Your answers are submitted for review!"
     },
     {
-      "label": "Kirjan edistyminen -otsikko",
-      "default": "Kirjan edistyminen"
+      "label": "Summary progress label",
+      "default": "Article progress"
     },
     {
       "label": "Tehtävien edistyminen -otsikko",

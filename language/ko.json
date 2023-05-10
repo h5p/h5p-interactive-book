@@ -173,8 +173,8 @@
       "default": "검토를 위해 답이 제출됨!"
     },
     {
-      "label": "학습진도 요약 레이블",
-      "default": "책 진도"
+      "label": "Summary progress label",
+      "default": "Article progress"
     },
     {
       "label": "상호작용 진도 레이블",

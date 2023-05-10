@@ -173,8 +173,8 @@
       "default": "Dina svar har skickats in för granskning!"
     },
     {
-      "label": "Etikett för sammanfattning av framsteg",
-      "default": "Framsteg i bok"
+      "label": "Summary progress label",
+      "default": "Article progress"
     },
     {
       "label": "Etikett för framsteg i interaktiva övningar",

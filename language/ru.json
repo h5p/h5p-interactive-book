@@ -173,8 +173,8 @@
       "default": "Ваши ответы отправлены!"
     },
     {
-      "label": "Заголовок Страниц просмотрено",
-      "default": "Страниц просмотрено"
+      "label": "Summary progress label",
+      "default": "Article progress"
     },
     {
       "label": "Заголовок Заданий просмотрено",

@@ -173,8 +173,8 @@
       "default": "మీ సమాధానాలు రివ్యూకై సబ్ మిట్ చేయబడ్డాయి!"
     },
     {
-      "label": "సమ్మరీ ప్రోగ్రెస్ లేబుల్",
-      "default": "బుక్ ప్రోగ్రెస్"
+      "label": "Summary progress label",
+      "default": "Article progress"
     },
     {
       "label": "ఇంటరాక్షన్స్ ప్రోగ్రెస్ లేబుల్",

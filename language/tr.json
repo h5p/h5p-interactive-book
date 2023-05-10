@@ -173,8 +173,8 @@
       "default": "Yanıtlarınız incelemeye gönderildi!"
     },
     {
-      "label": "Özet ilerleme etiketi",
-      "default": "Kitap ilerlemesi"
+      "label": "Summary progress label",
+      "default": "Article progress"
     },
     {
       "label": "Etkileşim ilerleme etiketi",

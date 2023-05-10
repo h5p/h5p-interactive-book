@@ -173,8 +173,8 @@
       "default": "Odgovori so oddani v pregled!"
     },
     {
-      "label": "Besedilo za indikator Ogled knjige",
-      "default": "Ogled knjige"
+      "label": "Summary progress label",
+      "default": "Article progress"
     },
     {
       "label": "Besedilo za indikator Zaključene interakcije",
