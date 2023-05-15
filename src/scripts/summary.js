@@ -410,7 +410,7 @@ class Summary extends H5P.EventDispatcher {
     for (const section of sections) {
       const sectionRow = document.createElement("li");
       sectionRow.classList.add('h5p-interactive-book-summary-overview-section-details');
-      const sectionRowContainer = document.createElement("div");
+      const sectionRowContainer = document.createElement('div');
       sectionRowContainer.classList.add('h5p-interactive-book-summary-overview-section-container');
       sectionRow.appendChild(sectionRowContainer);
       if (this.behaviour.progressIndicators) {
@@ -424,13 +424,17 @@ class Summary extends H5P.EventDispatcher {
       title.type = "button";
       title.classList.add('h5p-interactive-book-summary-section-title');
       title.onclick = () => {
-        if (section.instance.libraryInfo.machineName === 'H5P.ActiveReaderTextInput') {
-          const contentChapter = document.querySelector(`.h5p-content-chapter-${chapterId}`);
+        if (section.instance.libraryInfo.machineName === 'H5P.ActiveReaderTextInput'
+          && section.instance.getResponse().trim()) {
+
+          const contentChapter = document.querySelector(
+            `.h5p-content-chapter-${section.instance.subContentId}`
+          );
           // toggle hidden class on the chapter
           contentChapter.classList.toggle('hidden');
 
           // Resize the iframe
-          setTimeout(() => this.parent.trigger('resize'), 200);
+          setTimeout(() => this.parent.trigger('resize'), 180);
           return;
         }
         const newChapter = {
@@ -469,8 +473,8 @@ class Summary extends H5P.EventDispatcher {
       // Add active reader text's content
       if (section.instance.libraryInfo.machineName === 'H5P.ActiveReaderTextInput'
         && section.instance.getResponse().trim()) {
-        const responseField = document.createElement("div");
-        responseField.classList.add('h5p-interactive-book-summary-text-toggle', `h5p-content-chapter-${chapterId}`, 'hidden');
+        const responseField = document.createElement('div');
+        responseField.classList.add('h5p-interactive-book-summary-text-toggle', `h5p-content-chapter-${section.instance.subContentId}`, 'hidden');
         responseField.innerHTML = section.instance.getResponse();
         sectionRow.appendChild(responseField);
       }
