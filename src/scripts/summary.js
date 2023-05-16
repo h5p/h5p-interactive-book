@@ -407,6 +407,7 @@ class Summary extends H5P.EventDispatcher {
    */
   createSectionList(sections, chapterId) {
     let sectionElements = [], hasUnansweredInteractions = false;
+    let responseFields = [];
     for (const section of sections) {
       const sectionRow = document.createElement("li");
       sectionRow.classList.add('h5p-interactive-book-summary-overview-section-details');
@@ -427,13 +428,12 @@ class Summary extends H5P.EventDispatcher {
         if (section.instance.libraryInfo.machineName === 'H5P.ActiveReaderTextInput'
           && section.instance.getResponse().trim()) {
 
-          const contentChapter = document.querySelector(
-            `.h5p-content-chapter-${section.instance.subContentId}`
-          );
           // toggle hidden class on the chapter
-          contentChapter.classList.toggle('hidden');
+          responseFields[section.instance.subContentId].classList.toggle(
+            'hidden'
+          );
 
-          // Resize the iframe
+          // Resize the iframe and wait till the accordition animation is done
           setTimeout(() => this.parent.trigger('resize'), 180);
           return;
         }
@@ -473,10 +473,16 @@ class Summary extends H5P.EventDispatcher {
       // Add active reader text's content
       if (section.instance.libraryInfo.machineName === 'H5P.ActiveReaderTextInput'
         && section.instance.getResponse().trim()) {
-        const responseField = document.createElement('div');
-        responseField.classList.add('h5p-interactive-book-summary-text-toggle', `h5p-content-chapter-${section.instance.subContentId}`, 'hidden');
-        responseField.innerHTML = section.instance.getResponse();
-        sectionRow.appendChild(responseField);
+        responseFields[section.instance.subContentId] =
+          document.createElement('div');
+        responseFields[section.instance.subContentId].classList.add(
+          'h5p-interactive-book-summary-text-toggle',
+          `h5p-content-chapter-${section.instance.subContentId}`,
+          'hidden'
+        );
+        responseFields[section.instance.subContentId].innerHTML =
+          section.instance.getResponse();
+        sectionRow.appendChild(responseFields[section.instance.subContentId]);
       }
 
       sectionRowContainer.appendChild(title);
