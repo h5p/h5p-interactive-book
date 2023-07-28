@@ -375,8 +375,6 @@ class Summary extends H5P.EventDispatcher {
     text.classList.add('answers-submitted');
     submittedContainer.appendChild(text);
 
-    console.log(this.behaviour.enableRetry);
-
     if (this.behaviour.enableRetry) {
       submittedContainer.appendChild(this.createRestartButton());
     }
