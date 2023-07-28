@@ -57,6 +57,10 @@
         {
           "label": "Muhtasari wa onyesho",
           "description": "Inapowashwa mtumiaji anaweza kuona muhtasari na kuwasilisha maendeleo/majibu"
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

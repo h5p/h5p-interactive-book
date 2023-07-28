@@ -57,6 +57,10 @@
         {
           "label": "Үр дүнг харуулах",
           "description": "Идэвхжүүлсэн үед хэрэглэгч үр дүнг харж/илгээх боломжтой болно"
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

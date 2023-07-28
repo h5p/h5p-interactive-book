@@ -57,6 +57,10 @@
         {
           "label": "요약 표시",
           "description": "활성화되면 요약 정보를 보고 학습진도/정답을 제출할 수 있음."
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

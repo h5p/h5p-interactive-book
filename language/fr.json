@@ -57,6 +57,10 @@
         {
           "label": "Afficher le résumé",
           "description": "Lorsqu'il est activé, l'utilisateur peut voir un résumé et soumettre les progrès/réponses"
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

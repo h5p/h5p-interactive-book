@@ -69,7 +69,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
      * @see {@link https://h5p.org/documentation/developers/contracts#guides-header-9}
      */
     this.params.behaviour.enableSolutionsButton = false;
-    this.params.behaviour.enableRetry = false;
+    this.params.behaviour.enableRetry = this.params.behaviour.enableRetry ?? true;
 
     /**
      * Check if result has been submitted or input has been given.

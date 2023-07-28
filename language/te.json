@@ -57,6 +57,10 @@
         {
           "label": "సమ్మరీ చూపించు",
           "description": "ఎనేబుల్ అయి ఉన్నపుడు యూజర్ సమ్మరీను చూడగలరు మరియు ప్రోగ్రెస్ /సమాధానాలను సమర్పించగలరు"
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

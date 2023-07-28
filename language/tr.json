@@ -57,6 +57,10 @@
         {
           "label": "Özeti görüntüle",
           "description": "Etkinleştirildiğinde, kullanıcı bir özeti görebilir ve ilerlemeyi/cevapları gönderebilir"
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

@@ -57,6 +57,10 @@
         {
           "label": "Kuva kokkuvõtet",
           "description": "Kui lubatud, siis kasutaja näeb kokkuvõtet ning saab oma tulemused edastada/vaadata"
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

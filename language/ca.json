@@ -57,6 +57,10 @@
         {
           "label": "Mostra el resum",
           "description": "Si aquesta opció està activada, l’usuari podrà veure un resum i enviar el progrés i les respostes"
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

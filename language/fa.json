@@ -57,6 +57,10 @@
         {
           "label": "نمایش جمع‌بندی",
           "description": "در صورت فعال‌سازی، کاربر می‌تواند جمع‌بندی را ببیند و پیشرفت/پاسخ‌ها را ارسال کند"
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

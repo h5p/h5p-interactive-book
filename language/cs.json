@@ -57,6 +57,10 @@
         {
           "label": "Zobrazit souhrn",
           "description": "Je-li tato možnost povolena, uživatel může zobrazit souhrn a odeslat postup / odpovědi"
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

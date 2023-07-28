@@ -57,6 +57,10 @@
         {
           "label": "Vertoon opsomming",
           "description": "Indien dit geaktiveer is, kan die gebruiker 'n opsomming sien en die vordering/antwoorde indien"
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

@@ -57,6 +57,10 @@
         {
           "label": "Prikaži stran s povzetkom",
           "description": "Udeležencem se na dodatni strani prikaže povzetek interakcij oz. napredovanja."
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

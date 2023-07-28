@@ -57,6 +57,10 @@
         {
           "label": "Display summary",
           "description": "When enabled the user can see a summary and submit the progress/answers"
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

@@ -57,6 +57,10 @@
         {
           "label": "Amosar resumo",
           "description": "Se está activado, o ususario pode ver un resumo e enviar o seu progreso ou respostas"
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

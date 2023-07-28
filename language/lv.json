@@ -57,6 +57,10 @@
         {
           "label": "Parādīt kopsavilkumu",
           "description": "Kad iespējots, lietotājs var redzēt kopsavilkumu un iesniegt progresu/atbildes"
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

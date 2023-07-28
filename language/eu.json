@@ -57,6 +57,10 @@
         {
           "label": "Erakutsi laburpena",
           "description": "Gaituz gero erabiltzaileak laburpen bat ikusi eta aurrerapena/erantzunako bidali ditzake"
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

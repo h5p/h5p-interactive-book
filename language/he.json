@@ -56,6 +56,10 @@
         {
           "description": "כאשר מופעל המשתמש יכול לראות תקציר ולשלוח את ההתקדמות/תשובות",
           "label": "הצגת סיכום"
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ],
       "label": "הגדרות התנהגות"

@@ -57,6 +57,10 @@
         {
           "label": "Rodyti santrauką",
           "description": "Kai įjungta, naudotojas gali matyti santrauką ir pateikti pažangą/atsakymus"
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

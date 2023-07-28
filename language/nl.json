@@ -57,6 +57,10 @@
         {
           "label": "Toon samenvatting",
           "description": "Indien ingeschakeld, kan de gebruiker een samenvatting zien en de voortgang/antwoorden inzenden"
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

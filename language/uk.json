@@ -57,6 +57,10 @@
         {
           "label": "Показувати сторінку Підсумок",
           "description": "Якщо увімкнено, додається сторінка з результатами проходження і кнопкою для відправки"
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

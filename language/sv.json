@@ -57,6 +57,10 @@
         {
           "label": "Visa sammanfattning",
           "description": "När aktiverat så kan användaren se en sammanfattning och skicka in sina framsteg/ svar."
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

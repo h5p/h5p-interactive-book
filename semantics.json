@@ -178,6 +178,14 @@
         "label": "Display summary",
         "description": "When enabled the user can see a summary and submit the progress/answers",
         "default": true
+      },
+      {
+        "name": "enableRetry",
+        "type": "boolean",
+        "label": "Enable \"Restart\" button",
+        "description": "When enabled the user can initiate a restart on the summary page.",
+        "default": true,
+        "optional": true
       }
     ]
   },

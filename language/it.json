@@ -57,6 +57,10 @@
         {
           "label": "Mostra sommario",
           "description": "Quando attivo, l'utente può vedere un sommario e inviare la risposta o andare avanti"
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },

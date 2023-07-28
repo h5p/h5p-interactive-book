@@ -57,6 +57,10 @@
         {
           "label": "عرض الملخّص",
           "description": "عند تفعيل هذا الخيار سيتمكن المستخدم من رؤية الملخّص وإرسال التقدم/الإجابات"
+        },
+        {
+          "label": "Enable \"Restart\" button",
+          "description": "When enabled the user can initiate a restart on the summary page."
         }
       ]
     },
