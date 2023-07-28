@@ -59,8 +59,8 @@
           "description": "Wenn gewählt, können die Nutzenden eine Zusammenfassung sehen und ihren Fortschritt/ihre Antworten einsenden."
         },
         {
-          "label": "Enable \"Restart\" button",
-          "description": "When enabled the user can initiate a restart on the summary page."
+          "label": "\"Neustart\"-Button anzeigen",
+          "description": "Wenn gewählt, können die Nutzenden einen Neustart auf der Zusammenfassungsseite veranlassen."
         }
       ]
     },
