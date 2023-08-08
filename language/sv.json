@@ -12,8 +12,8 @@
           "description": "Denna text beskriver din bok."
         },
         {
-          "label": "Cover media",
-          "description": "Optional media to display on the cover."
+          "label": "Media på bokomslag",
+          "description": "Valfri media att visa på bokomslaget."
         }
       ]
     },
@@ -38,8 +38,8 @@
       "label": "Beteende-inställningar",
       "fields": [
         {
-          "label": "Base color",
-          "description": "Set the base color that will define the overall color scheme of the book. Please ensure a high enough contrast.",
+          "label": "Grundfärg",
+          "description": "Ange grundfärgen som kommer att definiera det övergripande färgschemat på boken. Försök försäkra dig om tillräckligt hög kontrast.",
           "default": "#1768c4"
         },
         {
@@ -59,8 +59,8 @@
           "description": "När aktiverat så kan användaren se en sammanfattning och skicka in sina framsteg/ svar."
         },
         {
-          "label": "Enable \"Restart\" button",
-          "description": "When enabled the user can initiate a restart on the summary page."
+          "label": "Aktivera knapp för \"Starta om\"",
+          "description": "När aktiverat, så kan användaren starta om från sammanfattningssidan."
         }
       ]
     },
