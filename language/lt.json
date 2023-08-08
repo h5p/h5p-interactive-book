@@ -73,15 +73,15 @@
       "default": "Rodyti „Turinys“"
     },
     {
-      "label": "Translation for \"Hide 'Table of contents'\"",
-      "default": "Hide 'Table of contents'"
+      "label": "„Slėpti turinį“ vertimas",
+      "default": "„Slėpti turinį“"
     },
     {
-      "label": "Translation for \"Next page\"",
-      "default": "Next page"
+      "label": "„Kitas puslapis“ vertimas",
+      "default": "Kitas puslapis"
     },
     {
-      "label": "Translation for \"Previous page\"",
+      "label": "„Ankstesnis puslapis“ vertimas",
       "default": "Ankstesnis puslapis"
     },
     {
@@ -128,7 +128,7 @@
     },
     {
       "label": "Label for \"restart\" button",
-      "default": "Restart"
+      "default": "Perkrauti"
     },
     {
       "label": "Summary header",
