@@ -13,7 +13,7 @@
         },
         {
           "label": "Medio de portada",
-          "description": "Medio opcional para la introducción."
+          "description": "Medios opcionales a mostrar en la portada."
         }
       ]
     },
@@ -59,8 +59,8 @@
           "description": "Cuando se habilita, el usuario puede ver un resumen y enviar el progreso/respuestas"
         },
         {
-          "label": "Enable \"Restart\" button",
-          "description": "When enabled the user can initiate a restart on the summary page."
+          "label": "Habilitar botón \"Reiniciar\"",
+          "description": "Cuando se habilita, el usuario puede iniciar un reinicio en la página del resumen."
         }
       ]
     },
@@ -197,7 +197,7 @@
           "default": "Página @page de @total."
         },
         {
-          "label": "Etiqueta para menú de navegación expandible/colapsable",
+          "label": "Etiqueta para expandir/contraer el menú de navegación",
           "default": "Alternar menú de navegación"
         }
       ]
