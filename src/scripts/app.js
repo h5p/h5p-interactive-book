@@ -70,6 +70,8 @@ export default class InteractiveBook extends H5P.EventDispatcher {
      */
     this.params.behaviour.enableSolutionsButton = false;
     this.params.behaviour.enableRetry = this.params.behaviour.enableRetry ?? true;
+    this.params.behaviour.hideScoreBeforeSubmit = this.params.behaviour.hideScoreBeforeSubmit ?? false;
+    this.params.behaviour.showSolutionsAfterSubmit = this.params.behaviour.showSolutionsAfterSubmit ?? false;
 
     /**
      * Check if result has been submitted or input has been given.
