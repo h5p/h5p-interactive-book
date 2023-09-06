@@ -13,7 +13,7 @@
         },
         {
           "label": "Portadarako euskarria",
-          "description": "Aurkezpenerako aukerako euskarriak."
+          "description": "Azalean bistaratzeko aukerako euskarriak"
         }
       ]
     },
@@ -59,8 +59,8 @@
           "description": "Gaituz gero erabiltzaileak laburpen bat ikusi eta aurrerapena/erantzunako bidali ditzake"
         },
         {
-          "label": "Enable \"Restart\" button",
-          "description": "When enabled the user can initiate a restart on the summary page."
+          "label": "Gaitu \"Berrabiarazi\" botoia",
+          "description": "Gaituta dagoenean, erabiltzaileak laburpen orrian berrabiarazi dezake."
         }
       ]
     },
