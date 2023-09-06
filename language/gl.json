@@ -12,8 +12,8 @@
           "description": "Este texto será a descrición do teu libro."
         },
         {
-          "label": "Cuberta mediana",
-          "description": "Medio opcional para a introdución."
+          "label": "Medios de portada",
+          "description": "Medios opcionais para mostrar na portada."
         }
       ]
     },
@@ -59,8 +59,8 @@
           "description": "Se está activado, o ususario pode ver un resumo e enviar o seu progreso ou respostas"
         },
         {
-          "label": "Enable \"Restart\" button",
-          "description": "When enabled the user can initiate a restart on the summary page."
+          "label": "Activa o botón \"Reiniciar\"",
+          "description": "Cando estea activado, o usuario pode iniciar un reinicio na páxina de resumo."
         }
       ]
     },
