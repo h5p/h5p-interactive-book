@@ -2,7 +2,7 @@
   "semantics": [
     {
       "label": "Įjungti knygos viršelį",
-      "description": "Viršelis, kuriame pateikiama informacija apie knygą prieš ją pasiekiant"
+      "description": "Viršelis, kuriame pateikiama informacija apie knygą prieš ją atveriant"
     },
     {
       "label": "Viršelis",
@@ -12,8 +12,8 @@
           "description": "Šis tekstas bus jūsų knygos aprašymas."
         },
         {
-          "label": "Viršelio nustatymai",
-          "description": "Pasirenkamas įžangos nustatymas"
+          "label": "Viršelio medija",
+          "description": "Pasirenkama viršelio medija"
         }
       ]
     },
@@ -43,7 +43,7 @@
           "default": "#1768c4"
         },
         {
-          "label": "Rodyti turinį kaip numatytąjį",
+          "label": "Rodyti Turinį kaip numatyta",
           "description": "Kai įjungta, atidarant knygą rodomas turinys"
         },
         {
