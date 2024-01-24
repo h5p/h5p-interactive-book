@@ -98,11 +98,31 @@ H5PUpgrades['H5P.InteractiveBook'] = (function () {
         let newParams = tables[0];
 
         for (let i = 1; i < tables.length; i++) {
-          const style = tables[i].includes('h5p-table') ? 
-            'style="border-style:solid;' :
-            'style="border-style:double;border-width:0.2em;border-collapse:collapse;';
-
           if (tables[i].includes('border')) {
+            // Find and replace border width
+            let needle = 'border="';
+            let needleStart = tables[i].indexOf(needle);
+            let needleEnd = tables[i].indexOf('"', needleStart + needle.length);
+            const borderWidth = parseInt(tables[i].substring(needleStart + needle.length, needleEnd));
+
+            const style = 'style="border-style:solid;border-collapse:collapse;' + 'border-width:' + borderWidth + 'px;';
+            let cellStyle = 'style="border-style:solid;';
+
+            if (!tables[i].includes('h5p-table')) {
+              cellStyle = 'style="border-style:double;border-collapse:collapse;border-width:0.2em;';
+            }
+
+            // Find and replace cell padding
+            if (tables[i].includes('cellpadding')) {
+              needle = 'cellpadding="';
+              needleStart = tables[i].indexOf(needle);
+              needleEnd = tables[i].indexOf('"', needleStart + needle.length);
+              const cellPadding = parseInt(tables[i].substring(needleStart + needle.length, needleEnd));
+
+              cellStyle += 'padding:' + cellPadding + 'px;';
+              tables[i] = tables[i].replace(/cellpadding="[0-9]*"/, '');
+            }
+
             // Set border style on the table
             if (tables.includes('style="')) {
               tables[i] = tables[i].replace('style="', style);
@@ -119,10 +139,10 @@ H5PUpgrades['H5P.InteractiveBook'] = (function () {
               tables[i] += '<th';
 
               if (headers[j].includes('style="')) {
-                tables[i] += headers[j].replace('style="', style);
+                tables[i] += headers[j].replace('style="', cellStyle);
               }
               else {
-                tables[i] += ' ' + style + '"' + headers[j];
+                tables[i] += ' ' + cellStyle + '"' + headers[j];
               }
             }
             
@@ -134,10 +154,10 @@ H5PUpgrades['H5P.InteractiveBook'] = (function () {
               tables[i] += '<td';
 
               if (cells[j].includes('style="')) {
-                tables[i] += cells[j].replace('style="', style);
+                tables[i] += cells[j].replace('style="', cellStyle);
               }
               else {
-                tables[i] += ' ' + style + '"' + cells[j];
+                tables[i] += ' ' + cellStyle + '"' + cells[j];
               }
             }
           }
