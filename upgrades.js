@@ -139,9 +139,12 @@ H5PUpgrades['H5P.InteractiveBook'] = (function () {
           }
 
           if (tableChanges) {
+            const tagEnd = tables[i].indexOf('>');
+            let substring = tables[i].substring(0, tagEnd);
+
             // Set border style on the table
-            if (tables.includes('style="')) {
-              tables[i] = tables[i].replace('style="', style);
+            if (substring.includes('style="')) {
+              tables[i] = substring.replace('style="', style) + tables[i].substring(tagEnd);
             }
             else {
               tables[i] = ' ' + style + '"' + tables[i];
@@ -156,8 +159,11 @@ H5PUpgrades['H5P.InteractiveBook'] = (function () {
             for (let j = 1; j < headers.length; j++) {
               tables[i] += '<th';
 
-              if (headers[j].includes('style="')) {
-                tables[i] += headers[j].replace('style="', cellStyle);
+              const tagEnd = headers[j].indexOf('>');
+              let substring = headers[j].substring(0, tagEnd);
+
+              if (substring.includes('style="')) {
+                tables[i] += substring.replace('style="', cellStyle) + headers[j].substring(tagEnd);
               }
               else {
                 tables[i] += ' ' + cellStyle + '"' + headers[j];
@@ -171,8 +177,11 @@ H5PUpgrades['H5P.InteractiveBook'] = (function () {
             for (let j = 1; j < cells.length; j++) {
               tables[i] += '<td';
 
-              if (cells[j].includes('style="')) {
-                tables[i] += cells[j].replace('style="', cellStyle);
+              const tagEnd = cells[j].indexOf('>');
+              let substring = cells[j].substring(0, tagEnd);
+
+              if (substring.includes('style="')) {
+                tables[i] += substring.replace('style="', cellStyle) + cells[j].substring(tagEnd);
               }
               else {
                 tables[i] += ' ' + cellStyle + '"' + cells[j];
