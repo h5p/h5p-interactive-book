@@ -113,7 +113,7 @@ H5PUpgrades['H5P.InteractiveBook'] = (function () {
             style += 'border-style:solid;border-collapse:collapse;' + 'border-width:' + borderWidth + 'px;';
             cellStyle += tables[i].includes('h5p-table') ?
               'border-style:solid;' :
-              'border-style:double;border-collapse:collapse;border-width:0.2em;';
+              'border-style:double;border-collapse:collapse;border-width:0.15em;';
 
             tableChanges = true;
             cellChanges = true;
