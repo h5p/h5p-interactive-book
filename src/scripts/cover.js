@@ -81,7 +81,17 @@ class Cover extends H5P.EventDispatcher {
       coverMedium.params.visuals.fit = false;
     }
 
-    H5P.newRunnable(coverMedium, this.contentId, H5P.jQuery(this.visuals), false, { metadata: coverMedium.medatata } );
+    const instance = H5P.newRunnable(coverMedium, this.contentId, H5P.jQuery(this.visuals), false, { metadata: coverMedium.medatata } );
+
+    // Resize parent when children resize
+    this.bubbleUp(
+      instance, 'resize', this.parent
+    );
+
+    // Resize children to fit inside parent
+    this.bubbleDown(
+      this.parent, 'resize', [instance]
+    );
 
     // Postparation
     if ((coverMedium.library || '').split(' ')[0] === 'H5P.Image') {
@@ -91,6 +101,43 @@ class Cover extends H5P.EventDispatcher {
     }
 
     this.visuals.appendChild(this.createCoverBar());
+  }
+
+  /**
+   * Make it easy to bubble events from child to parent.
+   * @param {object} origin Origin of event.
+   * @param {string} eventName Name of event.
+   * @param {object} target Target to trigger event on.
+   */
+  bubbleUp(origin, eventName, target) {
+    origin.on(eventName, (event) => {
+      // Prevent target from sending event back down
+      target.bubblingUpwards = true;
+
+      // Trigger event
+      target.trigger(eventName, event);
+
+      // Reset
+      target.bubblingUpwards = false;
+    });
+  }
+
+  /**
+   * Make it easy to bubble events from parent to children.
+   * @param {object} origin Origin of event.
+   * @param {string} eventName Name of event.
+   * @param {object[]} targets Targets to trigger event on.
+   */
+  bubbleDown(origin, eventName, targets) {
+    origin.on(eventName, (event) => {
+      if (origin.bubblingUpwards) {
+        return; // Prevent send event back down.
+      }
+
+      targets.forEach((target) => {
+        target.trigger(eventName, event);
+      });
+    });
   }
 
   /**

@@ -32,7 +32,8 @@
 
   &.h5p-image > img,
   &.h5p-video > video,
-  &.h5p-video.h5p-youtube > div:not(.h5p-interactive-book-cover-bar) {
+  &.h5p-video.h5p-youtube > div:not(.h5p-interactive-book-cover-bar),
+  &.h5p-video.h5p-echo > div:not(.h5p-interactive-book-cover-bar) {
     box-shadow: 0.5em 0.25em 3em 0 $black-20;
     position: absolute;
     left: 50%;
@@ -43,7 +44,8 @@
   }
 
   &.h5p-image > img,
-  &.h5p-video > video {
+  &.h5p-video > video,
+  &.h5p-video.h5p-echo > div:not(.h5p-interactive-book-cover-bar) {
     max-width: 85%;
   }
 
