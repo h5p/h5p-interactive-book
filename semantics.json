@@ -180,6 +180,20 @@
         "default": true
       },
       {
+        "name": "hideScoreBeforeSubmit",
+        "type": "boolean",
+        "label": "Hide score before submit",
+        "description": "When enabled the user can see there score in summary page,after they have submited there answers",
+        "default": false
+      },
+      {
+        "name": "showSolutionsAfterSubmit",
+        "type": "boolean",
+        "label": "Show Solutions After Submit",
+        "description": "When enabled all Solutions are shown after submiting the answers",
+        "default": false
+      },
+      {
         "name": "enableRetry",
         "type": "boolean",
         "label": "Enable \"Restart\" button",
