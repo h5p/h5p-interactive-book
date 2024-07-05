@@ -311,7 +311,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
      * @param {Array} chapters
      * @return {boolean}
      */
-    this.hasChaptersTasks = chapters => chapters.filter(chapter => chapter.sections.filter(section => section.isTask === true).length > 0).length > 0;
+    this.hasChaptersTasks = chapters => chapters.filter(chapter => chapter.sections.filter(section => (section.isTask === true || (section.content.metadata.contentType === 'Row'))).length > 0).length > 0;
 
     /**
      * Check if there are valid chapters.
