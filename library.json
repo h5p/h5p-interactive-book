@@ -2,7 +2,7 @@
   "title": "Interactive Book",
   "description": "An interactive book which displays content in pages and sections",
   "majorVersion": 1,
-  "minorVersion": 8,
+  "minorVersion": 9,
   "patchVersion": 0,
   "runnable": 1,
   "fullscreen": 1,
