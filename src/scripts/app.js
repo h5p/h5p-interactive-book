@@ -484,7 +484,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
         const container = this.pageContent.container;
         container.scrollBy(0, -container.scrollHeight);
       }
-      else if (H5PIntegration.context !== 'lti') {
+      else if (H5PIntegration.context !== 'lti') { // Will be changed in JI-6581 to not use H5PIntegration 
         this.statusBarHeader.wrapper.scrollIntoView(true);
       }
     });
@@ -1013,7 +1013,10 @@ export default class InteractiveBook extends H5P.EventDispatcher {
         this.setActivityStarted();
 
         // Focus header progress bar when cover is removed
-        this.statusBarHeader.progressBar.progress.focus({ preventScroll: true });
+        // Will be changed in JI-6581 to not use H5PIntegration 
+        if (H5PIntegration.context !== 'lti') {
+          this.statusBarHeader.progressBar.progress.focus();
+        }
       });
     }
     else {
