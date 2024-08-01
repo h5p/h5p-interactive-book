@@ -484,7 +484,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
         const container = this.pageContent.container;
         container.scrollBy(0, -container.scrollHeight);
       }
-      else if (H5PIntegration.context !== 'lti') {
+      else if (this.contentData.isInLti) {
         this.statusBarHeader.wrapper.scrollIntoView(true);
       }
     });
