@@ -217,7 +217,7 @@
     .h5p-interactive-book-summary-submit {
       background-color: #0E7C57;
       color: #ffffff;
-      border: 2px solid #0E7C57;
+      border: 4px solid #0E7C57;
       transition: background-color 150ms;
 
       &:hover {
@@ -225,7 +225,7 @@
       }
     }
     .h5p-interactive-book-summary-submit:focus-visible {
-      border: 2px solid #FFF;
+      border: 4px solid #FFF;
     }
 
     .h5p-interactive-book-summary-restart {
