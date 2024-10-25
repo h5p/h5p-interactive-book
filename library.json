@@ -2,10 +2,14 @@
   "title": "Interactive Book",
   "description": "An interactive book which displays content in pages and sections",
   "majorVersion": 1,
-  "minorVersion": 9,
-  "patchVersion": 1,
+  "minorVersion": 11,
+  "patchVersion": 4,
   "runnable": 1,
   "fullscreen": 1,
+  "coreApi": {
+    "majorVersion": 1,
+    "minorVersion": 27
+  },
   "author": "Joubel",
   "license": "MIT",
   "machineName": "H5P.InteractiveBook",
@@ -27,11 +31,6 @@
       "machineName": "FontAwesome",
       "majorVersion": 4,
       "minorVersion": 5
-    },
-    {
-      "machineName": "H5P.Column",
-      "majorVersion": 1,
-      "minorVersion": 17
     },
     {
       "machineName": "H5P.JoubelUI",
