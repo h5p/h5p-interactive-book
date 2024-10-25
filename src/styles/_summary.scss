@@ -218,10 +218,11 @@
       background-color: #0E7C57;
       color: #ffffff;
       border: 4px solid #0E7C57;
-      transition: background-color 150ms;
+      transition: background-color 150ms, border-color 150ms;
 
       &:hover {
         background-color: #0c694a;
+        border-color: #0c694a;
       }
     }
     .h5p-interactive-book-summary-submit:focus-visible {
