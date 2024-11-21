@@ -1073,18 +1073,10 @@ export default class InteractiveBook extends H5P.EventDispatcher {
 
     config.chapters = config.chapters
       .map(chapter => {
-        if (!chapter.params || !chapter.params.content) {
-          return null;
-        }
-        chapter.params.content = chapter.params.content.filter(content => content.content);
+        chapter.params.content = chapter.params.content?.filter(content => content.content);
         return chapter;
       })
-      .filter(chapter => {
-        if (!chapter) {
-          return false;
-        }
-        return (chapter.params.content && chapter.params.content.length > 0);
-      });
+      .filter(chapter => chapter.params.content && chapter.params.content.length > 0);
 
     config.behaviour.displaySummary = config.behaviour.displaySummary === undefined || config.behaviour.displaySummary;
 
