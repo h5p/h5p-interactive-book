@@ -215,7 +215,7 @@ class Cover extends H5P.EventDispatcher {
     const button = document.createElement('button');
     button.innerHTML = buttonText;
     button.onclick = () => {
-      this.removeCover();
+      this.removeCover(true);
     };
 
     const buttonWrapper = document.createElement('div');
@@ -228,14 +228,14 @@ class Cover extends H5P.EventDispatcher {
   /**
    * Remove cover.
    */
-  removeCover() {
+  removeCover(focus = false) {
     if (this.container.parentElement) {
       this.container.parentElement.classList.remove('covered');
       this.container.parentElement.removeChild(this.container);
     }
 
     this.hidden = true;
-    this.parent.trigger('coverRemoved');
+    this.parent.trigger('coverRemoved', focus);
   }
 }
 
