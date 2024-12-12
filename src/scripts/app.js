@@ -479,13 +479,15 @@ export default class InteractiveBook extends H5P.EventDispatcher {
       }
     });
 
-    this.on('scrollToTop', () => {
+    this.on('scrollToTop', event => {
       if (H5P.isFullscreen === true) {
         const container = this.pageContent.container;
         container.scrollBy(0, -container.scrollHeight);
       }
       else {
-        this.statusBarHeader.wrapper.scrollIntoView(true);
+        if (event.data !== false) { // Note: undefined is treated as true here
+          this.statusBarHeader.wrapper.scrollIntoView(true);
+        }
       }
     });
 
@@ -528,7 +530,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
       }
 
       H5P.trigger(this, 'changeHash', event.data);
-      H5P.trigger(this, 'scrollToTop');
+      H5P.trigger(this, 'scrollToTop', event.data.focus);
     });
 
     /**
@@ -1003,7 +1005,8 @@ export default class InteractiveBook extends H5P.EventDispatcher {
           this.trigger('newChapter', {
             h5pbookid: this.contentId,
             chapter: `h5p-interactive-book-chapter-${this.params.chapters[this.activeChapter].subContentId}`,
-            section: 0
+            section: 0,
+            focus: event.data
           });
         }
 
