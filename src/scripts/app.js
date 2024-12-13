@@ -485,6 +485,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
         container.scrollBy(0, -container.scrollHeight);
       }
       else {
+        console.log('should i scroll or nah?', event)
         if (event.data !== false) { // Note: undefined is treated as true here
           this.statusBarHeader.wrapper.scrollIntoView(true);
         }
@@ -1015,8 +1016,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
         // setActivityStarted() checks if it has been run before
         this.setActivityStarted();
 
-        // Focus header progress bar when cover is removed
-        // Will be changed in JI-6581 to not use H5PIntegration
+        // Focus header progress bar when cover is removed by user action
         if (event.data) {
           this.statusBarHeader.progressBar.progress.focus();
         }
