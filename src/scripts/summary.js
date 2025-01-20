@@ -14,6 +14,7 @@ class Summary extends H5P.EventDispatcher {
     super();
     this.parent = parent;
     this.behaviour = config.behaviour;
+    this.allowShowScore = ! this.behaviour.hideScoreBeforeSubmit;
     this.l10n = config.l10n;
     this.chapters = chapters || [];
 
@@ -326,8 +327,26 @@ class Summary extends H5P.EventDispatcher {
       const submitButton = this.addButton('icon-paper-pencil', this.l10n.submitReport);
       submitButton.classList.add('h5p-interactive-book-summary-submit');
       submitButton.onclick = () => {
+        // TODO maybe ask for confirmation. And maybe warn about unanswered sections
         this.trigger('submitted');
         this.parent.triggerXAPIScored(this.parent.getScore(), this.parent.getMaxScore(), 'completed');
+
+        if (this.behaviour.showSolutionsAfterSubmit) {
+          this.parent.showSolutions();
+        }
+        if (this.allowShowScore != true) {
+          this.allowShowScore = true;
+
+          // TODO maybe factor out to redrawChapter function of parent
+          const newChapter = {
+            h5pbookid: this.parent.contentId,
+            chapter: `h5p-interactive-book-chapter-summary`,
+            section: "top",
+          };
+          this.parent.trigger("newChapter", newChapter);
+        }
+        // TODO this is not always correcty but just using previous devined wrapper wont work after redraw
+        let wrapper = document.querySelector('.h5p-interactive-book-summary-buttons');
         wrapper.classList.add('submitted');
         const submitText = wrapper.querySelector('.answers-submitted');
         submitText.focus();
@@ -459,10 +478,13 @@ class Summary extends H5P.EventDispatcher {
         hasUnansweredInteractions = true;
       }
       sectionRow.appendChild(title);
-      sectionRow.appendChild(score);
+      if (this.allowShowScore) {
+        sectionRow.appendChild(score);
+      }
       sectionElements.push(sectionRow);
     }
-    if ( sectionElements.length) {
+    // TODO not showing scoreHeader changes layout a litle bit
+    if ( sectionElements.length && this.allowShowScore) {
       const sectionRow = document.createElement("div");
       sectionRow.classList.add('h5p-interactive-book-summary-overview-section-score-header');
       const scoreHeader = document.createElement("div");
@@ -700,7 +722,9 @@ class Summary extends H5P.EventDispatcher {
         this.addProgressIndicators();
         this.addActionButtons();
         this.addSummaryOverview();
-        this.addScoreBar();
+        if (this.allowShowScore) {
+          this.addScoreBar();
+        }
       }
     }
     else {
