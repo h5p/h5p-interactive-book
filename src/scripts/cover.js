@@ -219,7 +219,9 @@ class Cover extends H5P.EventDispatcher {
     };
 
     const buttonWrapper = document.createElement('div');
-    buttonWrapper.classList.add('h5p-interactive-book-cover-readbutton');
+    buttonWrapper.classList.add('h5p-button');
+    buttonWrapper.classList.add('h5p-theme-primary-cta');
+    buttonWrapper.classList.add('h5p-theme-check');
     buttonWrapper.appendChild(button);
 
     return buttonWrapper;

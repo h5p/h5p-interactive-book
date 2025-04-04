@@ -121,6 +121,7 @@ class Summary extends H5P.EventDispatcher {
   createSummaryButton() {
     const button = document.createElement('button');
     button.classList.add('h5p-interactive-book-summary-menu-button');
+    button.classList.add('h5p-theme-secondary-cta');
     button.onclick = () => {
       const newChapter = {
         h5pbookid: this.parent.contentId,
@@ -351,7 +352,8 @@ class Summary extends H5P.EventDispatcher {
    */
   createRestartButton() {
     const restartButton = this.addButton('icon-restart', this.l10n.restartLabel);
-    restartButton.classList.add('h5p-interactive-book-summary-restart');
+    restartButton.classList.add('h5p-theme-retry');
+    restartButton.classList.add('h5p-theme-secondary-cta');
     restartButton.onclick = () => this.parent.resetTask();
     return restartButton;
   }
@@ -392,7 +394,6 @@ class Summary extends H5P.EventDispatcher {
   addButton(iconClass, label) {
     const buttonElement = document.createElement("button");
     buttonElement.type = 'button';
-    buttonElement.classList.add('h5p-interactive-book-summary-button');
     buttonElement.innerHTML = label;
 
     const icon = document.createElement("span");

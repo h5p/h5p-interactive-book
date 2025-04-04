@@ -1,5 +1,5 @@
 
-$background-color: #fff;
+$background-color: var(--h5p-theme-ui-base);
 $base-color: #1768C4;
 $base-color-5: rgba($base-color, .05);
 $base-color-10: rgba($base-color, .1);
@@ -107,8 +107,8 @@ $fullscreen-button-size: 1.8em;
   overflow: hidden;
 
   &.h5p-interactive-book-navigation-open .h5p-interactive-book-navigation {
-    max-width: 16.563em;
-    width: 16.563em;
+    max-width: 25em;
+    width: 25em;
   }
 }
 

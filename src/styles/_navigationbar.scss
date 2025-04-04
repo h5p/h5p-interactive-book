@@ -54,7 +54,7 @@
 
   .h5p-interactive-book-navigation-section {
     background: transparent;
-    color: $mud;
+    color: var(--h5p-theme-text-secondary);
     font-size: .875em;
     font-weight: 400;
     line-height: 1.8;
@@ -71,7 +71,7 @@
 
     .h5p-interactive-book-navigation-section-icon {
       position: absolute;
-      color: $black;
+      color: var(--h5p-theme-text-primary);
       font-size: 5px;
       visibility: hidden;
       width: 2.17em;
@@ -104,7 +104,7 @@
     background-color: var(--color-base-10, $background-color);
 
     .h5p-interactive-book-navigation-chapter-title-text {
-      color: $mud;
+      color: var(--h5p-theme-text-secondary);
     }
   }
 
@@ -126,14 +126,14 @@
   background-size: cover;
   border: 0;
   border-bottom: solid 1px $ghost-white;
-  color: $mud;
+  color: var(--h5p-theme-text-secondary);
   display: flex;
-  font-family: Arial;
+  font-family: var(--h5p-theme-font-name);
   height: 3.438em;
   margin: 0;
   padding: 0 1.125em;
   text-align: initial;
-  text-decoration: none solid $mud;
+  text-decoration: none solid var(--h5p-theme-text-secondary);
   width: 100%;
   position: relative;
 
@@ -150,7 +150,7 @@
   .h5p-interactive-book-navigation-chapter-title-text {
     background-color: transparent;
     color: var(--color-base, $base-color);
-    font-family: Arial;
+    font-family: var(--h5p-theme-font-name);
     font-size: 1em;
     font-weight: 700;
     line-height: 1.5em;
@@ -196,12 +196,13 @@
   .navigation-title {
     align-self: center;
     color: var(--color-text, $background-color);
-    font-family: Arial;
+    font-family: var(--h5p-theme-font-name);
     font-size: 1em;
     font-weight: 400;
     overflow: hidden;
     padding-left: 1.25em;
     text-decoration: none solid var(--color-text, $background-color);
     text-overflow: ellipsis;
+    display: none;
   }
 }

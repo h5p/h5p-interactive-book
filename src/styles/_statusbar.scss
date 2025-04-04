@@ -19,7 +19,6 @@
 
   .h5p-interactive-book-status-button {
     align-items: center;
-    border-radius: 3px;
     display: flex;
     height: 3.6em;
     padding: 0;
@@ -28,7 +27,6 @@
 }
 
 .h5p-interactive-book-status-button {
-  border-radius: 3px;
 
   &:hover {
     background-color: var(--color-base-10, $base-color-10);
@@ -60,8 +58,8 @@
   &.h5p-interactive-book-enter-fullscreen {
     &::before {
       color: var(--color-base, $base-color);
-      content: '\e90b';
-      font-family: 'h5p-book';
+      font-family: 'h5p-theme';
+      content: '\e915';
       font-size: 1.2em;
     }
   }
@@ -70,40 +68,44 @@
     &::before {
       font-size: 1.2em;
       color: var(--color-base, $base-color);
-      content: '\e90c';
-      font-family: 'h5p-book';
+      font-family: 'h5p-theme';
+      content: '\e914';
     }
   }
 }
 
 .h5p-interactive-book-status-menu {
-  background-color: $background-color;
+  background-color: var(--h5p-theme-contrast-cta-light);
   background-size: cover;
-  border: 2px solid $background-color;
-  border-radius: 3px;
+  border: none;
+  border-radius: var(--h5p-theme-border-radius-large);
   flex-shrink: 0;
 
   .icon-menu {
-    color: var(--color-base, $base-color);
-    font-size: 1.5em;
+    color: var(--h5p-theme-contrast-cta-white);
+    font-size: 2em;
     margin: auto;
   }
 
   &.h5p-interactive-book-status-menu-active {
-    background-color: var(--color-base, $base-color);
-    opacity: 20;
+    background-color: var(--h5p-theme-contrast-cta-light);
     position: relative;
 
     .icon-menu {
-      color: $background-color;
+      color: var(--h5p-theme-contrast-cta-white);
       left: 50%;
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
+      
+      &:before {
+        font-family: 'h5p-theme';
+        content: "\e916";
+      }
     }
 
     &:hover {
-      background-color: var(--color-base-90, $base-color-90);
+      background-color: var(--h5p-theme-contrast-cta-light);
       background-size: cover;
       cursor: pointer;
     }
@@ -144,7 +146,7 @@
 
 .h5p-interactive-book-status-progress-number {
   color: var(--color-base, $base-color);
-  font-family: Arial;
+  font-family: var(--h5p-theme-font-name);
   font-size: 20px;
   font-weight: 700;
   text-align: right;
@@ -152,22 +154,22 @@
 }
 
 .h5p-interactive-book-status-progress-divider {
-  color: $mud;
-  font-family: Arial;
+  color: var(--h5p-theme-text-secondary);
+  font-family: var(--h5p-theme-font-name);
   font-size: 20px;
   font-weight: 700;
   text-align: right;
-  text-decoration: none solid $mud;
+  text-decoration: none solid var(--h5p-theme-text-secondary);
 }
 
 .h5p-interactive-book-status-progressbar-back {
-  background-color: var(--color-base-20, $base-color-20);
+  background-color: color-mix(in srgb, var(--h5p-theme-main-cta-base), transparent 80%);
   background-size: cover;
   width: 100%;
 }
 
 .h5p-interactive-book-status-progressbar-front {
-  background-color: var(--color-base, $base-color);
+  background-color: var(--h5p-theme-contrast-cta-white);
   height: .313em;
   transition: 1s;
 }
@@ -179,8 +181,8 @@
   white-space: nowrap;
 
   .title {
-    color: $mud;
-    font-family: Arial;
+    color: var(--h5p-theme-text-secondary);
+    font-family: var(--h5p-theme-font-name);
     font-size: 20px;
     font-weight: 700;
     margin: 0;

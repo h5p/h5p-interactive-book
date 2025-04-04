@@ -3,7 +3,7 @@
   background: $background-color;
   display: flex;
   flex-direction: column;
-  font-family: Arial;
+  font-family: var(--h5p-theme-font-name);
   height: 100%;
   left: 0;
   padding-bottom: 200px;
@@ -72,21 +72,21 @@
 }
 
 .h5p-interactive-book-cover-title {
-  color: $medium-grey;
+  color: var(--h5p-theme-text-primary);
   font-size: 2.188em;
   font-weight: 700;
   text-align: center;
-  text-decoration: none solid $medium-grey;
+  text-decoration: none solid var(--h5p-theme-text-primary);
   line-height: initial;
 }
 
 .h5p-interactive-book-cover-description {
-  color: $medium-grey;
+  color: var(--h5p-theme-text-secondary);
   font-size: 1.25em;
   font-weight: 400;
   margin-bottom: .5em;
   width: 80%;
-  text-decoration: none solid $medium-grey;
+  text-decoration: none solid var(--h5p-theme-text-secondary);
 }
 
 .h5p-interactive-book-cover-readbutton {
@@ -99,7 +99,7 @@
     border-radius: 3px;
     color: var(--color-text, $background-color);
     cursor: pointer;
-    font-family: Arial;
+    font-family: var(--h5p-theme-font-name);
     font-size: 20px;
     font-weight: 400;
     padding: 10px 40px;

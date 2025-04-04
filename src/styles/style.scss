@@ -7,10 +7,9 @@
     url('../fonts/h5p-interactive-book.woff?a3wrpr') format('woff'),
     url('../fonts/h5p-interactive-book.svg?a3wrpr#h5p-interactive-book') format('svg');
 }
-
 .h5p-interactive-book [class^='icon-'],
 .h5p-interactive-book [class*=' icon-'] {
-  font-family: 'h5p-book';
+  font-family: 'h5p-theme';
   font-style: normal;
   font-variant: normal;
   font-weight: normal;
@@ -26,61 +25,61 @@
 
 .icon-expanded {
   &::before {
-    content: '\e901';
+    content: '\e931';
   }
 }
 
 .icon-collapsed {
   &::before {
-    content: '\e902';
+    content: '\e901';
   }
 }
 
 .icon-chapter-started {
   &::before {
-    content: '\e903';
+    content: '\e92e';
   }
 }
 
 .icon-chapter-done {
   &::before {
-    content: '\e90a';
+    content: '\e92d';
   }
 }
 
 .icon-check-mark {
   &::before {
-    content: '\e910';
+    content: '\e908';
   }
 }
 
 .icon-chapter-blank {
   &::before {
-    content: '\e905';
+    content: '\e92c';
   }
 }
 
 .icon-menu {
   &::before {
-    content: '\e906';
+    content: '\e913';
   }
 }
 
 .icon-previous {
   &::before {
-    content: '\e907';
+    content: '\e900';
   }
 }
 
 .icon-next {
   &::before {
-    content: '\e908';
+    content: '\e901';
   }
 }
 
 .icon-up {
   &::before {
-    content: '\e909';
+    content: '\e92a';
   }
 }
 
@@ -92,30 +91,32 @@
 
 .icon-enable-fullscreen {
   &::before {
-    content: '\e90b';
+    font-family: 'h5p-theme';
+    content: '\e915';
   }
 }
 
 .icon-disable-fullscreen {
   &::before {
-    content: '\e90c';
+    font-family: 'h5p-theme';
+    content: '\e914';
   }
 }
 
 .icon-restart {
   &::before {
-    content: '\e90d';
+    content: '\e906';
   }
 }
 
 .icon-paper-pencil {
   &::before {
-    content: '\e90e';
+    content: '\e90a';
   }
 }
 
 .icon-paper {
   &::before {
-    content: '\e90f';
+    content: '\e90a';
   }
 }
