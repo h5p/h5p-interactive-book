@@ -218,13 +218,10 @@ class Cover extends H5P.EventDispatcher {
       this.removeCover(true);
     };
 
-    const buttonWrapper = document.createElement('div');
-    buttonWrapper.classList.add('h5p-button');
-    buttonWrapper.classList.add('h5p-theme-primary-cta');
-    buttonWrapper.classList.add('h5p-theme-check');
-    buttonWrapper.appendChild(button);
+    button.classList.add('h5p-theme-primary-cta');
+    button.classList.add('h5p-theme-check');
 
-    return buttonWrapper;
+    return button;
   }
 
   /**

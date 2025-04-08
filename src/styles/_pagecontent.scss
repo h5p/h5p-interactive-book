@@ -34,12 +34,8 @@
   transition: transform .25s ease-in-out;
 }
 
-body > div.h5p-content.h5p-initialized.h5p-large.h5p-frame.using-mouse > div.h5p-container.h5p-standalone.h5p-interactive-book.h5p-scrollable-fullscreen.h5p-interactive-book-large > div.h5p-interactive-book-main.h5p-interactive-book-navigation-open > div.h5p-interactive-book-content{
-  margin: 0;
-}
-
 .h5p-interactive-book-content {
-  margin: var(--h5p-theme-spacing-s) var(--h5p-theme-spacing-xl) var(--h5p-theme-spacing-xl) var(--h5p-theme-spacing-xl);
+  margin: var(--h5p-theme-spacing-s) var(--h5p-theme-spacing-xl) var(--h5p-theme-spacing-xl);
   overflow: hidden;
   position: relative;
   width: 100%;

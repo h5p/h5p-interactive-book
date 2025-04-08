@@ -89,40 +89,6 @@
   text-decoration: none solid var(--h5p-theme-text-secondary);
 }
 
-.h5p-interactive-book-cover-readbutton {
-  margin-top: .5em;
-
-  button {
-    background-color: var(--color-base, $base-color);
-    background-size: cover;
-    border: 0;
-    border-radius: 3px;
-    color: var(--color-text, $background-color);
-    cursor: pointer;
-    font-family: var(--h5p-theme-font-name);
-    font-size: 20px;
-    font-weight: 400;
-    padding: 10px 40px;
-    text-align: center;
-    text-decoration: none solid var(--color-text, $background-color);
-
-    &:hover {
-      background-color: var(--color-base-90, $base-color-90);
-      background-size: cover;
-      cursor: pointer;
-    }
-
-    &:active {
-      background-color: var(--color-base-95, $base-color-95);
-      background-size: cover;
-    }
-
-    &:focus {
-      outline-style: double;
-    }
-  }
-}
-
 .h5p-container {
   &.covered {
     .h5p-content-controls {
