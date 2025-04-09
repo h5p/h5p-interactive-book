@@ -22,38 +22,58 @@ class StatusBar extends H5P.EventDispatcher {
     /**
      * Top row initializer
      */
-    this.progressBar = this.createProgressBar();
-    this.progressIndicator = this.createProgressIndicator();
-    this.chapterTitle = this.createChapterTitle();
-    this.menuToggleButton = this.createMenuToggleButton();
-
-    const wrapperInfo = document.createElement('div');
-    wrapperInfo.classList.add('h5p-interactive-book-status');
-
-    if (this.params.displayToTopButton) {
-      wrapperInfo.appendChild(this.createToTopButton());
-    }
-
-    if (this.params.displayFullScreenButton && H5P.fullscreenSupported) {
-      wrapperInfo.appendChild(this.createFullScreenButton());
-    }
-
-    wrapperInfo.appendChild(this.arrows.buttonWrapperNext);
-    wrapperInfo.appendChild(this.arrows.buttonWrapperPrevious);
-
-    if (this.params.displayMenuToggleButton) {
-      wrapperInfo.appendChild(this.menuToggleButton);
-    }
-
-    wrapperInfo.appendChild(this.progressIndicator.wrapper);
-
-    wrapperInfo.appendChild(this.chapterTitle.wrapper);
 
     this.wrapper = document.createElement('div');
     this.wrapper.classList.add(styleClassName);
+    this.wrapper.classList.add('h5p-interactive-book-status');
     this.wrapper.setAttribute('tabindex', '-1');
-    this.wrapper.appendChild(this.progressBar.wrapper);
-    this.wrapper.appendChild(wrapperInfo);
+
+    // Make side section
+    const sidebarWrapper = document.createElement('div');
+    sidebarWrapper.classList.add('h5p-interactive-book-status-side');
+
+    if (this.params.displayToTopButton) {
+      sidebarWrapper.appendChild(this.createToTopButton());
+    }
+
+    this.menuToggleButton = this.createMenuToggleButton();
+    if (this.params.displayMenuToggleButton) {
+      sidebarWrapper.appendChild(this.menuToggleButton);
+    }
+
+    const sidebarTitle = document.createElement('div');
+
+    if (params.title) {
+      const title = document.createElement('h2');
+      title.textContent = params.title;
+      sidebarTitle.appendChild(title);
+    }
+
+    this.progressBar = this.createProgressBar();
+    sidebarTitle.appendChild(this.progressBar.wrapper);
+    sidebarWrapper.appendChild(sidebarTitle);
+
+    this.wrapper.appendChild(sidebarWrapper);
+
+    // Make main section
+    const mainWrapper = document.createElement('div');
+    mainWrapper.classList.add('h5p-interactive-book-status-main');
+
+    mainWrapper.appendChild(this.arrows.buttonWrapperPrevious);
+
+    this.progressIndicator = this.createProgressIndicator();
+    mainWrapper.appendChild(this.progressIndicator.wrapper);
+
+    this.chapterTitle = this.createChapterTitle();
+    mainWrapper.appendChild(this.chapterTitle.wrapper);
+
+    mainWrapper.appendChild(this.arrows.buttonWrapperNext);
+
+    if (this.params.displayFullScreenButton && H5P.fullscreenSupported) {
+      mainWrapper.appendChild(this.createFullScreenButton());
+    }
+
+    this.wrapper.appendChild(mainWrapper);
 
     this.on('updateStatusBar', this.updateStatusBar);
 

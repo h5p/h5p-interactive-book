@@ -107,8 +107,7 @@ $fullscreen-button-size: 1.8em;
   overflow: hidden;
 
   &.h5p-interactive-book-navigation-open .h5p-interactive-book-navigation {
-    max-width: 25em;
-    width: 25em;
+    min-width: calc(var(--h5p-theme-spacing-xl)*6);
   }
 }
 
