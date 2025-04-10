@@ -224,6 +224,30 @@ class PageContent extends H5P.EventDispatcher {
       const newInstance = H5P.newRunnable(config.chapters[i], contentId, undefined, undefined, instanceContentData);
       this.parent.bubbleUp(newInstance, 'resize', this.parent);
 
+      const sections = [];
+
+      const addSections = (parentInstance, contentList) => {
+        parentInstance.getInstances().forEach((instance, contentIndex) => {
+          if (instance.libraryInfo.machineName === 'H5P.Row') {
+            const columns = contentList[contentIndex].content.params.columns;
+
+            // Repeat for nested column instances
+            instance.getInstances().forEach((columnInstance, columnIndex) => {
+              addSections(columnInstance, columns[columnIndex].content.params.content);
+            });
+          }
+          else {
+            sections.push({
+              content: contentList[contentIndex].content,
+              instance: instance,
+              isTask: false
+            });
+          }
+        });
+      };
+
+      addSections(newInstance, config.chapters[i].params.content);
+
       const chapter = {
         isInitialized: false,
         instance: newInstance,
@@ -231,11 +255,7 @@ class PageContent extends H5P.EventDispatcher {
         completed: (previousState) ? previousState.chapters[i].completed : false,
         tasksLeft: (previousState) ? previousState.chapters[i].tasksLeft : 0,
         isSummary: false,
-        sections: newInstance.getInstances().map((instance, contentIndex) => ({
-          content: config.chapters[i].params.content[contentIndex].content,
-          instance: instance,
-          isTask: false
-        }))
+        sections: sections
       };
 
       columnNode.classList.add('h5p-interactive-book-chapter');
