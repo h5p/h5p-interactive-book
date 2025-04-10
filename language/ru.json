@@ -76,8 +76,20 @@
       "default": "Скрыть содержание"
     },
     {
+      "label": "Label for page counter",
+      "default": "Page"
+    },
+    {
+      "label": "Label for forwards navigation button",
+      "default": "Next"
+    },
+    {
       "label": "Перевод для \"Следующая страница\"",
       "default": "Следующая страница"
+    },
+    {
+      "label": "Label for backwards navigation button",
+      "default": "Previous"
     },
     {
       "label": "Перевод для \"Предыдущая страница\"",

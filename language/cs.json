@@ -76,8 +76,20 @@
       "default": "Skrýt \"Obsah\""
     },
     {
+      "label": "Label for page counter",
+      "default": "Page"
+    },
+    {
+      "label": "Label for forwards navigation button",
+      "default": "Next"
+    },
+    {
       "label": "Překlad pro \"Další stránka\"",
       "default": "Další stránka"
+    },
+    {
+      "label": "Label for backwards navigation button",
+      "default": "Previous"
     },
     {
       "label": "Překlad pro \"Předchozí stránka\"",

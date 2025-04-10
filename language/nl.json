@@ -76,8 +76,20 @@
       "default": "Verberg 'Inhoudsopgave'"
     },
     {
+      "label": "Label for page counter",
+      "default": "Page"
+    },
+    {
+      "label": "Label for forwards navigation button",
+      "default": "Next"
+    },
+    {
       "label": "Vertaling voor \"Volgende pagina\"",
       "default": "Volgende pagina"
+    },
+    {
+      "label": "Label for backwards navigation button",
+      "default": "Previous"
     },
     {
       "label": "Vertaling voor \"Vorige pagina\"",

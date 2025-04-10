@@ -76,8 +76,20 @@
       "default": "Skjul 'Table of contents'"
     },
     {
+      "label": "Label for page counter",
+      "default": "Page"
+    },
+    {
+      "label": "Label for forwards navigation button",
+      "default": "Next"
+    },
+    {
       "label": "Translation for \"Next page\"",
       "default": "Neste side"
+    },
+    {
+      "label": "Label for backwards navigation button",
+      "default": "Previous"
     },
     {
       "label": "Translation for \"Previous page\"",

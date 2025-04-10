@@ -5,6 +5,7 @@
       "description": "在访问前显示有关书的信息的封面"
     },
     {
+      "label": "封面页",
       "fields": [
         {
           "label": "封面说明",
@@ -14,8 +15,7 @@
           "label": "封面媒体",
           "description": "可选的媒体显示在封面上。"
         }
-      ],
-      "label": "封面页"
+      ]
     },
     {
       "label": "页面",
@@ -54,8 +54,8 @@
           "description": "如果启用，则在查看时认为没有任务的页面已完成。当所有任务都完成时，一个包含任务的页面。如果禁用，将在每个页面的底部有一个按钮，用户在完成页面时单击。"
         },
         {
-          "description": "启用后，用户可以看到摘要并提交进度/答案",
-          "label": "显示摘要"
+          "label": "显示摘要",
+          "description": "启用后，用户可以看到摘要并提交进度/答案"
         },
         {
           "label": "启用“重启”按钮",
@@ -76,12 +76,24 @@
       "default": "隐藏“目录”"
     },
     {
+      "label": "Label for page counter",
+      "default": "Page"
+    },
+    {
+      "label": "Label for forwards navigation button",
+      "default": "Next"
+    },
+    {
       "label": "“下一页”的翻译",
       "default": "下一页"
     },
     {
-      "default": "上一页",
-      "label": "“上一页”的翻译"
+      "label": "Label for backwards navigation button",
+      "default": "Previous"
+    },
+    {
+      "label": "“上一页”的翻译",
+      "default": "上一页"
     },
     {
       "label": "翻译为“页面完成!”",
@@ -164,8 +176,8 @@
       "default": "总结；提交"
     },
     {
-      "default": "您没有与任何页面进行交互。",
-      "label": "“您没有与任何页面交互。”的翻译"
+      "label": "“您没有与任何页面交互。”的翻译",
+      "default": "您没有与任何页面进行交互。"
     },
     {
       "label": "“在看到摘要之前，您必须与至少一个页面进行交互。”的翻译",

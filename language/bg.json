@@ -76,8 +76,20 @@
       "default": "Скриване на 'Съдържание'"
     },
     {
+      "label": "Label for page counter",
+      "default": "Page"
+    },
+    {
+      "label": "Label for forwards navigation button",
+      "default": "Next"
+    },
+    {
       "label": "Превод за \"Следваща страница\"",
       "default": "Следваща страница"
+    },
+    {
+      "label": "Label for backwards navigation button",
+      "default": "Previous"
     },
     {
       "label": "Превод за \"Предишна страница\"",
