@@ -6,6 +6,8 @@
 }
 
 .h5p-interactive-book-status {
+  background: var(--h5p-theme-ui-base);
+
   display: grid;
   grid-template-columns: min-content 1fr;
 
@@ -22,7 +24,6 @@
   }
 
   &.h5p-interactive-book-status-footer {
-    bottom: 0;
   
     .h5p-interactive-book-status-menu {
       display: none;
@@ -35,6 +36,22 @@
 
   .h5p-interactive-book-status-side {
     display: flex;
+    align-items: center;
+
+    .h5p-interactive-book-status-title {
+      display: none;
+      min-width: 0;
+      width: 100%;
+
+      h2 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        margin-bottom: var(--h5p-theme-spacing-s);
+        margin-top: 0;
+      }
+    }
   }
 
   .h5p-interactive-book-status-button {
@@ -245,4 +262,8 @@
 .h5p-interactive-book-status-side:has(.h5p-interactive-book-status-menu-active), 
 .h5p-interactive-book-status-footer .h5p-interactive-book-status-side {
   width: calc(var(--h5p-theme-spacing-xl)*6);
+
+  .h5p-interactive-book-status-title {
+    display: block;
+  }
 }

@@ -42,6 +42,7 @@ class StatusBar extends H5P.EventDispatcher {
     }
 
     const sidebarTitle = document.createElement('div');
+    sidebarTitle.classList.add('h5p-interactive-book-status-title');
 
     if (params.title) {
       const title = document.createElement('h2');
