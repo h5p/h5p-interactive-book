@@ -528,7 +528,10 @@ export default class InteractiveBook extends H5P.EventDispatcher {
       }
 
       H5P.trigger(this, 'changeHash', event.data);
-      H5P.trigger(this, 'scrollToTop');
+      
+      if(event.data?.scrollOnNav) {
+        H5P.trigger(this, 'scrollToTop');
+      }
     });
 
     /**
@@ -989,7 +992,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
       a11y: this.params.a11y,
       behaviour: this.params.behaviour,
       displayToTopButton: true
-    }, 'h5p-interactive-book-status-footer');
+    }, 'h5p-interactive-book-status-footer', true);
 
     if (this.hasCover()) {
 

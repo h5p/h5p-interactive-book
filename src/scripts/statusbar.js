@@ -2,10 +2,11 @@
  * Constructor function.
  */
 class StatusBar extends H5P.EventDispatcher {
-  constructor(contentId, totalChapters, parent, params, styleClassName) {
+  constructor(contentId, totalChapters, parent, params, styleClassName, isBottom = false) {
     super();
     this.id = contentId;
     this.parent = parent;
+    this.isBottom = isBottom;
 
     this.params = params || {};
 
@@ -82,6 +83,11 @@ class StatusBar extends H5P.EventDispatcher {
           eventInput.chapter = `h5p-interactive-book-chapter-${this.parent.chapters[this.parent.activeChapter-1].instance.subContentId}`;
         }
       }
+
+      if (this.isBottom) {
+        eventInput.scrollOnNav = true;
+      }
+      
       if (eventInput.chapter) {
         this.parent.trigger('newChapter', eventInput);
       }
