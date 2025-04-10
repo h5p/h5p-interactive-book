@@ -348,36 +348,31 @@ class PageContent extends H5P.EventDispatcher {
    * @param {number} headerNumber Header index within section
    */
   redirectSection(sectionUUID, headerNumber = null) {
-    if (sectionUUID === 'top') {
-      this.parent.trigger('scrollToTop');
-    }
-    else {
-      let section = document.getElementById(sectionUUID);
+    let section = document.getElementById(sectionUUID);
 
-      if (section) {
-        if (headerNumber !== null) {
-          // find header within section
-          const headers = section.querySelectorAll('h2, h3');
-          if (headers[headerNumber]) {
-            // Set section to the header
-            section = headers[headerNumber];
-          }
+    if (section) {
+      if (headerNumber !== null) {
+        // find header within section
+        const headers = section.querySelectorAll('h2, h3');
+        if (headers[headerNumber]) {
+          // Set section to the header
+          section = headers[headerNumber];
         }
-
-        const focusHandler = document.createElement('div');
-        focusHandler.setAttribute('tabindex', '-1');
-        section.parentNode.insertBefore(focusHandler, section);
-        focusHandler.focus();
-
-        focusHandler.addEventListener('blur', () => {
-          focusHandler.parentNode.removeChild(focusHandler);
-        });
-
-        this.targetPage.redirectFromComponent = false;
-        setTimeout(() => {
-          section.scrollIntoView(true);
-        }, 100);
       }
+
+      const focusHandler = document.createElement('div');
+      focusHandler.setAttribute('tabindex', '-1');
+      section.parentNode.insertBefore(focusHandler, section);
+      focusHandler.focus();
+
+      focusHandler.addEventListener('blur', () => {
+        focusHandler.parentNode.removeChild(focusHandler);
+      });
+
+      this.targetPage.redirectFromComponent = false;
+      setTimeout(() => {
+        section.scrollIntoView(true);
+      }, 100);
     }
   }
 
