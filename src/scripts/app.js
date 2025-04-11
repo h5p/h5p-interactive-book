@@ -484,8 +484,14 @@ export default class InteractiveBook extends H5P.EventDispatcher {
         container.scrollBy(0, -container.scrollHeight);
       }
       else {
-        if (event.data !== false) { // Note: undefined is treated as true here
-          this.statusBarHeader.wrapper.scrollIntoView(true);
+        if (event?.data?.preventScrollToTop) {
+          return;
+        }
+
+        if (event?.data?.focus !== false) { // Note: undefined is treated as true here
+          this.statusBarHeader.wrapper.scrollIntoView({
+            block: 'nearest',
+          });
         }
       }
     });
@@ -529,7 +535,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
       }
 
       H5P.trigger(this, 'changeHash', event.data);
-      H5P.trigger(this, 'scrollToTop', event.data.focus);
+      H5P.trigger(this, 'scrollToTop', event.data);
     });
 
     /**
@@ -982,7 +988,8 @@ export default class InteractiveBook extends H5P.EventDispatcher {
       a11y: this.params.a11y,
       behaviour: this.params.behaviour,
       displayFullScreenButton: true,
-      displayMenuToggleButton: true
+      displayMenuToggleButton: true,
+      preventScrollToTop: true,
     }, 'h5p-interactive-book-status-header');
 
     this.statusBarFooter = new StatusBar(contentId, this.chapters.length, this, {
