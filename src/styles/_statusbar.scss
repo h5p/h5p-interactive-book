@@ -124,6 +124,10 @@
       grid-template-columns: min-content 1fr min-content min-content;
     }
 
+    .h5p-theme-nav-button {
+      height: min-content;
+    }
+
     .h5p-theme-progress {
       margin: 0;
       white-space: nowrap;

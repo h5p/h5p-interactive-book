@@ -970,7 +970,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
     });
     this.chapters = this.pageContent.getChapters();
 
-    this.sideBar = new SideBar(this.params, contentId, contentData.metadata.title, this);
+    this.sideBar = new SideBar(this.params, contentId, this);
 
     // Set progress (from previous state);
     this.chapters.forEach((chapter, index) => {

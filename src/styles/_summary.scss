@@ -9,11 +9,6 @@
       }
     }
 
-    .h5p-interactive-book-summary-menu-button {
-      justify-content: center;
-      border-width: 0.125rem;
-    }
-
     .h5p-interactive-book-summary-menu-button-arrow {
       visibility: visible;
       opacity: 1;
@@ -50,43 +45,16 @@
   margin: 0.7rem auto;
 }
 
-.h5p-interactive-book-summary-menu-button {
-  justify-content: space-between;
-  height: 100%;
-  padding: 0.5rem;
-
-  &.h5p-interactive-book-navigation-chapter-button.h5p-interactive-book-navigation-current {
-    background-color: #f1f9f8;
-    border-bottom-color: #0E7C57;
-  }
-
-  &:hover {
-    background-color: #f1f9f8;
-
-    .h5p-interactive-book-summary-menu-button-arrow {
-      opacity: 1;
-      visibility: visible;
-      transform: rotate(90deg) translateY(-10px);
-    }
+.h5p-theme-show-results {
+  &:hover .h5p-interactive-book-summary-menu-button-arrow {
+    opacity: 1;
+    visibility: visible;
+    transform: rotate(90deg) translateY(-10px);
   }
 
   &[data-book-completed="true"],
   &:active {
     box-shadow: 0 0 0.625rem rgba(12,201,167,1);
-  }
-
-  .h5p-interactive-book-summary-text {
-    white-space: normal;
-    text-align: left;
-    height: 100%;
-    flex-grow: 2;
-    margin-right: 0.75rem;
-  }
-
-  .h5p-interactive-book-summary-icon {
-    margin-right: 0.25rem;
-    margin-left: auto;
-    font-size: 1.1em;
   }
 
   .h5p-interactive-book-summary-menu-button-arrow {
@@ -99,15 +67,6 @@
     font-weight: normal;
     transition: transform 0.4s, opacity 0.2s, visibility 0.2s;
   }
-
-  &[disabled] {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-}
-
-.h5p-interactive-book-navigation-summary-button {
-  padding: 1.125rem 0.5rem;
 }
 
 .h5p-interactive-book-summary-page {

@@ -111,10 +111,9 @@ $fullscreen-button-size: 1.8em;
   }
 }
 
-.h5p-content-hidden {
-  .h5p-interactive-book-cover-present {
-    display: none;
-  }
+.h5p-content-hidden.h5p-interactive-book-cover-present,
+.h5p-content-hidden .h5p-interactive-book-cover-present {
+  display: none;
 }
 
 .h5p-fullscreen,
