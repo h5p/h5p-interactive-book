@@ -335,6 +335,8 @@ class Summary extends H5P.EventDispatcher {
     }
     wrapper.appendChild(this.createSubmittedConfirmation());
 
+    wrapper.appendChild(this.createFilterDropdown());
+
     this.wrapper.appendChild(wrapper);
   }
 
@@ -586,16 +588,6 @@ class Summary extends H5P.EventDispatcher {
   addSummaryOverview() {
     const wrapper = document.createElement("ul");
     wrapper.classList.add('h5p-interactive-book-summary-list');
-    const summaryHeader = document.createElement("li");
-    summaryHeader.classList.add('h5p-interactive-book-summary-overview-header');
-
-    const header = document.createElement("h3");
-    header.innerHTML = this.l10n.summaryHeader;
-
-    summaryHeader.appendChild(header);
-    summaryHeader.appendChild(this.createFilterDropdown());
-
-    wrapper.appendChild(summaryHeader);
 
     const summaryList = document.createElement("ol");
     summaryList.classList.add('h5p-interactive-book-summary-overview-list');

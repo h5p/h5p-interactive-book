@@ -64,6 +64,11 @@ class StatusBar extends H5P.EventDispatcher {
     const mainWrapper = document.createElement('div');
     mainWrapper.classList.add('h5p-interactive-book-status-main');
 
+    // Pattern for summary screen
+    const pattern = document.createElement('div');
+    pattern.classList.add('h5p-theme-pattern');
+    mainWrapper.appendChild(pattern);
+
     mainWrapper.appendChild(this.arrows.buttonPrevious);
 
     const infoWrapper = document.createElement('div');
