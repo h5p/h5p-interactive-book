@@ -78,6 +78,8 @@
     display: flex;
     justify-content: space-between;
     color: #273C59;
+    margin-top: calc(-1 * var(--h5p-theme-spacing-xl)*2);
+    position: relative;
 
     .h5p-interactive-book-summary-progress-container {
       background-color: var(--h5p-theme-ui-base);
@@ -425,4 +427,8 @@
       font-size: 0.5rem;
     }
   }
+}
+
+.h5p-showing-summary .h5p-interactive-book-content {
+  margin: 0;
 }

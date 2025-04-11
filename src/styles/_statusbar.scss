@@ -275,10 +275,14 @@
 }
 
 // Summary screen
-.h5p-interactive-book.h5p-showing-summary .h5p-interactive-book-status-header .h5p-interactive-book-status-main {
-  background-color: var(--h5p-theme-main-cta-base);
+.h5p-interactive-book.h5p-showing-summary .h5p-interactive-book-status-header {
+  height: calc(var(--h5p-theme-spacing-xl)*3);
 
-  .h5p-theme-pattern {
-    display: block;
+  .h5p-interactive-book-status-main {
+    background-color: var(--h5p-theme-main-cta-base);
+
+    .h5p-theme-pattern {
+      display: block;
+    }
   }
 }
