@@ -484,13 +484,11 @@ export default class InteractiveBook extends H5P.EventDispatcher {
         container.scrollBy(0, -container.scrollHeight);
       }
       else {
-        const { focus, preventScrollToTop } = event.data;
-
-        if (preventScrollToTop) {
+        if (event?.data?.preventScrollToTop) {
           return;
         }
 
-        if (focus !== false) { // Note: undefined is treated as true here
+        if (event?.data?.focus !== false) { // Note: undefined is treated as true here
           this.statusBarHeader.wrapper.scrollIntoView({
             block: 'nearest',
           });
