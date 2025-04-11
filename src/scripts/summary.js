@@ -314,17 +314,19 @@ class Summary extends H5P.EventDispatcher {
     this.checkTheAnswerIsUpdated();
 
     if (this.parent.isSubmitButtonEnabled && this.parent.isAnswerUpdated) {
-      const submitButton = this.addButton('icon-paper-pencil', this.l10n.submitReport);
-      submitButton.classList.add('h5p-interactive-book-summary-submit');
-      submitButton.onclick = () => {
-        this.trigger('submitted');
-        this.parent.triggerXAPIScored(this.parent.getScore(), this.parent.getMaxScore(), 'completed');
-        wrapper.classList.add('submitted');
-        const submitText = wrapper.querySelector('.answers-submitted');
-        submitText.focus();
-        this.tempState = JSON.stringify(this.getChapterStats());
-        this.parent.isAnswerUpdated = false;
-      };
+      const submitButton = H5P.Components.Button({
+        label: this.l10n.submitReport,
+        icon: 'show-results',
+        onClick: () => {
+          this.trigger('submitted');
+          this.parent.triggerXAPIScored(this.parent.getScore(), this.parent.getMaxScore(), 'completed');
+          wrapper.classList.add('submitted');
+          const submitText = wrapper.querySelector('.answers-submitted');
+          submitText.focus();
+          this.tempState = JSON.stringify(this.getChapterStats());
+          this.parent.isAnswerUpdated = false;
+        },
+      });
       wrapper.appendChild(submitButton);
     }
 
@@ -341,10 +343,13 @@ class Summary extends H5P.EventDispatcher {
    * @return {HTMLButtonElement}
    */
   createRestartButton() {
-    const restartButton = this.addButton('icon-restart', this.l10n.restartLabel);
-    restartButton.classList.add('h5p-theme-retry');
-    restartButton.classList.add('h5p-theme-secondary-cta');
-    restartButton.onclick = () => this.parent.resetTask();
+    const restartButton = H5P.Components.Button({
+      label: this.l10n.restartLabel,
+      styleType: 'secondary',
+      icon: 'retry',
+      onClick: this.parent.resetTask,
+    });
+
     return restartButton;
   }
 
@@ -372,26 +377,6 @@ class Summary extends H5P.EventDispatcher {
     }
 
     return submittedContainer;
-  }
-
-  /**
-   * Function to create the actual button element used for the action buttons
-   *
-   * @param iconClass
-   * @param label
-   * @return {HTMLButtonElement}
-   */
-  addButton(iconClass, label) {
-    const buttonElement = document.createElement("button");
-    buttonElement.type = 'button';
-    buttonElement.innerHTML = label;
-
-    const icon = document.createElement("span");
-    icon.classList.add(iconClass);
-    icon.setAttribute('aria-hidden', "true");
-    buttonElement.appendChild(icon);
-
-    return buttonElement;
   }
 
   /**
