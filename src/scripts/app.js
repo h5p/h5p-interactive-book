@@ -707,6 +707,11 @@ export default class InteractiveBook extends H5P.EventDispatcher {
       this.statusBarHeader.updateStatusBar();
       this.statusBarFooter.updateStatusBar();
       this.newHandler.redirectFromComponent = false;
+
+      this.$wrapper.removeClass('h5p-showing-summary');
+      if (this.chapters[this.activeChapter].isSummary) {
+        this.$wrapper.addClass('h5p-showing-summary');
+      }
     };
 
     /**
@@ -872,6 +877,10 @@ export default class InteractiveBook extends H5P.EventDispatcher {
 
       if (this.isEdge18orEarlier()) {
         $wrapper.addClass('edge-18');
+      }
+
+      if (this.chapters[this.activeChapter].isSummary) {
+        $wrapper.addClass('h5p-showing-summary');
       }
 
       this.setWrapperClassFromRatio(this.mainWrapper);

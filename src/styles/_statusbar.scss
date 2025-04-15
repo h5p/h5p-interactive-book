@@ -116,6 +116,7 @@
 
   .h5p-interactive-book-status-main {
     display: grid;
+    position: relative;
     grid-template-columns: min-content 1fr min-content;
     container-type: inline-size;
     container-name: h5p-navigation;
@@ -124,8 +125,13 @@
       grid-template-columns: min-content 1fr min-content min-content;
     }
 
+    .h5p-theme-pattern {
+      display: none;
+    }
+
     .h5p-theme-nav-button {
       height: min-content;
+      z-index: 1;
     }
 
     .h5p-theme-progress {
@@ -167,6 +173,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      z-index: 1;
 
       .h5p-interactive-book-status-chapter {
         flex-grow: 1;
@@ -193,6 +200,7 @@
       background-size: cover;
       border: .125em solid $background-color;
       justify-content: center;
+      z-index: 1;
 
       &.h5p-interactive-book-enter-fullscreen {
         &::before {
@@ -263,5 +271,18 @@
 
   .h5p-interactive-book-status-title {
     display: block;
+  }
+}
+
+// Summary screen
+.h5p-interactive-book.h5p-showing-summary .h5p-interactive-book-status-header {
+  height: calc(var(--h5p-theme-spacing-xl)*3);
+
+  .h5p-interactive-book-status-main {
+    background-color: var(--h5p-theme-main-cta-base);
+
+    .h5p-theme-pattern {
+      display: block;
+    }
   }
 }

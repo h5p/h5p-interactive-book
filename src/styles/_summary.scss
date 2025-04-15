@@ -15,14 +15,6 @@
       right: 0.6875rem;
     }
 
-    .h5p-interactive-book-summary-buttons {
-      display: flex;
-
-      .h5p-interactive-book-summary-submit {
-        flex-grow: 6;
-      }
-    }
-
     .h5p-interactive-book-summary-score-bar {
       margin-top: 1.25rem;
     }
@@ -36,7 +28,10 @@
       border-bottom-color: #0E7C57;
       border-bottom-width: 2px;
     }
+  }
 
+  .h5p-interactive-book-summary-buttons {
+    display: flex;
   }
 }
 
@@ -83,6 +78,8 @@
     display: flex;
     justify-content: space-between;
     color: #273C59;
+    margin-top: calc(-1 * var(--h5p-theme-spacing-xl)*2);
+    position: relative;
 
     .h5p-interactive-book-summary-progress-container {
       background-color: var(--h5p-theme-ui-base);
@@ -138,21 +135,6 @@
   .h5p-interactive-book-summary-buttons {
     margin-top: 1rem;
     flex-wrap: wrap;
-
-    .h5p-interactive-book-summary-submit {
-      background-color: #0E7C57;
-      color: var(--h5p-theme-ui-base);
-      border: 4px solid #0E7C57;
-      transition: background-color 150ms, border-color 150ms;
-
-      &:hover {
-        background-color: #0c694a;
-        border-color: #0c694a;
-      }
-    }
-    .h5p-interactive-book-summary-submit:focus-visible {
-      border: 4px solid #FFF;
-    }
 
     .h5p-interactive-book-summary-submitted {
       transform: translateY(100%);
@@ -394,7 +376,7 @@
   border: 1px solid #e8e8e8;
   border-radius: 4px;
   background-color: var(--h5p-theme-ui-base);
-  margin-left: auto 0.0625rem auto auto;
+  margin: auto 0.0625rem auto auto;
   font-size: 0.875rem;
   min-width: 12rem;
 
@@ -445,4 +427,8 @@
       font-size: 0.5rem;
     }
   }
+}
+
+.h5p-showing-summary .h5p-interactive-book-content {
+  margin: 0;
 }

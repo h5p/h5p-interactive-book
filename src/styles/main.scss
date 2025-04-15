@@ -103,8 +103,6 @@ $fullscreen-button-size: 1.8em;
 
 .h5p-interactive-book-main {
   display: flex;
-  flex: 1;
-  overflow: hidden;
 
   &.h5p-interactive-book-navigation-open .h5p-interactive-book-navigation {
     min-width: calc(var(--h5p-theme-spacing-xl)*6);
