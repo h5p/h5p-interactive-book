@@ -76,8 +76,20 @@
       "default": "Dölj 'Innehållsförteckning'"
     },
     {
+      "label": "Label for page counter",
+      "default": "Page"
+    },
+    {
+      "label": "Label for forwards navigation button",
+      "default": "Next"
+    },
+    {
       "label": "Översättning för \"Nästa sida\"",
       "default": "Nästa sida"
+    },
+    {
+      "label": "Label for backwards navigation button",
+      "default": "Previous"
     },
     {
       "label": "Översättning för \"Föregående sida\"",

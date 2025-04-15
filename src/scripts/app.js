@@ -970,7 +970,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
     });
     this.chapters = this.pageContent.getChapters();
 
-    this.sideBar = new SideBar(this.params, contentId, contentData.metadata.title, this);
+    this.sideBar = new SideBar(this.params, contentId, this);
 
     // Set progress (from previous state);
     this.chapters.forEach((chapter, index) => {
@@ -982,14 +982,16 @@ export default class InteractiveBook extends H5P.EventDispatcher {
       a11y: this.params.a11y,
       behaviour: this.params.behaviour,
       displayFullScreenButton: true,
-      displayMenuToggleButton: true
+      displayMenuToggleButton: true,
+      title: contentData.metadata.title,
     }, 'h5p-interactive-book-status-header');
 
     this.statusBarFooter = new StatusBar(contentId, this.chapters.length, this, {
       l10n: this.l10n,
       a11y: this.params.a11y,
       behaviour: this.params.behaviour,
-      displayToTopButton: true
+      displayToTopButton: true,
+      title: contentData.metadata.title,
     }, 'h5p-interactive-book-status-footer');
 
     if (this.hasCover()) {

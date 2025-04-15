@@ -217,6 +217,22 @@
     "optional": true
   },
   {
+    "name": "page",
+    "type": "text",
+    "label": "Label for page counter",
+    "importance": "low",
+    "default": "Page",
+    "common": true
+  },
+  {
+    "name": "next",
+    "type": "text",
+    "label": "Label for forwards navigation button",
+    "importance": "low",
+    "default": "Next",
+    "common": true
+  },
+  {
     "name": "nextPage",
     "type": "text",
     "label": "Translation for \"Next page\"",
@@ -224,6 +240,14 @@
     "default": "Next page",
     "common": true,
     "optional": true
+  },
+  {
+    "name": "previous",
+    "type": "text",
+    "label": "Label for backwards navigation button",
+    "importance": "low",
+    "default": "Previous",
+    "common": true
   },
   {
     "name": "previousPage",

@@ -76,8 +76,20 @@
       "default": "Hide 'Table of contents'"
     },
     {
+      "label": "Label for page counter",
+      "default": "Side"
+    },
+    {
+      "label": "Label for forwards navigation button",
+      "default": "Neste"
+    },
+    {
       "label": "Translation for \"Next page\"",
       "default": "Neste side"
+    },
+    {
+      "label": "Label for backwards navigation button",
+      "default": "Forrige"
     },
     {
       "label": "Translation for \"Previous page\"",

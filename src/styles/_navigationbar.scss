@@ -44,7 +44,7 @@
   transition: max-height .5s ease-in;
 
   >:first-child {
-    margin-top: .5em;
+    padding-top: .5em;
   }
 
   >:last-child {
@@ -53,6 +53,7 @@
   }
 
   .h5p-interactive-book-navigation-section {
+    position: relative;
     background: transparent;
     color: var(--h5p-theme-text-secondary);
     font-size: .875em;
@@ -100,7 +101,7 @@
 }
 
 .h5p-interactive-book-navigation-closed {
-  .h5p-interactive-book-navigation-chapter-button {
+  .h5p-interactive-book-navigation-chapter-button:not(.h5p-theme-show-results) {
     background-color: var(--color-base-10, $background-color);
 
     .h5p-interactive-book-navigation-chapter-title-text {
@@ -120,12 +121,11 @@
   list-style: none;
 }
 
-.h5p-interactive-book-navigation-chapter-button {
+.h5p-interactive-book-navigation-chapter-button:not(.h5p-theme-show-results) {
   align-items: center;
   background-color: var(--color-base-10, $base-color-10);
   background-size: cover;
   border: 0;
-  border-bottom: solid 1px $ghost-white;
   color: var(--h5p-theme-text-secondary);
   display: flex;
   font-family: var(--h5p-theme-font-name);
@@ -140,14 +140,23 @@
   &.h5p-interactive-book-navigation-current {
     background-color: var(--color-base-10, $base-color-10);
     border-bottom-color: white;
+
+    .h5p-interactive-book-navigation-chapter-accordion {
+      display: block;
+    }
   }
 
   &:hover {
     background-color: var(--color-base-5, $base-color-5);
     cursor: pointer;
+
+    .h5p-interactive-book-navigation-chapter-accordion {
+      display: block;
+    }
   }
 
   .h5p-interactive-book-navigation-chapter-title-text {
+    width: 100%;
     background-color: transparent;
     color: var(--color-base, $base-color);
     font-family: var(--h5p-theme-font-name);
@@ -163,12 +172,8 @@
   }
 
   .h5p-interactive-book-navigation-chapter-accordion {
-    align-self: center;
+    display: none;
     font-size: .65em;
-    width: 1em;
-    position: absolute;
-    left: 15px;
-    top: 17px;
 
     &.hidden {
       opacity: 0;
@@ -176,33 +181,32 @@
     }
   }
 
-  .h5p-interactive-book-navigation-chapter-progress {
-    align-self: center;
-    font-size: .75em;
-    position: absolute;
-    right: 15px;
-    top: 17px;
-  }
-
   &:active {
     background-color: var(--color-base-10, $base-color-10);
   }
 }
 
-.h5p-interactive-book-navigation-maintitle {
-  background-color: var(--color-base, $base-color);
-  background-size: cover;
+// Lines connecting the dots
+.h5p-interactive-book-navigation-current:after,
+.h5p-interactive-book-navigation-section:after {
+  content: '';
+  position: absolute;
+  left: 20px; // TODO: calculate position after Jelena has styled
+  bottom: 0;
 
-  .navigation-title {
-    align-self: center;
-    color: var(--color-text, $background-color);
-    font-family: var(--h5p-theme-font-name);
-    font-size: 1em;
-    font-weight: 400;
-    overflow: hidden;
-    padding-left: 1.25em;
-    text-decoration: none solid var(--color-text, $background-color);
-    text-overflow: ellipsis;
-    display: none;
-  }
+  top: 0;
+  z-index: 0;
+
+  height: 100%;
+  width: 2px;
+  background-color: color-mix(in srgb, var(--h5p-theme-main-cta-base), transparent 80%); 
+}
+
+.h5p-interactive-book-navigation-current:after {
+  height: 50%;
+  top: unset;
+}
+
+.h5p-interactive-book-navigation-section:last-child:after {
+  height: 50%;
 }

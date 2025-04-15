@@ -76,8 +76,20 @@
       "default": "„Slėpti turinį“"
     },
     {
+      "label": "Label for page counter",
+      "default": "Page"
+    },
+    {
+      "label": "Label for forwards navigation button",
+      "default": "Next"
+    },
+    {
       "label": "„Kitas puslapis“ vertimas",
       "default": "Kitas puslapis"
+    },
+    {
+      "label": "Label for backwards navigation button",
+      "default": "Previous"
     },
     {
       "label": "„Ankstesnis puslapis“ vertimas",

@@ -76,8 +76,20 @@
       "default": "Ocultar 'Tabla de contenidos'"
     },
     {
+      "label": "Label for page counter",
+      "default": "Page"
+    },
+    {
+      "label": "Label for forwards navigation button",
+      "default": "Next"
+    },
+    {
       "label": "Traducción para \"Página siguiente\"",
       "default": "Página siguiente"
+    },
+    {
+      "label": "Label for backwards navigation button",
+      "default": "Previous"
     },
     {
       "label": "Traducción para \"Página anterior\"",

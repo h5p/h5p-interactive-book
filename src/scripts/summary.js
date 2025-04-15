@@ -60,7 +60,7 @@ class Summary extends H5P.EventDispatcher {
     }
 
     this.bookCompleted = complete;
-    Array.from(document.querySelectorAll('.h5p-interactive-book-summary-menu-button'))
+    Array.from(document.querySelectorAll('.h5p-theme-show-results'))
       .forEach(button => button.setAttribute('data-book-completed', complete.toString()));
   }
 
@@ -119,38 +119,28 @@ class Summary extends H5P.EventDispatcher {
    * @return {HTMLButtonElement}
    */
   createSummaryButton() {
-    const button = document.createElement('button');
-    button.classList.add('h5p-interactive-book-summary-menu-button');
-    button.classList.add('h5p-theme-secondary-cta');
-    button.onclick = () => {
-      const newChapter = {
-        h5pbookid: this.parent.contentId,
-        chapter: `h5p-interactive-book-chapter-summary`,
-        section: "top",
-      };
-      this.parent.trigger('newChapter', newChapter);
-      if (this.parent.isMenuOpen() && this.parent.isSmallSurface()) {
-        this.parent.trigger('toggleMenu');
-      }
-    };
-    //button.disabled = true;
-
-    const paperIcon = document.createElement('span');
-    paperIcon.classList.add('h5p-interactive-book-summary-icon');
-    paperIcon.classList.add('icon-paper');
-    paperIcon.setAttribute('aria-hidden', "true");
-
-    const text = document.createElement('span');
-    text.classList.add('h5p-interactive-book-summary-text');
-    text.innerHTML = this.l10n.summaryAndSubmit;
+    const button = H5P.Components.Button({
+      label: this.l10n.summaryAndSubmit,
+      styleType: 'secondary',
+      icon: 'show-results',
+      onClick: () => {
+        const newChapter = {
+          h5pbookid: this.parent.contentId,
+          chapter: `h5p-interactive-book-chapter-summary`,
+          section: "top",
+        };
+        this.parent.trigger('newChapter', newChapter);
+        if (this.parent.isMenuOpen() && this.parent.isSmallSurface()) {
+          this.parent.trigger('toggleMenu');
+        }
+      },
+    });
 
     const arrowIcon = document.createElement('span');
     arrowIcon.classList.add('h5p-interactive-book-summary-menu-button-arrow');
     arrowIcon.classList.add('icon-up');
     arrowIcon.setAttribute('aria-hidden', "true");
 
-    button.appendChild(paperIcon);
-    button.appendChild(text);
     button.appendChild(arrowIcon);
 
     return button;
