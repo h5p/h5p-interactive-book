@@ -219,7 +219,7 @@ class Cover extends H5P.EventDispatcher {
     };
 
     button.classList.add('h5p-theme-primary-cta');
-    button.classList.add('h5p-theme-check');
+    button.classList.add('h5p-theme-book');
 
     return button;
   }

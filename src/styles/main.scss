@@ -105,7 +105,7 @@ $fullscreen-button-size: 1.8em;
   display: flex;
 
   &.h5p-interactive-book-navigation-open .h5p-interactive-book-navigation {
-    min-width: calc(var(--h5p-theme-spacing-xl)*6);
+    min-width: calc(var(--h5p-theme-spacing-xl)*5.5);
   }
 }
 

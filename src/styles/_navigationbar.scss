@@ -9,7 +9,7 @@
   top: 0;
   transition: width .15s linear, flex-basis .15s linear, max-width .15s linear;
   width: 0;
-  z-index: 1;
+  z-index: 100;
   display: flex;
   flex-direction: column;
 
@@ -25,7 +25,7 @@
 
   .navigation-list {
     margin: 0;
-    padding: 0;
+    padding: 0 var(--h5p-theme-spacing-s);
   }
 
   .large-navigation-list {
@@ -75,9 +75,13 @@
       color: var(--h5p-theme-text-primary);
       font-size: 5px;
       visibility: hidden;
-      width: 2.17em;
+      font-size: var(--h5p-theme-font-size-xxs);
+      background-color: var(--h5p-theme-ui-base);
+      border-radius: 50%;
       top: 50%;
       transform: translateY(-50%);
+      z-index: 10;
+      left: 17px;
 
       &.h5p-interactive-book-navigation-section-task {
         visibility: inherit;
@@ -85,12 +89,13 @@
     }
 
     .h5p-interactive-book-navigation-section-title {
-      font-size: .85em;
-      margin-left: 15px;
-      margin-right: 2em;
+      font-size: var(--h5p-theme-font-size-s);
+      margin-left: 2em;
+      font-weight: 600;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      color: var(--h5p-theme-text-third);
     }
   }
 
@@ -98,6 +103,27 @@
     color: var(--color-base, $base-color);
     cursor: pointer;
   }
+}
+.h5p-interactive-book-navigation-sectionlist > :last-child{
+  border-bottom: none;
+}
+.h5p-theme-show-results.h5p-interactive-book-navigation-chapter-button{
+  width: 100%;
+  margin-top: var(--h5p-theme-spacing-s);
+}
+
+.h5p-interactive-book-navigation-chapter-button{
+  border-radius: var(--h5p-theme-border-radius-medium);
+}
+.h5p-interactive-book-summary-menu-button-arrow{
+  display: none;
+}
+
+.h5p-interactive-book-navigation-chapter-progress:before,
+.h5p-interactive-book-navigation-chapter-button:not(.h5p-theme-show-results).h5p-interactive-book-navigation-current .h5p-interactive-book-navigation-chapter-progress:before{
+  font-size: var(--h5p-theme-font-size-l);
+  background-color: var(--h5p-theme-ui-base);
+  border-radius: 4em;
 }
 
 .h5p-interactive-book-navigation-closed {
@@ -126,7 +152,7 @@
   background-color: var(--color-base-10, $base-color-10);
   background-size: cover;
   border: 0;
-  color: var(--h5p-theme-text-secondary);
+  color: var(--h5p-theme-text-primary);
   display: flex;
   font-family: var(--h5p-theme-font-name);
   height: 3.438em;
@@ -138,7 +164,7 @@
   position: relative;
 
   &.h5p-interactive-book-navigation-current {
-    background-color: var(--color-base-10, $base-color-10);
+    background-color: var(--h5p-theme-contrast-cta-light);
     border-bottom-color: white;
 
     .h5p-interactive-book-navigation-chapter-accordion {
@@ -158,12 +184,12 @@
   .h5p-interactive-book-navigation-chapter-title-text {
     width: 100%;
     background-color: transparent;
-    color: var(--color-base, $base-color);
+    color: var(--h5p-theme-contrast-cta-white);
     font-family: var(--h5p-theme-font-name);
     font-size: 1em;
     font-weight: 700;
     line-height: 1.5em;
-    padding-left: 1.5em;
+    padding-left: 1em;
     padding-right: 2em;
     overflow: hidden;
     text-decoration: none solid var(--color-base, $base-color);
@@ -173,7 +199,7 @@
 
   .h5p-interactive-book-navigation-chapter-accordion {
     display: none;
-    font-size: .65em;
+    font-size: var(--h5p-theme-font-size-xxs);
 
     &.hidden {
       opacity: 0;
@@ -191,7 +217,7 @@
 .h5p-interactive-book-navigation-section:after {
   content: '';
   position: absolute;
-  left: 20px; // TODO: calculate position after Jelena has styled
+  left: 22px; // TODO: calculate position after Jelena has styled
   bottom: 0;
 
   top: 0;

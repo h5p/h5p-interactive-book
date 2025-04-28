@@ -1,4 +1,5 @@
 .h5p-interactive-book {
+  
   &.h5p-interactive-book-small {
     .h5p-interactive-box-summary-progress {
       display: block;
@@ -32,6 +33,10 @@
 
   .h5p-interactive-book-summary-buttons {
     display: flex;
+    
+    .h5p-theme-primary-cta.h5p-theme-show-results{
+      margin-right: 0.5em;
+    }
   }
 }
 
@@ -49,7 +54,9 @@
 
   &[data-book-completed="true"],
   &:active {
-    box-shadow: 0 0 0.625rem rgba(12,201,167,1);
+    outline: 2px ridge var(--h5p-theme-main-cta-base);
+    border-radius: 4px;
+    outline-offset: 2px;
   }
 
   .h5p-interactive-book-summary-menu-button-arrow {
@@ -83,9 +90,9 @@
 
     .h5p-interactive-book-summary-progress-container {
       background-color: var(--h5p-theme-ui-base);
-      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.08);
       width: 49%;
-      padding: 1rem;
+      padding: var(--h5p-theme-spacing-s);
       box-sizing: border-box;
       border-radius: 5px;
       display: flex;
@@ -112,28 +119,29 @@
     h3 {
       font-size: var(--h5p-theme-font-size-s);
       font-weight: bold;
-      line-height: 1.25rem;
       margin-top: 0;
+      margin-bottom: 0;
+      line-height: 1;
       color: var(--h5p-theme-text-primary);
     }
 
     .h5p-interactive-book-summary-progressbox-bigtext {
       font-size: calc(var(--h5p-theme-font-size-xxl)*1.2);
       color: var(--h5p-theme-text-primary);
-      margin: 0.4375rem auto;
+      margin: var(--h5p-theme-spacing-s) auto;
       font-weight: bold;
     }
 
     .h5p-interactive-book-summary-progressbox-smalltext {
       font-size: var(--h5p-theme-font-size-s);
       color: var(--h5p-theme-text-third);
-      line-height: 1.25rem;
+      line-height: 1;
       margin: 0;
     }
   }
 
   .h5p-interactive-book-summary-buttons {
-    margin-top: 1rem;
+    margin-top: var(--h5p-theme-spacing-l);
     flex-wrap: wrap;
 
     .h5p-interactive-book-summary-submitted {
@@ -239,15 +247,14 @@
 
   .h5p-interactive-book-summary-overview-section:first-of-type,
   .h5p-interactive-book-summary-top-section {
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
+    border-top-right-radius: var(--h5p-theme-border-radius-large);
+    border-top-left-radius: var(--h5p-theme-border-radius-large);
   }
 
   .h5p-interactive-book-summary-overview-section:last-of-type,
   .h5p-interactive-book-summary-bottom-section {
-    border-bottom: 1px solid #ebebeb;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: var(--h5p-theme-border-radius-large);
+    border-bottom-left-radius: var(--h5p-theme-border-radius-large);
   }
 
   .h5p-interactive-book-summary-overview-section-score-header {
@@ -272,12 +279,12 @@
     padding: 0.25rem;
 
     &:hover {
-      background: #f3f3f3;
+      background: var(--h5p-theme-contrast-cta-light);
     }
 
     & .h5p-interactive-book-summary-section-title {
-      font-size: var(--h5p-theme-font-size-s);
-      font-weight: 700;
+      font-size: var(--h5p-theme-font-size-m);
+      font-weight: 600;
       color: var(--h5p-theme-text-primary);
       border: 0;
       background-color: transparent;
@@ -309,6 +316,8 @@
     font-size: var(--h5p-theme-font-size-s);
     line-height: 0.9375rem;
   }
+  
+
 
   .h5p-interactive-book-summary-progress-circle {
     width: calc(var(--h5p-theme-spacing-xl)*1.5);
@@ -332,6 +341,7 @@
     display: flex;
     justify-content: flex-end;
     margin-top: 3rem;
+    display: none; 
   }
 
   .h5p-interactive-book-summary-no-chapter-interactions {
@@ -432,3 +442,21 @@
 .h5p-showing-summary .h5p-interactive-book-content {
   margin: 0;
 }
+
+/*specific styles for the summary page*/
+.h5p-showing-summary.h5p-showing-summary .h5p-interactive-book-status .h5p-interactive-book-status-main .h5p-interactive-book-status-info .h5p-interactive-book-status-chapter .title{
+  color: var(--h5p-theme-contrast-cta) !important;
+  font-size: var(--h5p-theme-font-size-xxl);
+}
+.h5p-showing-summary.h5p-showing-summary .h5p-interactive-book-status .h5p-interactive-book-status-main .h5p-theme-progress{
+  color: var(--h5p-theme-contrast-cta) !important;
+}
+.h5p-showing-summary.h5p-showing-summary .h5p-interactive-book-status-main,
+.h5p-showing-summary.h5p-showing-summary .h5p-interactive-book-status .h5p-interactive-book-status-side{
+  align-items: flex-start;
+}
+/*
+.h5p-showing-summary.h5p-showing-summary .h5p-interactive-book-status-main .h5p-theme-nav-button[aria-disabled="true"], .h5p-theme-nav-button:disabled{
+  display: none;
+}
+*/

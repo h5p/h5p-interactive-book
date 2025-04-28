@@ -291,12 +291,14 @@ class StatusBar extends H5P.EventDispatcher {
   createToTopButton() {
     const button = document.createElement('div');
     button.classList.add('icon-up');
-    button.classList.add('navigation-button');
+    /*button.classList.add('navigation-button');*/
+   
 
     const wrapper = document.createElement('button');
     wrapper.classList.add('h5p-interactive-book-status-to-top');
     wrapper.classList.add('h5p-interactive-book-status-button');
     wrapper.classList.add('h5p-interactive-book-status-arrow');
+     button.classList.add('h5p-interactive-book-status-button');
     wrapper.setAttribute('aria-label', this.params.l10n.navigateToTop);
     wrapper.addEventListener('click', () => {
       this.parent.trigger('scrollToTop');

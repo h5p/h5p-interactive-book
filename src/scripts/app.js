@@ -60,6 +60,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
     else if (H5PIntegration.reportingIsEnabled !== undefined) { // (Never use H5PIntegration directly in a content type. It's only here for backwards compatibility)
       this.isSubmitButtonEnabled = H5PIntegration.reportingIsEnabled;
     }
+    this.isSubmitButtonEnabled = true; /*TODO: Remove*/
 
     /*
      * this.params.behaviour.enableSolutionsButton and this.params.behaviour.enableRetry
