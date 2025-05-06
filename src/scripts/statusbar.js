@@ -137,7 +137,9 @@ class StatusBar extends H5P.EventDispatcher {
     else {
       this.setButtonStatus('Previous', false);
     }
-    if ((this.parent.activeChapter + 1) >= this.totalChapters) {
+
+    const nextChapterIsRestricted = this.parent.chapters[this.parent.activeChapter + 1]?.isAccessRestricted;
+    if ((this.parent.activeChapter + 1) >= this.totalChapters || nextChapterIsRestricted) {
       this.setButtonStatus('Next', true);
     }
     else {

@@ -293,7 +293,12 @@ class PageContent extends H5P.EventDispatcher {
 
     // First chapter or cover page should be visible, except if the URL of previous state says otherwise.
     if (urlFragments.chapter && urlFragments.h5pbookid == this.parent.contentId) {
-      const chapterIndex = this.findChapterIndex(urlFragments.chapter);
+      let chapterIndex = this.findChapterIndex(urlFragments.chapter);
+
+      const firstRestrictedChapter = previousState?.firstRestrictedChapter ?? -1;
+      if (firstRestrictedChapter !== -1 && firstRestrictedChapter <= chapterIndex) {
+        chapterIndex = 0;
+      }
 
       if (chapterIndex === -1) {
         // Chapter requested does not exist - do nothing, so that the cover page or first chapter (0 by default) is displayed.

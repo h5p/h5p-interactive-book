@@ -54,6 +54,21 @@
           "description": "Wenn gewählt, werden Kapitel ohne Aufgaben als abgeschlossen markiert, sobald sie angezeigt wurden. Kapitel mit interaktiven Aufgaben gelten als abgeschlossen, wenn alle Aufgaben gelöst wurden. Wenn abgewählt, wird am Ende eines Kapitels ein Button angezeigt, den die Lernenden anklicken müssen, wenn sie das Kapitel abgeschlossen haben."
         },
         {
+          "label": "Navigationseinschränkungsmodus",
+          "description": "Lege fest, welche Einschränkungen du den Lernenden auferlegen möchtest, um im Buch fortzufahren.",
+          "options": [
+            {
+              "label": "Keine Einschränkungen"
+            },
+            {
+              "label": "Seite muss abgeschlossen sein, um fortzufahren"
+            },
+            {
+              "label": "Volle Punktzahl erforderlich, um fortzufahren"
+            }
+          ]
+        },
+        {
           "label": "Zusammenfassung anzeigen",
           "description": "Wenn gewählt, können die Nutzenden eine Zusammenfassung sehen und ihren Fortschritt/ihre Antworten einsenden."
         },
@@ -198,6 +213,10 @@
         {
           "label": "Beschriftung des Buttons, um das Inhaltsverzeichnis ein- und auszublenden",
           "default": "Inhaltsverzeichnis ein- bzw. ausschalten"
+        },
+        {
+          "label": "\"Ein neues Kapitel wurde freigeschaltet\"",
+          "default": "Ein neues Kapitel wurde freigeschaltet."
         }
       ]
     }

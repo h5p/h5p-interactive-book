@@ -54,6 +54,21 @@
           "description": "Якщо увімкнено, то сторінка без завдань відмічається пройденою відразу після перегляду, а сторінка із завданнями - після їх виконання. Якщо вимкнено - потрібно підтверджувати виконання кнопкою знизу на кожній сторінці."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Показувати сторінку Підсумок",
           "description": "Якщо увімкнено, додається сторінка з результатами проходження і кнопкою для відправки"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Позначка для розгортання/згортання навігаційного меню",
           "default": "Перемикання навігаційного меню"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

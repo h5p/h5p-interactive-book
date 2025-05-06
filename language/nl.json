@@ -54,6 +54,21 @@
           "description": "Indien ingeschakeld, wordt een pagina zonder taken als voltooid beschouwd wanneer die is bekeken, een pagina met taken als die klaar zijn. Indien uitgeschakeld, wordt er een knop getoond op elke pagina waarop de gebruiker kan klikken als hij klaar is met de pagina."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Toon samenvatting",
           "description": "Indien ingeschakeld, kan de gebruiker een samenvatting zien en de voortgang/antwoorden inzenden"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Label voor uitvouwen/invouwen navigatiemenu",
           "default": "Uit-/invouwen navigatiemenu"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }
