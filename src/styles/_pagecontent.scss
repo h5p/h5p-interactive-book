@@ -56,6 +56,19 @@
       }
     }
   }
+
+  // Center align images inside interactive book 
+  .h5p-interactive-book-chapter {
+    .h5p-column-content.h5p-image img {
+      width: auto !important;
+      height: auto !important;
+      max-width: 100%;
+      max-height: 66vh;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }
 
 .h5p-interactive-book-status-progress-marker {
@@ -89,5 +102,23 @@
 .h5p-course-presentation {
   .h5p-wrapper {
     height: 596px;
+  }
+}
+
+/* Some extra styling for minimalistic H5P.Audio related components */
+.h5p-column-content {
+  &.h5p-audio-wrapper {
+    .h5p-audio {
+      margin: 1em;
+    }
+
+    .h5p-audio-minimal-button {
+      width: 48px;
+      height: 48px;
+      margin: 1em;
+      &:before {
+        font-size: 18px;
+      }
+    }
   }
 }
