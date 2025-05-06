@@ -22,6 +22,11 @@ $mud-80: rgba($mud, .8);
 
 $fullscreen-button-size: 1.8em;
 
+
+.h5p-interactive-book-content {
+   margin: var(--h5p-theme-spacing-s) !important;
+}
+
 .h5p-interactive-book {
   &.h5p-interactive-book-small {
     .h5p-interactive-book-main {
