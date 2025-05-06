@@ -818,7 +818,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
           section.taskDone = sectionInstance.getAnswerGiven ? sectionInstance.getAnswerGiven() : true;
 
           this.sideBar.setSectionMarker(chapterId, index);
-          if (section.taskDone) {
+          if (section.isTask && section.taskDone) {
             this.chapters[chapterId].tasksLeft -= 1;
           }
           this.updateChapterProgress(chapterId);
