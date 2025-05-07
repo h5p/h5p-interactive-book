@@ -3,7 +3,7 @@
   "description": "An interactive book which displays content in pages and sections",
   "majorVersion": 1,
   "minorVersion": 11,
-  "patchVersion": 3,
+  "patchVersion": 4,
   "runnable": 1,
   "fullscreen": 1,
   "coreApi": {
