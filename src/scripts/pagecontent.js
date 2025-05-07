@@ -240,8 +240,14 @@ class PageContent extends H5P.EventDispatcher {
             });
           }
           else {
+            let content = contentList[contentIndex].content;
+
+            if (parentInstance.libraryInfo.machineName === 'H5P.RowColumn') {
+              content = contentList[contentIndex];
+            }
+
             sections.push({
-              content: contentList[contentIndex].content,
+              content: content,
               instance: instance,
               isTask: false
             });
