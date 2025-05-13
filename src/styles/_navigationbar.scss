@@ -9,7 +9,7 @@
   top: 0;
   transition: width .15s linear, flex-basis .15s linear, max-width .15s linear;
   width: 0;
-  z-index: 100;
+  z-index: 1;
   display: flex;
   flex-direction: column;
 
@@ -104,23 +104,26 @@
     cursor: pointer;
   }
 }
-.h5p-interactive-book-navigation-sectionlist > :last-child{
+
+.h5p-interactive-book-navigation-sectionlist > :last-child {
   border-bottom: none;
 }
-.h5p-theme-show-results.h5p-interactive-book-navigation-chapter-button{
+
+.h5p-theme-show-results.h5p-interactive-book-navigation-chapter-button {
   width: 100%;
   margin-top: var(--h5p-theme-spacing-s);
 }
 
-.h5p-interactive-book-navigation-chapter-button{
+.h5p-interactive-book-navigation-chapter-button {
   border-radius: var(--h5p-theme-border-radius-medium);
 }
-.h5p-interactive-book-summary-menu-button-arrow{
+
+.h5p-interactive-book-summary-menu-button-arrow {
   display: none;
 }
 
 .h5p-interactive-book-navigation-chapter-progress:before,
-.h5p-interactive-book-navigation-chapter-button:not(.h5p-theme-show-results).h5p-interactive-book-navigation-current .h5p-interactive-book-navigation-chapter-progress:before{
+.h5p-interactive-book-navigation-chapter-button:not(.h5p-theme-show-results).h5p-interactive-book-navigation-current .h5p-interactive-book-navigation-chapter-progress:before {
   font-size: var(--h5p-theme-font-size-l);
   background-color: var(--h5p-theme-ui-base);
   border-radius: 4em;

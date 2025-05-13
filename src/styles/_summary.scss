@@ -316,8 +316,6 @@
     font-size: var(--h5p-theme-font-size-s);
     line-height: 0.9375rem;
   }
-  
-
 
   .h5p-interactive-book-summary-progress-circle {
     width: calc(var(--h5p-theme-spacing-xl)*1.5);
@@ -445,21 +443,16 @@
 
 /*specific styles for the summary page*/
 
-
-
-.h5p-showing-summary.h5p-showing-summary .h5p-interactive-book-status:not(.h5p-interactive-book-status-footer) .h5p-interactive-book-status-main .h5p-interactive-book-status-info .h5p-interactive-book-status-chapter .title{
+.h5p-showing-summary.h5p-showing-summary .h5p-interactive-book-status:not(.h5p-interactive-book-status-footer) .h5p-interactive-book-status-main .h5p-interactive-book-status-info .h5p-interactive-book-status-chapter .title {
   color: var(--h5p-theme-contrast-cta) !important;
   font-size: var(--h5p-theme-font-size-xxl);
 }
-.h5p-showing-summary.h5p-showing-summary .h5p-interactive-book-status:not(.h5p-interactive-book-status-footer) .h5p-interactive-book-status-main .h5p-theme-progress{
+
+.h5p-showing-summary.h5p-showing-summary .h5p-interactive-book-status:not(.h5p-interactive-book-status-footer) .h5p-interactive-book-status-main .h5p-theme-progress {
   color: var(--h5p-theme-contrast-cta) !important;
 }
+
 .h5p-showing-summary.h5p-showing-summary .h5p-interactive-book-status-main,
-.h5p-showing-summary.h5p-showing-summary .h5p-interactive-book-status .h5p-interactive-book-status-side{
+.h5p-showing-summary.h5p-showing-summary .h5p-interactive-book-status .h5p-interactive-book-status-side {
   align-items: flex-start;
 }
-/*
-.h5p-showing-summary.h5p-showing-summary .h5p-interactive-book-status-main .h5p-theme-nav-button[aria-disabled="true"], .h5p-theme-nav-button:disabled{
-  display: none;
-}
-*/

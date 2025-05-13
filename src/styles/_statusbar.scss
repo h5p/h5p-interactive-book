@@ -52,12 +52,9 @@
       &.h5p-interactive-book-status-menu-active {
         position: relative;
 
-        .icon-menu {
-
-          &:before {
-            font-family: 'h5p-theme';
-            content: "\e916";
-          }
+        .icon-menu:before {
+          font-family: 'h5p-theme';
+          content: "\e916";
         }
       }
     }
@@ -113,7 +110,6 @@
     }
 
     .h5p-theme-nav-button {
-      /*height: min-content;*/
       z-index: 1;
     }
 
@@ -123,7 +119,7 @@
       padding: calc(var(--h5p-theme-spacing-xxs)/2) var(--h5p-theme-spacing-xxs);
       margin-bottom: var(--h5p-theme-spacing-xxs);
 
-      span:first-of-type{
+      span:first-of-type {
         display: inline-block;
         margin-right: calc(var(--h5p-theme-spacing-xxs)/2);
       }
@@ -138,29 +134,6 @@
         position: absolute;
         white-space: nowrap;
         width: 1px;
-      }
-
-      .h5p-interactive-book-status-progress-number {
-        /* TODO: REMOVE
-        color: var(--color-base, $base-color);
-        font-family: var(--h5p-theme-font-name);
-        font-size: 20px;
-        font-weight: 700;
-        text-align: right;
-        text-decoration: none solid var(--color-base, $base-color);
-        */
-        
-      }
-      
-      .h5p-interactive-book-status-progress-divider {
-        /* TODO: REMOVE
-        color: var(--h5p-theme-text-secondary);
-        font-family: var(--h5p-theme-font-name);
-        font-size: 20px;
-        font-weight: 700;
-        text-align: right;
-        text-decoration: none solid var(--h5p-theme-text-secondary);
-        */
       }
     }
 
@@ -245,18 +218,6 @@
     flex-shrink: 0;
     height: 2.75em;
     width: 2.75em;
-
-    .navigation-button {
-      background: transparent;
-      border: 0;
-      color: var(--color-base, $base-color);
-      font-size: 1.5em;
-      margin: auto;
-  
-      &.disabled {
-        opacity: .5;
-      }
-    }
   }
 }
 
@@ -274,7 +235,6 @@
 
 // Summary screen
 .h5p-interactive-book.h5p-showing-summary .h5p-interactive-book-status-header {
-  
 
   .h5p-interactive-book-status-main {
     background-color: var(--h5p-theme-main-cta-base);
