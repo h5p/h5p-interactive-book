@@ -166,6 +166,7 @@
     .h5p-interactive-book-status-fullscreen {
       border: none;
       margin-left: var(--h5p-theme-spacing-xs);
+      z-index: 1;
 
       &.h5p-interactive-book-enter-fullscreen {
         &::before {
