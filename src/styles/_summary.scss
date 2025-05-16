@@ -350,6 +350,14 @@
   }
 }
 
+.h5p-fullscreen {
+  .h5p-interactive-book-summary-page {
+    .h5p-interactive-box-summary-progress {
+      margin-top: 0;
+    }
+  }
+}
+
 .h5p-interactive-book-summary-footer {
   position: absolute;
   bottom: 0;
