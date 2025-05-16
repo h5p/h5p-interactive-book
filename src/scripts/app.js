@@ -3,7 +3,6 @@ import SideBar from './sidebar';
 import StatusBar from './statusbar';
 import Cover from './cover';
 import PageContent from './pagecontent';
-import 'element-scroll-polyfill';
 import Colors from './colors';
 
 export default class InteractiveBook extends H5P.EventDispatcher {
@@ -479,13 +478,15 @@ export default class InteractiveBook extends H5P.EventDispatcher {
       }
     });
 
-    this.on('scrollToTop', () => {
+    this.on('scrollToTop', event => {
       if (H5P.isFullscreen === true) {
         const container = this.pageContent.container;
         container.scrollBy(0, -container.scrollHeight);
       }
-      else if (H5PIntegration.context !== 'lti') { // Will be changed in JI-6581 to not use H5PIntegration 
-        this.statusBarHeader.wrapper.scrollIntoView(true);
+      else {
+        if (event.data !== false) { // Note: undefined is treated as true here
+          this.statusBarHeader.wrapper.scrollIntoView(true);
+        }
       }
     });
 
@@ -528,7 +529,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
       }
 
       H5P.trigger(this, 'changeHash', event.data);
-      H5P.trigger(this, 'scrollToTop');
+      H5P.trigger(this, 'scrollToTop', event.data.focus);
     });
 
     /**
@@ -995,7 +996,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
 
       this.hideAllElements(true);
 
-      this.on('coverRemoved', () => {
+      this.on('coverRemoved', event => {
         this.hideAllElements(false);
 
         // Ensure that URL is updated, so getCurrentState will resume without showing cover
@@ -1003,7 +1004,8 @@ export default class InteractiveBook extends H5P.EventDispatcher {
           this.trigger('newChapter', {
             h5pbookid: this.contentId,
             chapter: `h5p-interactive-book-chapter-${this.params.chapters[this.activeChapter].subContentId}`,
-            section: 0
+            section: 0,
+            focus: event.data
           });
         }
 
@@ -1012,9 +1014,8 @@ export default class InteractiveBook extends H5P.EventDispatcher {
         // setActivityStarted() checks if it has been run before
         this.setActivityStarted();
 
-        // Focus header progress bar when cover is removed
-        // Will be changed in JI-6581 to not use H5PIntegration 
-        if (H5PIntegration.context !== 'lti') {
+        // Focus header progress bar when cover is removed by user action
+        if (event.data) {
           this.statusBarHeader.progressBar.progress.focus();
         }
       });

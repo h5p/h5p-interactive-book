@@ -58,8 +58,8 @@
           "description": "Όταν είναι ενεργό, ο/η χρήστης μπορεί να δει μια σύνοψη και να καταχωρεί τις απαντήσεις/πρόοδό του/της"
         },
         {
-          "label": "Enable \"Restart\" button",
-          "description": "When enabled the user can initiate a restart on the summary page."
+          "label": "Ενεργοποίηση κουμπιού \"Επανάληψη\" ",
+          "description": "Όταν είναι ενεργό ο/η χρήστης μπορεί να επαναλάβει την δραστηριότητα μέσω επιλογής στην οθόνη σύνοψης."
         }
       ]
     },
