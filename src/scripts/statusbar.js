@@ -421,8 +421,6 @@ class StatusBar extends H5P.EventDispatcher {
       fullScreenButton.classList.add('h5p-interactive-book-exit-fullscreen');
       fullScreenButton.setAttribute('title', this.params.l10n.exitFullscreen);
       fullScreenButton.setAttribute('aria-label', this.params.l10n.exitFullScreen);
-
-      this.parent.pageContent.updateFooter();
     });
 
     this.parent.on('exitFullScreen', () => {
@@ -431,8 +429,6 @@ class StatusBar extends H5P.EventDispatcher {
       fullScreenButton.classList.add('h5p-interactive-book-enter-fullscreen');
       fullScreenButton.setAttribute('title', this.params.l10n.fullscreen);
       fullScreenButton.setAttribute('aria-label', this.params.l10n.fullscreen);
-
-      this.parent.pageContent.updateFooter();
     });
 
     return fullScreenButton;
