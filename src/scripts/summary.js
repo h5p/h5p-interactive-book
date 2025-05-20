@@ -136,13 +136,6 @@ class Summary extends H5P.EventDispatcher {
       },
     });
 
-    const arrowIcon = document.createElement('span');
-    arrowIcon.classList.add('h5p-interactive-book-summary-menu-button-arrow');
-    arrowIcon.classList.add('icon-up');
-    arrowIcon.setAttribute('aria-hidden', "true");
-
-    button.appendChild(arrowIcon);
-
     return button;
   }
 
