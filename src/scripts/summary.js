@@ -440,14 +440,6 @@ class Summary extends H5P.EventDispatcher {
       sectionRow.appendChild(score);
       sectionElements.push(sectionRow);
     }
-    if ( sectionElements.length) {
-      const sectionRow = document.createElement("div");
-      sectionRow.classList.add('h5p-interactive-book-summary-overview-section-score-header');
-      const scoreHeader = document.createElement("div");
-      scoreHeader.innerHTML = this.l10n.score;
-      sectionRow.appendChild(scoreHeader);
-      sectionElements.unshift(sectionRow);
-    }
     return {
       hasUnansweredInteractions,
       sectionElements
@@ -463,20 +455,17 @@ class Summary extends H5P.EventDispatcher {
   createChapterOverview(chapter) {
     const wrapper = document.createElement("li");
     wrapper.classList.add('h5p-interactive-book-summary-overview-section');
-    const header = document.createElement("h4");
-    header.onclick = () => {
+    const header = document.createElement('div');
+    header.classList.add('h5p-interactive-book-summary-section-header');
+    const titleWrapper = document.createElement("div");
+    titleWrapper.onclick = () => {
       const newChapter = {
         h5pbookid: this.parent.contentId,
         chapter: `h5p-interactive-book-chapter-${chapter.instance.subContentId}`,
         section: `top`,
       };
       this.parent.trigger("newChapter", newChapter);
-
     };
-
-    const chapterTitle = document.createElement("span");
-    chapterTitle.innerHTML = chapter.title;
-    header.appendChild(chapterTitle);
 
     if (this.behaviour.progressIndicators) {
       const chapterIcon = document.createElement("span");
@@ -485,7 +474,9 @@ class Summary extends H5P.EventDispatcher {
       header.appendChild(chapterIcon);
     }
 
-    wrapper.appendChild(header);
+    const chapterTitle = document.createElement("h4");
+    chapterTitle.innerHTML = chapter.title;
+    titleWrapper.appendChild(chapterTitle);
 
     let {
       sectionElements: sections,
@@ -504,7 +495,15 @@ class Summary extends H5P.EventDispatcher {
       sectionSubheader.innerHTML = this.l10n.noInteractions;
     }
 
-    wrapper.appendChild(sectionSubheader);
+    titleWrapper.appendChild(sectionSubheader);
+    header.appendChild(titleWrapper);
+
+    const scoreHeader = document.createElement("div");
+    scoreHeader.classList.add('h5p-interactive-book-summary-overview-section-score-header');
+    scoreHeader.innerHTML = this.l10n.score;
+    header.appendChild(scoreHeader);
+
+    wrapper.appendChild(header);
 
     const sectionsContainer = document.createElement("ul");
     if ( sections.length ) {

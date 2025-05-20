@@ -24,7 +24,10 @@
   }
 
   &.h5p-interactive-book-status-footer {
-  
+    // Prevent sidebar dropshadow
+    z-index: 2;
+    position: relative;
+
     .h5p-interactive-book-status-menu {
       display: none;
     }
@@ -222,8 +225,7 @@
 }
 
 // Expand side in footer and if nav menu is expanded
-.h5p-interactive-book-status-side:has(.h5p-interactive-book-status-menu-active), 
-.h5p-interactive-book-status-footer .h5p-interactive-book-status-side {
+.h5p-interactive-book-navigation-open ~ .h5p-interactive-book-status .h5p-interactive-book-status-side {
   width: calc(calc(var(--h5p-theme-spacing-xl)*5.5) - calc(2*var(--h5p-theme-spacing-s)));
   padding: var(--h5p-theme-spacing-s);
   box-shadow: 0.625em 0.625em 1.875em rgba(166, 166, 166, 0.2);
