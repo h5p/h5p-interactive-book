@@ -873,7 +873,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
     this.attach = ($wrapper) => {
       this.mainWrapper = $wrapper;
       // Needed to enable scrolling in fullscreen
-      $wrapper.addClass('h5p-interactive-book h5p-scrollable-fullscreen');
+      $wrapper.addClass('h5p-interactive-book h5p-scrollable-fullscreen h5p-theme');
 
       if (this.isEdge18orEarlier()) {
         $wrapper.addClass('edge-18');
