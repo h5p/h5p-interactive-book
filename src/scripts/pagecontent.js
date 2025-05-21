@@ -462,33 +462,6 @@ class PageContent extends H5P.EventDispatcher {
   }
 
   /**
-   * Update footer.
-   */
-  updateFooter() {
-    if ( this.chapters.length === 0) {
-      return;
-    }
-    const activeChapter = this.parent.getActiveChapter();
-    const column = this.columnNodes[activeChapter];
-    const moveFooterInsideContent = this.parent.shouldFooterBeHidden(column.clientHeight);
-
-    // Move status bar footer to content in fullscreen
-    const footerParent = this.parent.statusBarFooter.wrapper.parentNode;
-    if (moveFooterInsideContent) {
-      // Add status bar footer to page content
-      if (footerParent !== this.content) {
-        this.content.appendChild(this.parent.statusBarFooter.wrapper);
-      }
-    }
-    else {
-      // Re-attach to shared bottom of book when exiting fullscreen
-      if (footerParent !== this.parent.$wrapper) {
-        this.parent.$wrapper.append(this.parent.statusBarFooter.wrapper);
-      }
-    }
-  }
-
-  /**
    * Toggle the navigation menu.
    */
   toggleNavigationMenu() {

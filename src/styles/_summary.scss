@@ -86,7 +86,9 @@
     justify-content: space-between;
     color: #273C59;
     margin-top: calc(-1 * var(--h5p-theme-spacing-xl)*2);
-    position: relative;
+    position: sticky;
+    top: calc(var(--h5p-theme-spacing-xl)*2);
+    z-index: 4;
 
     .h5p-interactive-book-summary-progress-container {
       background-color: var(--h5p-theme-ui-base);
