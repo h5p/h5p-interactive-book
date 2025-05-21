@@ -227,6 +227,10 @@
   background-color: color-mix(in srgb, var(--h5p-theme-main-cta-base), transparent 80%); 
 }
 
+.h5p-interactive-book-navigation-summary-button .h5p-interactive-book-navigation-current:after {
+  display: none;
+}
+
 .h5p-interactive-book-navigation-current[aria-expanded="true"]:not(:has(.h5p-interactive-book-navigation-chapter-accordion.hidden)):after {
   height: 50%;
   top: unset;
