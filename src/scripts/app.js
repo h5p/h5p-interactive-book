@@ -679,15 +679,6 @@ export default class InteractiveBook extends H5P.EventDispatcher {
     };
 
     /**
-     * Check if the content height exceeds the window.
-     */
-    this.shouldFooterBeHidden = () => {
-      // Always show except for in fullscreen
-      // Ideally we'd check on the top window size but we can't always get it.
-      return this.isFullscreen;
-    };
-
-    /**
      * Get content container width.
      * @return {number} Container width or 0.
      */

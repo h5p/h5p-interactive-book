@@ -23,15 +23,8 @@
     }
   }
 
-  &.h5p-interactive-book-status-footer {
-  
-    .h5p-interactive-book-status-menu {
-      display: none;
-    }
-
-    &.footer-hidden {
-      display: none;
-    }
+  &.h5p-interactive-book-status-footer .h5p-interactive-book-status-menu {
+    display: none;
   }
 
   .h5p-interactive-book-status-side {
@@ -236,7 +229,6 @@
 
 // Summary screen
 .h5p-interactive-book.h5p-showing-summary .h5p-interactive-book-status-header {
-
   .h5p-interactive-book-status-main {
     background-color: var(--h5p-theme-main-cta-base);
     padding: var(--h5p-theme-spacing-s) var(--h5p-theme-spacing-s) calc(var(--h5p-theme-spacing-xl)*1.5) var(--h5p-theme-spacing-s);

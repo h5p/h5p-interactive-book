@@ -128,39 +128,10 @@ $fullscreen-button-size: 1.8em;
 .h5p-fullscreen,
 .h5p-semi-fullscreen {
   .h5p-interactive-book {
-    display: flex;
-    flex-direction: column;
+    overflow-y: auto !important;
 
     &.edge-18 .h5p-interactive-book-status {
       padding-right: 9em;
-    }
-  }
-
-  .h5p-interactive-book-main {
-    flex: 1;
-    overflow: auto;
-
-    .h5p-interactive-book-content {
-      overflow-x: hidden;
-      overflow-y: auto;
-      // Note: Subtracts padding, do not use box-sizing because then inner div
-      // will have too little space
-      min-height: calc(100% - 5.5em);
-    }
-  }
-
-  .h5p-interactive-book-navigation {
-    display: flex;
-    flex-direction: column;
-
-    .navigation-list {
-      flex: 1;
-      overflow-x: hidden;
-      overflow-y: auto;
-    }
-
-    .large-navigation-list {
-      min-height: 1px;
     }
   }
 }

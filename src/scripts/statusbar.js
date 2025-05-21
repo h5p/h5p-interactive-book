@@ -309,20 +309,6 @@ class StatusBar extends H5P.EventDispatcher {
   }
 
   /**
-   * Set the visibility.
-   *
-   * @param {boolean} hide True will hide the bar.
-   */
-  setVisibility(hide) {
-    if (hide) {
-      this.wrapper.classList.add('footer-hidden');
-    }
-    else {
-      this.wrapper.classList.remove('footer-hidden');
-    }
-  }
-
-  /**
    * Add a status-button which shows current and total chapters.
    *
    * @return {object} Progress elements.
