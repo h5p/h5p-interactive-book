@@ -431,8 +431,6 @@ export default class InteractiveBook extends H5P.EventDispatcher {
         if (this.pageContent.content.style.height !== `${currentNode.offsetHeight}px` && !currentNode.classList.contains('h5p-interactive-book-animate')) {
           this.pageContent.content.style.height = `${currentNode.offsetHeight}px`;
 
-          this.pageContent.updateFooter();
-
           // Add some slack time before resizing again.
           setTimeout(() => {
             this.trigger('resize');
@@ -681,15 +679,6 @@ export default class InteractiveBook extends H5P.EventDispatcher {
     };
 
     /**
-     * Check if the content height exceeds the window.
-     */
-    this.shouldFooterBeHidden = () => {
-      // Always show except for in fullscreen
-      // Ideally we'd check on the top window size but we can't always get it.
-      return this.isFullscreen;
-    };
-
-    /**
      * Get content container width.
      * @return {number} Container width or 0.
      */
@@ -903,8 +892,6 @@ export default class InteractiveBook extends H5P.EventDispatcher {
       if (this.params.behaviour.defaultTableOfContents && !this.isSmallSurface()) {
         this.trigger('toggleMenu', {shouldNotFocusNav: true});
       }
-
-      this.pageContent.updateFooter();
     };
 
     /**

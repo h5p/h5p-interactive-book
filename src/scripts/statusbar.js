@@ -304,20 +304,6 @@ class StatusBar extends H5P.EventDispatcher {
   }
 
   /**
-   * Set the visibility.
-   *
-   * @param {boolean} hide True will hide the bar.
-   */
-  setVisibility(hide) {
-    if (hide) {
-      this.wrapper.classList.add('footer-hidden');
-    }
-    else {
-      this.wrapper.classList.remove('footer-hidden');
-    }
-  }
-
-  /**
    * Add a status-button which shows current and total chapters.
    *
    * @return {object} Progress elements.
@@ -416,8 +402,6 @@ class StatusBar extends H5P.EventDispatcher {
       fullScreenButton.classList.add('h5p-interactive-book-exit-fullscreen');
       fullScreenButton.setAttribute('title', this.params.l10n.exitFullscreen);
       fullScreenButton.setAttribute('aria-label', this.params.l10n.exitFullScreen);
-
-      this.parent.pageContent.updateFooter();
     });
 
     this.parent.on('exitFullScreen', () => {
@@ -426,8 +410,6 @@ class StatusBar extends H5P.EventDispatcher {
       fullScreenButton.classList.add('h5p-interactive-book-enter-fullscreen');
       fullScreenButton.setAttribute('title', this.params.l10n.fullscreen);
       fullScreenButton.setAttribute('aria-label', this.params.l10n.fullscreen);
-
-      this.parent.pageContent.updateFooter();
     });
 
     return fullScreenButton;
