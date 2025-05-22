@@ -13,7 +13,7 @@
 
   &.h5p-interactive-book-status-header {
     @include prefix(position, sticky, webkit);
-  
+    pointer-events: none;
     background: transparent;
     top: 0;
     z-index: 2;
@@ -28,6 +28,7 @@
   }
 
   .h5p-interactive-book-status-side {
+    pointer-events: auto;
     display: flex;
     align-items: center;
     padding-left: var(--h5p-theme-spacing-s);
@@ -87,6 +88,7 @@
   }
 
   .h5p-interactive-book-status-main {
+    pointer-events: auto;
     display: grid;
     position: relative;
     grid-template-columns: min-content 1fr min-content;
