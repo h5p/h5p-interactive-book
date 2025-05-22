@@ -14,7 +14,7 @@
   &.h5p-interactive-book-status-header {
     @include prefix(position, sticky, webkit);
   
-    background: $background-color;
+    background: transparent;
     top: 0;
     z-index: 2;
 
@@ -31,6 +31,7 @@
     display: flex;
     align-items: center;
     padding-left: var(--h5p-theme-spacing-s);
+    height: 3rem;
 
     .h5p-interactive-book-status-menu {
       background-color: var(--h5p-theme-contrast-cta-light);
