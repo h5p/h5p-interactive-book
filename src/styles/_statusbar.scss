@@ -97,6 +97,10 @@
     }
   }
 
+  .h5p-theme-pattern {
+    display: none;
+  }
+
   .h5p-interactive-book-status-main {
     pointer-events: auto;
     display: grid;
@@ -109,10 +113,6 @@
 
     &:has(.h5p-interactive-book-status-fullscreen) {
       grid-template-columns: min-content 1fr min-content min-content;
-    }
-
-    .h5p-theme-pattern {
-      display: none;
     }
 
     .h5p-theme-nav-button {
@@ -241,9 +241,25 @@
 
 // Summary screen
 .h5p-interactive-book.h5p-showing-summary .h5p-interactive-book-status-header {
-  .h5p-interactive-book-status-main {
+  &:not(:has(.h5p-interactive-book-status-menu-active)) {
     background-color: var(--h5p-theme-main-cta-base);
+
+    > .h5p-theme-pattern {
+      display: block;
+    }
+
+    .h5p-interactive-book-status-menu {
+      z-index: 1;
+      background-color: var(--h5p-theme-contrast-cta);
+    }
+  }
+
+  .h5p-interactive-book-status-main {
     padding: var(--h5p-theme-spacing-s) var(--h5p-theme-spacing-s) calc(var(--h5p-theme-spacing-xl)*1.5) var(--h5p-theme-spacing-s);
+  }
+
+  &:has(.h5p-interactive-book-status-menu-active) .h5p-interactive-book-status-main {
+    background-color: var(--h5p-theme-main-cta-base);
 
     .h5p-theme-pattern {
       display: block;
