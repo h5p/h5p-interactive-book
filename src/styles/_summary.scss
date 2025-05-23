@@ -10,12 +10,6 @@
       }
     }
 
-    .h5p-interactive-book-summary-menu-button-arrow {
-      visibility: visible;
-      opacity: 1;
-      right: 0.6875rem;
-    }
-
     .h5p-interactive-book-summary-score-bar {
       margin-top: 1.25rem;
     }
@@ -46,28 +40,11 @@
 }
 
 .h5p-theme-show-results {
-  &:hover .h5p-interactive-book-summary-menu-button-arrow {
-    opacity: 1;
-    visibility: visible;
-    transform: rotate(90deg) translateY(-10px);
-  }
-
   &[data-book-completed="true"],
   &:active {
     outline: 2px ridge var(--h5p-theme-main-cta-base);
     border-radius: 4px;
     outline-offset: 2px;
-  }
-
-  .h5p-interactive-book-summary-menu-button-arrow {
-    transform: rotate(90deg);
-    position: absolute;
-    right: 25px;
-    visibility: hidden;
-    opacity: 0;
-    height: auto;
-    font-weight: normal;
-    transition: transform 0.4s, opacity 0.2s, visibility 0.2s;
   }
 }
 
@@ -222,6 +199,14 @@
     margin: var(--h5p-theme-spacing-xs) 0;
     display: block;
 
+    span[class^='icon-'],
+    span[class*=' icon-'] {
+      margin-right: var(--h5p-theme-spacing-xs);
+      color: var(--h5p-theme-contrast-cta-white);
+      font-weight: 100;
+      cursor: pointer;
+    }
+
     h4 {
       margin: 0;
       display: flex;
@@ -232,14 +217,6 @@
 
       &:hover {
         color: var(--h5p-theme-contrast-cta-white);
-      }
-
-      span[class^='icon-'],
-      span[class*=' icon-'] {
-        margin-left: auto;
-        color: var(--h5p-theme-contrast-cta-white);
-        font-weight: 100;
-        cursor: pointer;
       }
     }
   }
@@ -257,14 +234,10 @@
   }
 
   .h5p-interactive-book-summary-overview-section-score-header {
-    display: flex;
-
-    div {
-      font-size: var(--h5p-theme-font-size-s);
-      margin-left: auto;
-      line-height: 2rem;
-      color: var(--h5p-theme-text-primary);
-    }
+    margin-left: auto;
+    color: var(--h5p-theme-text-primary);
+    font-size: var(--h5p-theme-font-size-s);
+    font-weight: bold;
   }
 
   .h5p-interactive-book-summary-overview-list-empty {
@@ -300,6 +273,12 @@
       font-weight: bold;
       font-size: var(--h5p-theme-font-size-m);
     }
+  }
+
+  .h5p-interactive-book-summary-section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--h5p-theme-spacing-m);
   }
 
   .h5p-interactive-book-summary-section-icon {
