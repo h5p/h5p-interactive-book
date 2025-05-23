@@ -124,17 +124,12 @@
     flex-wrap: wrap;
 
     .h5p-interactive-book-summary-submitted {
-      transform: translateY(100%);
-      transition: transform 0.4s;
-      position: absolute;
       opacity: 0;
       border-radius: 4px;
       background-color: #d3ede9;
       display: flex;
-      padding: 0.4375rem;
       align-items: center;
       flex: auto;
-      left: 2000px;
 
       .icon-chapter-done {
         font-size: 2rem;
@@ -147,13 +142,10 @@
         margin: 0;
         font-size: 0.875rem;
         color: #0e8275;
-      }
-
-      button {
-        display: none;
+        flex: 1;
       }
     }
-
+    
     &.submitted {
       & > button {
         display: none;
@@ -166,6 +158,11 @@
         button {
           display: flex;
         }
+        margin-right: 0.5rem;
+      }
+      
+      .h5p-interactive-book-summary-restart-button {
+        display: inline-block;
       }
     }
   }
@@ -368,6 +365,7 @@
   margin: auto 0.0625rem auto auto;
   font-size: 0.875rem;
   min-width: 12rem;
+  margin-top: 1.5rem;
 
   & > button {
     cursor: pointer;

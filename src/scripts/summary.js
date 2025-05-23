@@ -1,5 +1,4 @@
 import 'jquery-circle-progress';
-import Colors from './colors';
 
 class Summary extends H5P.EventDispatcher {
 
@@ -146,14 +145,18 @@ class Summary extends H5P.EventDispatcher {
    * @return {HTMLDivElement}
    */
   createCircle(progress) {
-    const color = Colors.computeContrastColor(Colors.colorBase, Colors.DEFAULT_COLOR_BG);
     const circleProgress = document.createElement("div");
     circleProgress.classList.add('h5p-interactive-book-summary-progress-circle');
-    circleProgress.setAttribute('data-value', progress);
-    circleProgress.setAttribute('data-start-angle', -Math.PI / 3);
-    circleProgress.setAttribute('data-thickness', 13);
-    circleProgress.setAttribute('data-empty-fill', `rgba(${color.rgb().array().join(', ')}, .1)`);
-    circleProgress.setAttribute('data-fill', JSON.stringify({color: color.hex()}));
+
+    const documentStyle = getComputedStyle(document.documentElement);
+
+    H5P.jQuery(circleProgress).circleProgress({
+      value: progress,
+      startAngle: -Math.PI / 3,
+      thickness: 13,
+      emptyFill: documentStyle.getPropertyValue("--h5p-theme-contrast-cta-light"),
+      fill: documentStyle.getPropertyValue("--h5p-theme-main-cta-base"),
+    });
 
     return circleProgress;
   }
@@ -245,9 +248,6 @@ class Summary extends H5P.EventDispatcher {
     );
     box.classList.add('h5p-interactive-book-summary-progress-container');
     box.classList.add('h5p-interactive-book-summary-score-progress');
-    const circle = box.querySelector('.h5p-interactive-book-summary-progress-circle');
-    circle.setAttribute('data-empty-fill', "rgb(198, 220, 212)");
-    circle.setAttribute('data-fill', JSON.stringify({color: '#0e7c57'}));
 
     return box;
   }
@@ -294,7 +294,6 @@ class Summary extends H5P.EventDispatcher {
     progressBox.appendChild(this.addBookProgress());
     progressBox.appendChild(this.addInteractionsProgress());
 
-    setTimeout(() => H5P.jQuery('.h5p-interactive-book-summary-progress-circle').circleProgress(), 100);
     this.wrapper.appendChild(progressBox);
   }
 
@@ -318,6 +317,9 @@ class Summary extends H5P.EventDispatcher {
           submitText.focus();
           this.tempState = JSON.stringify(this.getChapterStats());
           this.parent.isAnswerUpdated = false;
+          if (this.behaviour.enableRetry) {
+            submitConfirmButton.parentNode.appendChild(this.createRestartButton('h5p-interactive-book-summary-restart-button'));
+          }
         },
       });
       wrapper.appendChild(submitButton);
@@ -326,22 +328,22 @@ class Summary extends H5P.EventDispatcher {
     if (this.behaviour.enableRetry) {
       wrapper.appendChild(this.createRestartButton());
     }
-    wrapper.appendChild(this.createSubmittedConfirmation());
-
-    wrapper.appendChild(this.createFilterDropdown());
-
+    const submitConfirmButton = this.createSubmittedConfirmation();
+    wrapper.appendChild(submitConfirmButton);
     this.wrapper.appendChild(wrapper);
+    this.wrapper.appendChild(this.createFilterDropdown());
   }
 
   /**
    * Create the restart button
    * @return {HTMLButtonElement}
    */
-  createRestartButton() {
+  createRestartButton(classes) {
     const restartButton = H5P.Components.Button({
       label: this.l10n.restartLabel,
       styleType: 'secondary',
       icon: 'retry',
+      classes,
       onClick: this.parent.resetTask,
     });
 
@@ -366,10 +368,6 @@ class Summary extends H5P.EventDispatcher {
     text.tabIndex = -1;
     text.classList.add('answers-submitted');
     submittedContainer.appendChild(text);
-
-    if (this.behaviour.enableRetry) {
-      submittedContainer.appendChild(this.createRestartButton());
-    }
 
     return submittedContainer;
   }

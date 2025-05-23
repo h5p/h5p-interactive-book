@@ -21,8 +21,8 @@
   .navigation-list {
     margin: 0;
     padding: 0 var(--h5p-theme-spacing-s);
-    position: sticky;
-    top: calc(var(--h5p-theme-spacing-xl)*3);
+    position: relative;
+    top: 1rem;
   }
 
   .large-navigation-list {
@@ -31,6 +31,10 @@
     flex: 1 1 auto;
     min-height: 58em;
   }
+}
+
+.h5p-showing-summary .navigation-list {
+  top: calc(-1 * var(--h5p-theme-spacing-xl));
 }
 
 .h5p-interactive-book-navigation-sectionlist {
@@ -162,6 +166,7 @@
   &.h5p-interactive-book-navigation-current {
     background-color: var(--h5p-theme-contrast-cta-light);
     border-bottom-color: white;
+    z-index: 1;
 
     .h5p-interactive-book-navigation-chapter-accordion {
       display: block;

@@ -32,6 +32,11 @@ class StatusBar extends H5P.EventDispatcher {
     this.wrapper.classList.add('h5p-interactive-book-status');
     this.wrapper.setAttribute('tabindex', '-1');
 
+    // Pattern for summary screen when menu collapsed
+    const collapsedPattern = document.createElement('div');
+    collapsedPattern.classList.add('h5p-theme-pattern');
+    this.wrapper.appendChild(collapsedPattern);
+
     // Make side section
     const sidebarWrapper = document.createElement('div');
     sidebarWrapper.classList.add('h5p-interactive-book-status-side');
