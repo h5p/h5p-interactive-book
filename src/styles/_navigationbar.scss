@@ -166,6 +166,7 @@
   &.h5p-interactive-book-navigation-current {
     background-color: var(--h5p-theme-contrast-cta-light);
     border-bottom-color: white;
+    z-index: 1;
 
     .h5p-interactive-book-navigation-chapter-accordion {
       display: block;
