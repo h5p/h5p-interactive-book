@@ -325,6 +325,9 @@ class Summary extends H5P.EventDispatcher {
           submitText.focus();
           this.tempState = JSON.stringify(this.getChapterStats());
           this.parent.isAnswerUpdated = false;
+          if (this.behaviour.enableRetry) {
+            submitConfirmButton.parentNode.appendChild(this.createRestartButton('h5p-interactive-book-summary-restart-button'));
+          }
         },
       });
       wrapper.appendChild(submitButton);
@@ -333,22 +336,22 @@ class Summary extends H5P.EventDispatcher {
     if (this.behaviour.enableRetry) {
       wrapper.appendChild(this.createRestartButton());
     }
-    wrapper.appendChild(this.createSubmittedConfirmation());
-
-    wrapper.appendChild(this.createFilterDropdown());
-
+    const submitConfirmButton = this.createSubmittedConfirmation();
+    wrapper.appendChild(submitConfirmButton);
     this.wrapper.appendChild(wrapper);
+    this.wrapper.appendChild(this.createFilterDropdown());
   }
 
   /**
    * Create the restart button
    * @return {HTMLButtonElement}
    */
-  createRestartButton() {
+  createRestartButton(classes) {
     const restartButton = H5P.Components.Button({
       label: this.l10n.restartLabel,
       styleType: 'secondary',
       icon: 'retry',
+      classes,
       onClick: this.parent.resetTask,
     });
 
@@ -375,7 +378,7 @@ class Summary extends H5P.EventDispatcher {
     submittedContainer.appendChild(text);
 
     if (this.behaviour.enableRetry) {
-      submittedContainer.appendChild(this.createRestartButton());
+      //submittedContainer.appendChild(this.createRestartButton());
     }
 
     return submittedContainer;
