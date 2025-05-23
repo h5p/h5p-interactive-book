@@ -1,5 +1,4 @@
 import 'jquery-circle-progress';
-import Colors from './colors';
 
 class Summary extends H5P.EventDispatcher {
 
@@ -146,14 +145,18 @@ class Summary extends H5P.EventDispatcher {
    * @return {HTMLDivElement}
    */
   createCircle(progress) {
-    const color = Colors.computeContrastColor(Colors.colorBase, Colors.DEFAULT_COLOR_BG);
     const circleProgress = document.createElement("div");
     circleProgress.classList.add('h5p-interactive-book-summary-progress-circle');
-    circleProgress.setAttribute('data-value', progress);
-    circleProgress.setAttribute('data-start-angle', -Math.PI / 3);
-    circleProgress.setAttribute('data-thickness', 13);
-    circleProgress.setAttribute('data-empty-fill', `rgba(${color.rgb().array().join(', ')}, .1)`);
-    circleProgress.setAttribute('data-fill', JSON.stringify({color: color.hex()}));
+
+    const documentStyle = getComputedStyle(document.documentElement);
+
+    H5P.jQuery(circleProgress).circleProgress({
+      value: progress,
+      startAngle: -Math.PI / 3,
+      thickness: 13,
+      emptyFill: documentStyle.getPropertyValue("--h5p-theme-contrast-cta-light"),
+      fill: documentStyle.getPropertyValue("--h5p-theme-main-cta-base"),
+    });
 
     return circleProgress;
   }
@@ -245,9 +248,6 @@ class Summary extends H5P.EventDispatcher {
     );
     box.classList.add('h5p-interactive-book-summary-progress-container');
     box.classList.add('h5p-interactive-book-summary-score-progress');
-    const circle = box.querySelector('.h5p-interactive-book-summary-progress-circle');
-    circle.setAttribute('data-empty-fill', "rgb(198, 220, 212)");
-    circle.setAttribute('data-fill', JSON.stringify({color: '#0e7c57'}));
 
     return box;
   }
@@ -294,7 +294,6 @@ class Summary extends H5P.EventDispatcher {
     progressBox.appendChild(this.addBookProgress());
     progressBox.appendChild(this.addInteractionsProgress());
 
-    setTimeout(() => H5P.jQuery('.h5p-interactive-book-summary-progress-circle').circleProgress(), 100);
     this.wrapper.appendChild(progressBox);
   }
 

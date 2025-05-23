@@ -34,15 +34,7 @@
 }
 
 .h5p-showing-summary .navigation-list {
-  top: -3rem;
-}
-
-.h5p-medium .h5p-showing-summary .navigation-list {
-  top: -2rem;
-}
-
-.h5p-small .h5p-showing-summary .navigation-list {
-  top: -1rem;
+  top: calc(-1 * var(--h5p-theme-spacing-xl));
 }
 
 .h5p-interactive-book-navigation-sectionlist {
