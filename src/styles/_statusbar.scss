@@ -23,8 +23,18 @@
     }
   }
 
-  &.h5p-interactive-book-status-footer .h5p-interactive-book-status-menu {
-    display: none;
+  &.h5p-interactive-book-status-footer {
+    // Prevent sidebar dropshadow
+    z-index: 2;
+    position: relative;
+
+    .h5p-interactive-book-status-menu {
+      display: none;
+    }
+
+    &.footer-hidden {
+      display: none;
+    }
   }
 
   .h5p-interactive-book-status-side {
@@ -116,7 +126,7 @@
         display: inline-block;
         margin-right: calc(var(--h5p-theme-spacing-xxs)/2);
       }
-      
+
       .hidden-but-read {
         border: 0;
         clip: rect(0 0 0 0);
@@ -187,22 +197,21 @@
     color: var(--h5p-theme-contrast-cta-white);
     border: none;
     cursor: pointer;
-    
+
     &:focus{
       outline: 2px ridge var(--h5p-theme-main-cta-base);
       border-radius: 4px;
       outline-offset: 2px;
     }
-    
+
     &:hover{
       background-color: color-mix(in srgb, var(--h5p-theme-contrast-cta-light), transparent 60%);
     }
-    
+
     &:active{
       background-color: color-mix(in srgb, var(--h5p-theme-contrast-cta-light), transparent 80%);
     }
   }
-    
 
   .h5p-interactive-book-status-arrow {
     background-color: var(--color-base-5, $base-color-5);
@@ -216,8 +225,8 @@
 }
 
 // Expand side in footer and if nav menu is expanded
-.h5p-interactive-book-status-side:has(.h5p-interactive-book-status-menu-active), 
-.h5p-interactive-book-status-footer .h5p-interactive-book-status-side {
+.h5p-interactive-book-status-side:has(.h5p-interactive-book-status-menu-active),
+.h5p-interactive-book-navigation-open ~ .h5p-interactive-book-status .h5p-interactive-book-status-side {
   width: calc(calc(var(--h5p-theme-spacing-xl)*5.5) - calc(2*var(--h5p-theme-spacing-s)));
   padding: var(--h5p-theme-spacing-s);
   box-shadow: 0.625em 0.625em 1.875em rgba(166, 166, 166, 0.2);
@@ -237,7 +246,7 @@
       display: block;
     }
   }
-  
+
   .h5p-interactive-book-status-fullscreen {
     background-color: var(--h5p-theme-contrast-cta-light);
     border-radius: var(--h5p-theme-border-radius-large);

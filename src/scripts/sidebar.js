@@ -440,7 +440,7 @@ class SideBar extends H5P.EventDispatcher {
 
       // Expand chapter in menu
       if (isExpandable) {
-        this.toggleChapter(event.currentTarget.parentElement);
+        this.toggleChapter(event.currentTarget.parentElement, isExpanded);
         this.parent.trigger('resize');
       }
     };
