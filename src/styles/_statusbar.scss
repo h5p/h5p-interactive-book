@@ -41,7 +41,8 @@
     pointer-events: auto;
     display: flex;
     align-items: center;
-    padding-left: var(--h5p-theme-spacing-s);
+    padding: var(--h5p-theme-spacing-s);
+    padding-right: 0;
     height: 3rem;
 
     .h5p-interactive-book-status-menu {
