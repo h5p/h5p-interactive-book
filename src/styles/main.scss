@@ -120,7 +120,11 @@ $fullscreen-button-size: 1.8em;
   background-color: var(--h5p-theme-background);
 
   &.h5p-interactive-book-navigation-open .h5p-interactive-book-navigation {
-    min-width: calc(var(--h5p-theme-spacing-xl)*5.5);
+    max-width: calc(var(--h5p-theme-spacing-xl)*5.5);
+
+    .navigation-list {
+      opacity: 1;
+    }
   }
 }
 
