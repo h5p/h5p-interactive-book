@@ -228,6 +228,17 @@
   }
 }
 
+.h5p-interactive-book-small.h5p-interactive-book-navigation-open .h5p-interactive-book-status .h5p-interactive-book-status-main {
+  display: none;
+}
+.h5p-interactive-book-small.h5p-interactive-book-navigation-open .h5p-interactive-book-status {
+  grid-template-columns: 1fr;
+}
+
+.h5p-interactive-book-small.h5p-interactive-book-navigation-open .h5p-interactive-book-status .h5p-interactive-book-status-side {
+  width: calc(100% - 2*var(--h5p-theme-spacing-s));
+}
+
 // Expand side in footer and if nav menu is expanded
 .h5p-interactive-book-status-side:has(.h5p-interactive-book-status-menu-active),
 .h5p-interactive-book-navigation-open ~ .h5p-interactive-book-status .h5p-interactive-book-status-side {

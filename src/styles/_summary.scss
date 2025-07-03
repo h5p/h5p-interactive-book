@@ -17,12 +17,6 @@
     .h5p-interactive-book-summary-page {
       padding: 0.5rem;
     }
-
-    & .h5p-interactive-book-navigation-open .h5p-interactive-book-navigation-chapter-button.h5p-interactive-book-navigation-current[aria-expanded="true"]
-    {
-      border-bottom-color: #0E7C57;
-      border-bottom-width: 2px;
-    }
   }
 
   .h5p-interactive-book-summary-buttons {

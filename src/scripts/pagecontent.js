@@ -470,6 +470,7 @@ class PageContent extends H5P.EventDispatcher {
       this.container.classList.remove('h5p-interactive-book-navigation-hidden');
       setTimeout(function () {
         self.container.classList.add('h5p-interactive-book-navigation-open');
+        self.parent.mainWrapper.get(0).classList.add('h5p-interactive-book-navigation-open');
       }, 1);
     }
     else {
@@ -478,6 +479,7 @@ class PageContent extends H5P.EventDispatcher {
         self.container.classList.add('h5p-interactive-book-navigation-hidden');
       }, 500);
       this.container.classList.remove('h5p-interactive-book-navigation-open');
+      this.parent.mainWrapper.get(0).classList.remove('h5p-interactive-book-navigation-open');
     }
 
     this.sidebarIsOpen = !this.sidebarIsOpen;

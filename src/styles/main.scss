@@ -44,14 +44,6 @@ $fullscreen-button-size: 1.8em;
           visibility: hidden;
         }
 
-        .h5p-interactive-book-navigation-chapter-button {
-          background-color: $background-color;
-
-          &.h5p-interactive-book-navigation-current {
-            border-bottom: solid 1px $ghost-white;
-          }
-        }
-
         .h5p-interactive-book-navigation-sectionlist {
           max-height: none;
           overflow: inherit;
