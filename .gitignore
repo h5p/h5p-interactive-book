@@ -40,5 +40,7 @@ jspm_packages
 # Div
 .vscode/
 
+# macOS
+.DS_Store
 
 src/styles/css/main.css
