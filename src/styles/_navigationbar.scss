@@ -18,10 +18,9 @@
   }
 
   .navigation-list {
-    margin: 0;
+    margin: 1rem 0 0 0;
     padding: 0 var(--h5p-theme-spacing-s);
     position: relative;
-    top: 1rem;
     opacity: 0;
     transition: opacity .05s linear;
   }
@@ -34,7 +33,7 @@
   }
 }
 
-.h5p-showing-summary .navigation-list {
+.h5p-interactive-book-large.h5p-showing-summary .navigation-list {
   top: calc(-1 * var(--h5p-theme-spacing-xl));
 }
 
