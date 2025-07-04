@@ -1,0 +1,205 @@
+{
+  "semantics": [
+    {
+      "label": "Könyvborító engedélyezve",
+      "description": "Egy fedlap, amin a kezdés előtt információk olvashatók a könyvvel kapcsolatban"
+    },
+    {
+      "label": "Fedlap",
+      "fields": [
+        {
+          "label": "Fedlap leírása",
+          "description": "Ez a szöveg lesz a könyv leírása."
+        },
+        {
+          "label": "Fedlapmédia típusa",
+          "description": "Opcionális média a fedlapon megjelenítve."
+        }
+      ]
+    },
+    {
+      "label": "Oldalak",
+      "entity": "Oldal",
+      "widgets": [
+        {
+          "label": "Alapértelmezett"
+        }
+      ],
+      "field": {
+        "label": "Elem",
+        "fields": [
+          {
+            "label": "Oldal"
+          }
+        ]
+      }
+    },
+    {
+      "label": "Viselkedési beállítások",
+      "fields": [
+        {
+          "label": "Alapszín",
+          "description": "Az alapszín beállítása, amely meghatározza a könyv általános színsémáját. Ügyeljen a megfelelő kontrasztra!"
+        },
+        {
+          "label": "Tartalomjegyzék megjelenítése alapértelmezettként",
+          "description": "Bekapcsolása esetén a tartalomjegyzék megjelenik a könyv megnyitásakor"
+        },
+        {
+          "label": "Haladásjelzők megjelenítése",
+          "description": "Bekapcsolása esetén jelzések lesznek minden oldalon, mutatva a felhasználónak, hogy végzett-e az oldallal vagy sem."
+        },
+        {
+          "label": "Automatikus előrehaladás engedélyezve",
+          "description": "Bekapcsolása esetén a feladat nélküli oldal a megtekintéskor befejezettnek minősül. A feladatokkal rendelkező oldal akkor befejezett, amikor az összes feladat teljesített. Kikapcsolása esetén minden oldal alján lesz egy gomb, amelyre a felhasználó rákattinthat, ha végzett az oldallal."
+        },
+        {
+          "label": "Összefoglalás megjelenítése",
+          "description": "Bekapcsolása esetén a felhasználó megtekintheti egy összefoglalót, és elküldheti az előrehaladást/válaszokat"
+        },
+        {
+          "label": "\"Újra\" gomb engedélyezve",
+          "description": "Bekapcsolása esetén a felhasználó az összefoglalás oldalon újrakezdheti elölről."
+        }
+      ]
+    },
+    {
+      "label": "\"Olvasás\" fordítása",
+      "default": "Olvasás"
+    },
+    {
+      "label": "\"Tartalomjegyzék megjelenítése\" gomb fordítása",
+      "default": "\"Tartalomjegyzék\" megjelenítése"
+    },
+    {
+      "label": "\"Tartalomjegyzék elrejtése\" gomb fordítása",
+      "default": "Tartalomjegyzék elrejtése"
+    },
+    {
+      "label": "\"Következő oldal\" fordítása",
+      "default": "Következő oldal"
+    },
+    {
+      "label": "\"Előző oldal\" fordítása",
+      "default": "Előző oldal"
+    },
+    {
+      "label": "\"Az oldal kész!\" fordítása",
+      "default": "Oldal kész!"
+    },
+    {
+      "label": "A „@pages teljesítve a(z) @total oldalból” fordítása (a @pages és @total helyébe a tényleges értékek lesznek behelyettesítve)",
+      "default": "@pages teljesítve a(z) @total oldalból"
+    },
+    {
+      "label": "\"Befejezetlen oldal\" fordítása",
+      "default": "Befejezetlen oldal"
+    },
+    {
+      "label": "\"Ugrás a tetejére\" fordítása",
+      "default": "Ugrás a tetejére"
+    },
+    {
+      "label": "\"Befejeztem ezt az oldalt\" fordítása",
+      "default": "Befejeztem ezt az oldalt"
+    },
+    {
+      "label": "Teljes képernyő gomb felirata",
+      "default": "Teljes képernyő"
+    },
+    {
+      "label": "Kilépés a teljes képernyőből gomb felirata",
+      "default": "Kilépés a teljes képernyőből"
+    },
+    {
+      "label": "Oldal előrehaladás a könyvben",
+      "description": "A \"@count\" helyére az oldalszám, a \"@total\" helyére pedig a összoldalszám lesz behelyettesítve",
+      "default": "@count a(z) @total oldalból"
+    },
+    {
+      "label": "Interakció előrehaladás",
+      "description": "A \"@count\" helyére az interakciók száma, a \"@total\" helyére pedig az interakciók össz-száma lesz behelyettesítve",
+      "default": "@count a(z) @total interakcióból"
+    },
+    {
+      "label": "\"Jelentés leadása\" fordítása",
+      "default": "Jelentés leadása"
+    },
+    {
+      "label": "\"Újra\" gomb címkéje",
+      "default": "Újra"
+    },
+    {
+      "label": "Összefoglalás fejléce",
+      "default": "Összefoglalás"
+    },
+    {
+      "label": "\"Összes interakció\" fordítása",
+      "default": "Összes interakció"
+    },
+    {
+      "label": "\"Befejezetlen interakciók\" fordítása",
+      "default": "Befejezetlen interakciók"
+    },
+    {
+      "label": "Pontszám",
+      "description": "A \"@score\" helyére az aktuális pontszám, a \"@maxscore\" helyére pedig a maximálisan elérhető pontszám lesz behelyettesítve",
+      "default": "@score / @maxscore"
+    },
+    {
+      "label": "Oldalankénti interakciók teljesítése",
+      "description": "A \"@left\" helyére a fennmaradó interakciók, a \"@max\" helyére pedig az oldalon lévő interakciók száma lesz behelyettesítve",
+      "default": "@left a(z) @max interakcióból teljesítve"
+    },
+    {
+      "label": "\"Nincs interakció\" fordítása",
+      "default": "Nincs interakció"
+    },
+    {
+      "label": "\"Pontszám\" fordítása",
+      "default": "Pontszám"
+    },
+    {
+      "label": "\"Összefoglalás &amp; leadás\" gomb címkéje",
+      "default": "Összefoglalás &amp; leadás"
+    },
+    {
+      "label": "\"Még egyetlen oldallal sem végzett\" fordítása.",
+      "default": "Még egyetlen oldallal sem végzett."
+    },
+    {
+      "label": "\"Legalább egy oldalt be kell fejeznie, mielőtt megtekintheti az összefoglalót\" fordítása.",
+      "default": "Legalább egy oldalt be kell fejeznie, mielőtt megtekintheti az összefoglalót."
+    },
+    {
+      "label": "\"Válaszai ellenőrzésre továbbítva!\" fordítása",
+      "default": "Válaszai ellenőrzésre továbbítva!"
+    },
+    {
+      "label": "Összefoglalás előrehaladása címke",
+      "default": "Könyv előrehaladás"
+    },
+    {
+      "label": "Interakciós előrehaladás címke",
+      "default": "Interakciós előrehaladás"
+    },
+    {
+      "label": "Összpontszám felirata",
+      "default": "Összpontszám"
+    },
+    {
+      "label": "Akadálymentesítéses szövegek",
+      "fields": [
+        {
+          "label": "Oldal előrehaladás szöveges alternatívája",
+          "description": "Leíró szöveg a látható oldal előrehaladásához. @page és @total változók állnak rendelkezésre.",
+          "default": "@page / @total oldal"
+        },
+        {
+          "label": "Felirat a navigációs menü kibontásához/összecsukásához",
+          "default": "Navigációs menü átkapcsolása"
+        }
+      ]
+    }
+  ]
+}
