@@ -215,7 +215,7 @@
 }
 
 // Lines connecting the dots
-.h5p-interactive-book-small .h5p-interactive-book-navigation-chapter:not(.h5p-interactive-book-navigation-summary-button) .h5p-interactive-book-navigation-chapter-button:after,
+.h5p-interactive-book-small .h5p-interactive-book-navigation-chapter:not(.h5p-interactive-book-navigation-summary-button):not(.h5p-interactive-book-navigation-no-sections) .h5p-interactive-book-navigation-chapter-button:after,
 .h5p-interactive-book-navigation-current[aria-expanded="true"]:not(:has(.h5p-interactive-book-navigation-chapter-accordion.hidden)):after,
 .h5p-interactive-book-navigation-section:after {
   content: '';
@@ -235,7 +235,7 @@
   display: none;
 }
 
-.h5p-interactive-book-small .h5p-interactive-book-navigation-chapter:not(.h5p-interactive-book-navigation-summary-button) > .h5p-interactive-book-navigation-chapter-button:after,
+.h5p-interactive-book-small .h5p-interactive-book-navigation-chapter:not(.h5p-interactive-book-navigation-summary-button):not(.h5p-interactive-book-navigation-no-sections) > .h5p-interactive-book-navigation-chapter-button:after,
 .h5p-interactive-book-navigation-current[aria-expanded="true"]:not(:has(.h5p-interactive-book-navigation-chapter-accordion.hidden)):after {
   height: 50%;
   top: unset;

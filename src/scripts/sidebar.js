@@ -463,6 +463,10 @@ class SideBar extends H5P.EventDispatcher {
     sectionsWrapper.classList.add('h5p-interactive-book-navigation-sectionlist');
     sectionsWrapper.id = sectionsDivId;
 
+    if (this.parent.chapters[chapterId].sections.every(s => !s.isTask)) {
+      chapterNode.classList.add('h5p-interactive-book-navigation-no-sections');
+    }
+
     const sectionLinks = [];
     // Add sections to the chapter
     for (let i = 0; i < this.chapters[chapterId].sections.length; i++) {
