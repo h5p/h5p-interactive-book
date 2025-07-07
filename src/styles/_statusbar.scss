@@ -14,7 +14,7 @@
   &.h5p-interactive-book-status-header {
     @include prefix(position, sticky, webkit);
     pointer-events: none;
-    background: transparent;
+    background: var(--h5p-theme-ui-base);
     top: 0;
     z-index: 2;
 
