@@ -412,6 +412,10 @@ export default class InteractiveBook extends H5P.EventDispatcher {
      * Handle resizing of the content
      */
     this.resize = () => {
+      if (this.isBubblingUpToCore) {
+        return;
+      }
+
       if (!this.pageContent || !this.hasValidChapters() || !this.mainWrapper) {
         return;
       }
@@ -433,7 +437,9 @@ export default class InteractiveBook extends H5P.EventDispatcher {
 
           // Add some slack time before resizing again.
           setTimeout(() => {
+            this.isBubblingUpToCore = true;
             this.trigger('resize');
+            this.isBubblingUpToCore = false;
           }, 10);
 
           /*
