@@ -54,6 +54,21 @@
           "description": "Ikiwashwa ukurasa usio na kazi unazingatiwa kuwa umekamilika unapotazamwa. Ukurasa wenye kazi wakati kazi zote zinafanywa. Ikiwa imezimwa kutakuwa na kitufe chini ya kila ukurasa kwa mtumiaji kubofya anapomalizana na ukurasa."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Muhtasari wa onyesho",
           "description": "Inapowashwa mtumiaji anaweza kuona muhtasari na kuwasilisha maendeleo/majibu"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Lebo ya kupanua/kukunja menyu ya urambazaji",
           "default": "Geuza menyu ya urambazaji"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

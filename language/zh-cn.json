@@ -54,6 +54,21 @@
           "description": "如果启用，则在查看时认为没有任务的页面已完成。当所有任务都完成时，一个包含任务的页面。如果禁用，将在每个页面的底部有一个按钮，用户在完成页面时单击。"
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "description": "启用后，用户可以看到摘要并提交进度/答案",
           "label": "显示摘要"
         },
@@ -198,6 +213,10 @@
         {
           "label": "展开/折叠导航菜单的标签",
           "default": "切换导航菜单"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

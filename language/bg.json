@@ -54,6 +54,21 @@
           "description": "Ако е активирано, страница без задачи се счита за извършена, когато е видяна, а страница със задачи, когато всички задачи са изпълнени. Ако е деактивиран, в долната част на всяка страница ще има бутон, който потребителят да щракне, когато приключи със страницата."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Display summary",
           "description": "When enabled the user can see a summary and submit the progress/answers"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Етикет за разпъване/свиване на навигационното меню",
           "default": "Превключване на менюто за навигация"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

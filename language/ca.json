@@ -54,6 +54,21 @@
           "description": "Si està activat es considerarà que una pàgina sense tasques es realitza quan es visualitza. Una pàgina amb tasques, quan es fan totes les tasques. Si està desactivat hi haurà un botó a la part inferior de cada pàgina perquè l’usuari faci clic quan acabi amb la pàgina."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Mostra el resum",
           "description": "Si aquesta opció està activada, l’usuari podrà veure un resum i enviar el progrés i les respostes"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Etiqueta per ampliar el menú de navegació o reduir-lo",
           "default": "Activa o desactiva el menú de navegació"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

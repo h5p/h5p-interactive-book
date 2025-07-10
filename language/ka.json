@@ -54,6 +54,21 @@
           "description": "თუ ჩართულია, ამოცანების გარეშე გვერდი ჩაითვლება დასრულებულად ნახვისას. გვერდი ამოცანებით, როდესაც ყველა დავალება შესრულებულია. თუ გამორთულია, ყველა გვერდის ბოლოში იქნება ღილაკი, რომელსაც მომხმარებელი დააწკაპუნებს გვერდის დასრულების შემდეგ."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "შეჯამების ჩვენება",
           "description": "როდესაც ჩართულია, მომხმარებელს შეუძლია ნახოს რეზიუმე და წარადგინოს პროგრესი/პასუხები"
         },
@@ -198,6 +213,10 @@
         {
           "label": "ნავიგაციის მენიუს გაფართოების/ჩაკეცვის ეტიკეტი",
           "default": "ნავიგაციის მენიუს გადართვა"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

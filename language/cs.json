@@ -54,6 +54,21 @@
           "description": "Pokud je povoleno, stránka bez úkolů se při prohlížení považuje za hotovou. Stránka s úkoly, když jsou všechny úkoly hotové. Pokud je zakázáno, bude ve spodní části každé stránky tlačítko, na které uživatel po dokončení stránky klikne."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Zobrazit souhrn",
           "description": "Je-li tato možnost povolena, uživatel může zobrazit souhrn a odeslat postup / odpovědi"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Popisek pro rozbalení/sbalení navigační nabídky",
           "default": "Přepnutí navigační nabídky"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

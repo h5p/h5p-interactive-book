@@ -54,6 +54,21 @@
           "description": "ఎనేబుల్ చేసిఉన్నట్లయితే టాస్క్‌లు లేని పేజీని యూజర్ చూసినప్పుడు పూర్తయినట్లు పరిగణించబడుతుంది.టాస్క్‌లతో కూడిన పేజీ అయితే ఆ టాస్క్‌లు అన్నీ పూర్తయితే పేజీ పూర్తయినట్లు పరిగణించబడుతుంది. డిసేబుల్ చేసి ఉన్నట్లయితే పేజీని పూర్తి చేసినప్పుడు యూజరు క్లిక్ చేయడానికి ప్రతి పేజీ దిగువన పూర్తయినట్లు పరిగణించడానికి ఒక బటన్ ఉంటుంది."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "సమ్మరీ చూపించు",
           "description": "ఎనేబుల్ అయి ఉన్నపుడు యూజర్ సమ్మరీను చూడగలరు మరియు ప్రోగ్రెస్ /సమాధానాలను సమర్పించగలరు"
         },
@@ -198,6 +213,10 @@
         {
           "label": "నావిగేషన్ మెను విస్తరణ/కనుమరగవడం కోసం లేబుల్",
           "default": "నావిగేషన్ మెనుని టాగుల్ చేయండి"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

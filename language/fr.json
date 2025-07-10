@@ -54,6 +54,21 @@
           "description": "Si elle est activée, une page sans tâches est considérée comme terminée lorsqu'elle est visualisée. Une page avec des tâches lorsque toutes les tâches sont effectuées. Si elle est désactivée, un bouton sera placé au bas de chaque page pour que l'utilisateur puisse cliquer lorsqu'il a terminé la page."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Afficher le résumé",
           "description": "Lorsqu'il est activé, l'utilisateur peut voir un résumé et soumettre les progrès/réponses"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Intitulé pour étendre/réduire le menu de navigation",
           "default": "Étendre/Réduire le menu"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

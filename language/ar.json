@@ -54,6 +54,21 @@
           "description": "في حالة التمكين ، يتم اعتبار الصفحة بدون مهام عند عرضها. صفحة بها مهام عند الانتهاء من جميع المهام. في حالة التعطيل ، سيكون هناك زر في أسفل كل صفحة لينقر عليها المستخدم عند الانتهاء من الصفحة."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "عرض الملخّص",
           "description": "عند تفعيل هذا الخيار سيتمكن المستخدم من رؤية الملخّص وإرسال التقدم/الإجابات"
         },
@@ -198,6 +213,10 @@
         {
           "label": "وضع علامة لتوسيع / طي قائمة التنقل",
           "default": "تبديل قائمة التنقل"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

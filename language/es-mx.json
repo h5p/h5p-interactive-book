@@ -54,6 +54,21 @@
           "description": "Si se habilita, una página sin trabajos es considerada hecha cuando es vista. Una página con trabajos cuando todos los trabajos están hechos. Si se deshabilita, habrá un botón al fondo de cada página para que el usuario pueda hacer clic cuando haya terminado con la página."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Mostrar resumen",
           "description": "Cuando se habilita, el usuario puede ver un resumen y enviar el progreso/respuestas"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Etiqueta para expandir/contraer el menú de navegación",
           "default": "Alternar menú de navegación"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }
