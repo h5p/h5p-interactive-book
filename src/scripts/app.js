@@ -412,7 +412,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
      * Handle resizing of the content
      */
     this.resize = () => {
-      if (this.isBubblingUpToCore) {
+      if (this.isBubblingUpToCore || this.isBubblingUpToCoreNo2) {
         return;
       }
 
@@ -452,7 +452,9 @@ export default class InteractiveBook extends H5P.EventDispatcher {
            */
           window.clearTimeout(this.extraResizeTimeout);
           this.extraResizeTimeout = window.setTimeout(() => {
+            this.isBubblingUpToCoreNo2 = true;
             this.trigger('resize');
+            this.isBubblingUpToCoreNo2 = false;
           }, 200); // Transition time of H5P.Question hiding buttons: 150ms
         }
       }
