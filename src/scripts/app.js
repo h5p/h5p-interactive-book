@@ -419,7 +419,10 @@ export default class InteractiveBook extends H5P.EventDispatcher {
       if (!this.pageContent || !this.hasValidChapters() || !this.mainWrapper) {
         return;
       }
-      this.setWrapperClassFromRatio(this.mainWrapper);
+      window.requestAnimationFrame(() => {
+        this.setWrapperClassFromRatio(this.mainWrapper);
+      });
+
       const currentChapterId = this.getActiveChapter();
       const currentNode = this.pageContent.columnNodes[currentChapterId];
 
