@@ -114,6 +114,10 @@
 .h5p-theme-show-results.h5p-interactive-book-navigation-chapter-button {
   width: 100%;
   margin-top: var(--h5p-theme-spacing-s);
+
+  &::before {
+    content: "\e90a"; // Folder icon instead of eye icon
+  }
 }
 
 .h5p-interactive-book-navigation-chapter-button {
@@ -228,7 +232,7 @@
 
   height: 100%;
   width: 2px;
-  background-color: color-mix(in srgb, var(--h5p-theme-main-cta-base), transparent 80%); 
+  background-color: color-mix(in srgb, var(--h5p-theme-main-cta-base), transparent 80%);
 }
 
 .h5p-interactive-book-navigation-summary-button .h5p-interactive-book-navigation-current:after {
