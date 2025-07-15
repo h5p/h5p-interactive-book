@@ -16,7 +16,7 @@
     pointer-events: none;
     background: var(--h5p-theme-ui-base);
     top: 0;
-    z-index: 2;
+    z-index: 150; // Ensure it is above any content having high z-index
 
     .h5p-interactive-book-status-to-top {
       display: none;
