@@ -67,21 +67,21 @@
       position: relative;
       background: transparent;
       border: 0;
-      padding: 0 1.125em;
+      padding: 0 1.3em;
       max-width: 100%;
       font-family: var(--h5p-theme-font-name);
+      display: flex;
+      align-items: center;
+      margin-bottom: var(--h5p-theme-spacing-xs);
     }
 
     .h5p-interactive-book-navigation-section-icon {
-      position: absolute;
       color: var(--h5p-theme-text-primary);
       font-size: 5px;
       visibility: hidden;
       font-size: var(--h5p-theme-font-size-xxs);
       background-color: var(--h5p-theme-ui-base);
       border-radius: 50%;
-      top: 50%;
-      transform: translateY(-50%);
       z-index: 10;
       left: 17px;
 
@@ -224,7 +224,7 @@
 .h5p-interactive-book-navigation-section:after {
   content: '';
   position: absolute;
-  left: 22px; // TODO: calculate position after Jelena has styled
+  left: 2.9vw;
   bottom: 0;
 
   top: 0;
