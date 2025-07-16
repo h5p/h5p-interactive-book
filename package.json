@@ -1,6 +1,6 @@
 {
   "name": "h5p-interactive-book",
-  "version": "1.6.1",
+  "version": "1.13.5",
   "description": "An interactive book which displays content in pages and sections",
   "scripts": {
     "dev": "cross-env NODE_ENV='development' webpack",
