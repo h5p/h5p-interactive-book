@@ -161,7 +161,7 @@
   font-family: var(--h5p-theme-font-name);
   height: 3.438em;
   margin: 0;
-  padding: 0 1.125em;
+  padding: 0 1.165em;
   text-align: initial;
   text-decoration: none solid var(--h5p-theme-text-secondary);
   width: 100%;
@@ -215,6 +215,10 @@
   &:active {
     background-color: var(--color-base-10, $base-color-10);
   }
+}
+
+.h5p-content.h5p-large .h5p-interactive-book-navigation-chapter-button:not(.h5p-theme-show-results) {
+  padding-left: 1.125em;
 }
 
 // Lines connecting the dots
