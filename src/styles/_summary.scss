@@ -59,7 +59,7 @@
     margin-top: calc(-1 * var(--h5p-theme-spacing-xl)*2);
     position: sticky;
     top: calc(var(--h5p-theme-spacing-xl)*2);
-    z-index: 4;
+    z-index: 151; // Ensure it is above the header
 
     .h5p-interactive-book-summary-progress-container {
       background-color: var(--h5p-theme-ui-base);
