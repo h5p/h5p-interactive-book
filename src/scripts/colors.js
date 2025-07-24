@@ -189,7 +189,6 @@ Colors.DEFAULT_COLOR_BG = Color('#ffffff');
 /** @const {number} Minimum acceptable contrast for normal font size, cmp. https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-procedure */
 Colors.MINIMUM_ACCEPTABLE_CONTRAST = 4.5;
 
-// Your fixed “template” colors (their S & L will be kept, hue will be replaced)
 Colors.DEFAULT_THEME_ALTERNATIVES = {
   base:   '#EEEFFA',
   light:  '#F8F9FE',
