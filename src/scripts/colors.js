@@ -159,10 +159,8 @@ export default class Colors {
    * @return {string} CSS overrides.
    */
   static getCSS() {
-    // Optional: expose the alt colors as CSS vars too
     const altBase   = Colors.getAlternative('base');
     const altLight  = Colors.getAlternative('light');
-    const altDark   = Colors.getAlternative('dark');
     const altDarker = Colors.getAlternative('darker');
 
     return `:root{
