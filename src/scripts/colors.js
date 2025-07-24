@@ -18,6 +18,9 @@ export default class Colors {
 
     Colors.colorBase = Color(color);
 
+    // Update the hue-shifted palette based on the new base color
+    Colors.updateThemeAlternativesFromHue(Colors.colorBase);
+
     // Get contrast color with highest contrast
     Colors.colorText = [
       Colors.DEFAULT_COLOR_BG,
@@ -28,16 +31,52 @@ export default class Colors {
       contrast: Colors.colorBase.contrast(color)
     })).reduce((result, current) => {
       return (current.contrast > result.contrast) ? current : result;
-    }, {contrast: 0}).color;
+    }, { contrast: 0 }).color;
   }
 
   /**
-   * Get color.
-   * @param {Color} color Base color.
-   * @param {object} [params={}] Parameters.
-   * @param {number} [params.opacity] Opacity value assuming white background.
-   * @return {Color} Color with opacity figured in.
+   * Get only the hue from a hex/color.
+   * @param {string|Color} hex
+   * @return {number}
    */
+  static getHue(hex) {
+    return Color(hex).hsl().object().h;
+  }
+
+  /**
+   * Return a new Color where we keep S & L from the original, but replace H.
+   * @param {string|Color} hex
+   * @param {number} newHue
+   * @return {Color}
+   */
+  static replaceHue(hex, newHue) {
+    const { s, l } = Color(hex).hsl().object();
+    return Color.hsl(newHue, s, l);
+  }
+
+  /**
+   * Builds the 4 “theme alternative” colors using the user's hue.
+   * @param {Color} baseColor
+   */
+  static updateThemeAlternativesFromHue(baseColor) {
+    const hue = baseColor.hsl().object().h;
+
+    Colors.themeAlternatives = Object.entries(Colors.DEFAULT_THEME_ALTERNATIVES)
+      .reduce((acc, [key, hex]) => {
+        acc[key] = Colors.replaceHue(hex, hue).hex().toLowerCase();
+        return acc;
+      }, {});
+  }
+
+  /**
+   * Get the re-hued alternative color (already hex).
+   * @param {'base'|'light'|'dark'|'darker'} which
+   * @return {string}
+   */
+  static getAlternative(which) {
+    return Colors.themeAlternatives?.[which] ?? Colors.DEFAULT_THEME_ALTERNATIVES[which];
+  }
+
   static getColor(color, params = {}) {
     if (
       typeof params.opacity === 'string' &&
@@ -120,6 +159,12 @@ export default class Colors {
    * @return {string} CSS overrides.
    */
   static getCSS() {
+    // Optional: expose the alt colors as CSS vars too
+    const altBase   = Colors.getAlternative('base');
+    const altLight  = Colors.getAlternative('light');
+    const altDark   = Colors.getAlternative('dark');
+    const altDarker = Colors.getAlternative('darker');
+
     return `:root{
       --color-base: ${Colors.colorBase};
       --color-base-5: ${Colors.getColor(Colors.colorBase, { opacity: .05 })};
@@ -132,6 +177,9 @@ export default class Colors {
       --color-base-95: ${Colors.getColor(Colors.colorBase, { opacity: .95 })};
       --color-text: ${Colors.colorText};
       --color-contrast: ${Colors.computeContrastColor(Colors.colorBase, Colors.DEFAULT_COLOR_BG)};
+      --h5p-theme-main-cta-base: ${altBase};
+      --h5p-theme-contrast-cta-light: ${altLight};
+      --h5p-theme-contrast-cta-white: ${altDarker};
     }`;
   }
 }
@@ -143,6 +191,14 @@ Colors.DEFAULT_COLOR_BG = Color('#ffffff');
 /** @const {number} Minimum acceptable contrast for normal font size, cmp. https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-procedure */
 Colors.MINIMUM_ACCEPTABLE_CONTRAST = 4.5;
 
-// Relevant default colors defined in SCSS main class or derived from those
+// Your fixed “template” colors (their S & L will be kept, hue will be replaced)
+Colors.DEFAULT_THEME_ALTERNATIVES = {
+  base:   '#EEEFFA',
+  light:  '#F8F9FE',
+  darker: '#CED1EE'
+};
+
+// Start state
 Colors.colorBase = Colors.DEFAULT_COLOR_BASE;
 Colors.colorText = Colors.DEFAULT_COLOR_BG;
+Colors.themeAlternatives = { ...Colors.DEFAULT_THEME_ALTERNATIVES };
