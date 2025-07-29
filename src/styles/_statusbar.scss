@@ -102,22 +102,22 @@
     display: none;
   }
 
-  .h5p-interactive-book-status-main {
+  // The navigation component is now handled by H5P.Components.Navigation
+  .h5p-navigation.h5p-interactive-book-status-main {
     pointer-events: auto;
-    display: grid;
     position: relative;
-    grid-template-columns: min-content 1fr min-content;
     container-type: inline-size;
     container-name: h5p-navigation;
-    padding: var(--h5p-theme-spacing-s);
-    align-items: center;
 
-    &:has(.h5p-interactive-book-status-fullscreen) {
-      grid-template-columns: min-content 1fr min-content min-content;
+    .h5p-theme-previous,
+    .h5p-theme-next,
+    .h5p-theme-submit {
+      z-index: 1;
     }
 
-    .h5p-theme-nav-button {
-      z-index: 1;
+    // Add fullscreen button to the grid
+    &:has(.h5p-interactive-book-status-fullscreen) {
+      grid-template-columns: min-content 1fr min-content min-content;
     }
 
     .h5p-theme-progress {
@@ -219,19 +219,9 @@
       background-color: color-mix(in srgb, var(--h5p-theme-contrast-cta-light), transparent 80%);
     }
   }
-
-  .h5p-interactive-book-status-arrow {
-    background-color: var(--color-base-5, $base-color-5);
-    background-size: cover;
-    border: .125em solid $background-color;
-    border-radius: 3px;
-    flex-shrink: 0;
-    height: 2.75em;
-    width: 2.75em;
-  }
 }
 
-.h5p-interactive-book-small.h5p-interactive-book-navigation-open .h5p-interactive-book-status .h5p-interactive-book-status-main {
+.h5p-interactive-book-small.h5p-interactive-book-navigation-open .h5p-interactive-book-status .h5p-navigation.h5p-interactive-book-status-main {
   display: none;
 }
 .h5p-interactive-book-small.h5p-interactive-book-navigation-open .h5p-interactive-book-status {
