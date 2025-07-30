@@ -102,22 +102,66 @@
     display: none;
   }
 
-  // The navigation component is now handled by H5P.Components.Navigation
-  .h5p-navigation.h5p-interactive-book-status-main {
+  .h5p-interactive-book-status-main {
     pointer-events: auto;
     position: relative;
     container-type: inline-size;
     container-name: h5p-navigation;
 
-    .h5p-theme-previous,
-    .h5p-theme-next,
-    .h5p-theme-submit {
+    // Override H5P.Components.Navigation CSS to match original IB nav
+    &.h5p-navigation {
+      display: grid !important;
+      grid-template-columns: min-content 1fr min-content !important;
+      padding: var(--h5p-theme-spacing-s) !important;
+      align-items: center !important;
+      grid-gap: 0 !important;
+      justify-items: stretch !important;
+      border-top: none !important;
+      box-shadow: none !important;
+      background-color: transparent !important;
+      min-height: auto !important;
+
+      &:has(.h5p-interactive-book-status-fullscreen) {
+        grid-template-columns: min-content 1fr min-content min-content !important;
+      }
+    }
+
+    .h5p-theme-nav-button {
       z-index: 1;
     }
 
-    // Add fullscreen button to the grid
-    &:has(.h5p-interactive-book-status-fullscreen) {
-      grid-template-columns: min-content 1fr min-content min-content;
+    .progress-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1;
+      overflow: hidden;
+
+      .progress-text {
+        margin: 0;
+        white-space: nowrap;
+        padding: calc(var(--h5p-theme-spacing-xxs)/2) var(--h5p-theme-spacing-xxs);
+        margin-bottom: var(--h5p-theme-spacing-xxs);
+
+        &:first-of-type {
+          display: inline-block;
+          margin-right: calc(var(--h5p-theme-spacing-xxs)/2);
+        }
+      }
+
+      .title {
+        color: var(--h5p-theme-text-secondary);
+        font-family: var(--h5p-theme-font-name);
+        font-size: var(--h5p-theme-font-size-m);
+        font-weight: 700;
+        line-height: 1.1;
+        margin: 0;
+        overflow: hidden;
+        text-decoration: none solid $mud;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 100%;
+      }
     }
 
     .h5p-theme-progress {
@@ -172,24 +216,27 @@
         }
       }
     }
+  }
 
-    .h5p-interactive-book-status-fullscreen {
-      border: none;
-      margin-left: var(--h5p-theme-spacing-xs);
-      z-index: 1;
+  .h5p-interactive-book-status-fullscreen {
+    position: absolute;
+    right: var(--h5p-theme-spacing-s);
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    z-index: 2;
 
-      &.h5p-interactive-book-enter-fullscreen {
-        &::before {
-          font-family: 'h5p-theme';
-          content: '\e915';
-        }
+    &.h5p-interactive-book-enter-fullscreen {
+      &::before {
+        font-family: 'h5p-theme';
+        content: '\e915';
       }
+    }
 
-      &.h5p-interactive-book-exit-fullscreen {
-        &::before {
-          font-family: 'h5p-theme';
-          content: '\e914';
-        }
+    &.h5p-interactive-book-exit-fullscreen {
+      &::before {
+        font-family: 'h5p-theme';
+        content: '\e914';
       }
     }
   }
@@ -218,6 +265,16 @@
     &:active{
       background-color: color-mix(in srgb, var(--h5p-theme-contrast-cta-light), transparent 80%);
     }
+  }
+
+  .h5p-interactive-book-status-arrow {
+    background-color: var(--color-base-5, $base-color-5);
+    background-size: cover;
+    border: .125em solid $background-color;
+    border-radius: 3px;
+    flex-shrink: 0;
+    height: 2.75em;
+    width: 2.75em;
   }
 }
 

@@ -67,8 +67,13 @@ class StatusBar extends H5P.EventDispatcher {
     this.wrapper.appendChild(sidebarWrapper);
 
     // Create navigation using H5P.Components.Navigation
-    this.navigation = this.createNavigation();
-    this.wrapper.appendChild(this.navigation);
+    this.navigationWrapper = this.createNavigation();
+    this.wrapper.appendChild(this.navigationWrapper);
+
+    if (this.params.displayFullScreenButton && H5P.fullscreenSupported) {
+      this.fullscreenButton = this.createFullScreenButton();
+      this.wrapper.appendChild(this.fullscreenButton);
+    }
 
     this.on('updateStatusBar', this.updateStatusBar);
 
@@ -143,23 +148,14 @@ class StatusBar extends H5P.EventDispatcher {
     const currentChapter = this.parent.getActiveChapter() + 1;
 
     const chapterTitle = this.parent.chapters[currentChapter - 1].title;
+    this.navigationComponent.updateTitle(chapterTitle);
 
     this.progressIndicator.current.innerHTML = currentChapter;
 
     this.updateA11yProgress(currentChapter);
     this.updateProgressBar(currentChapter);
 
-    this.chapterTitle.text.innerHTML = chapterTitle;
-
-    this.chapterTitle.text.setAttribute('title', chapterTitle);
-
-    // Update navigation component
-    if (this.navigation) {
-      if (typeof this.navigation.setCurrentIndex === 'function') {
-        this.navigation.setCurrentIndex(this.parent.getActiveChapter());
-      }
-      
-    }
+    this.navigationComponent.setCurrentIndex(this.parent.getActiveChapter());
   }
 
   /**
@@ -168,6 +164,7 @@ class StatusBar extends H5P.EventDispatcher {
    */
   createNavigation() {
     const activeChapter = this.parent.getActiveChapter();
+    const currentChapterTitle = this.parent.chapters[activeChapter] ? this.parent.chapters[activeChapter].title : '';
 
     const navigation = H5P.Components.Navigation({
       className: 'h5p-interactive-book-status-main',
@@ -188,6 +185,7 @@ class StatusBar extends H5P.EventDispatcher {
       progressType: 'text',
       index: activeChapter,
       navigationLength: this.totalChapters,
+      title: currentChapterTitle,
       texts: {
         previousButton: this.params.l10n.previous,
         nextButton: this.params.l10n.next,
@@ -195,22 +193,8 @@ class StatusBar extends H5P.EventDispatcher {
       },
     });
 
-    // Create info wrapper with progress indicator and chapter title
-    const infoWrapper = document.createElement('div');
-    infoWrapper.classList.add('h5p-interactive-book-status-info');
-    infoWrapper.appendChild(this.progressIndicator.wrapper);
-    infoWrapper.appendChild(this.chapterTitle.wrapper);
-
-    // Replace the default progress text with our custom info
-    const progressText = navigation.querySelector('.progress-text');
-    if (progressText) {
-      progressText.parentNode.replaceChild(infoWrapper, progressText);
-    }
-
-    // Add fullscreen button if needed
-    if (this.params.displayFullScreenButton && H5P.fullscreenSupported) {
-      navigation.appendChild(this.createFullScreenButton());
-    }
+    // Store reference to navigation component for API calls
+    this.navigationComponent = navigation;
 
     return navigation;
   }
@@ -253,21 +237,17 @@ class StatusBar extends H5P.EventDispatcher {
    * @return {object} Progress bar elements.
    */
   createProgressBar() {
-    const back = document.createElement('div');
-    back.classList.add('h5p-interactive-book-status-progressbar-back');
-
     const progress = document.createElement('div');
     progress.classList.add('h5p-interactive-book-status-progressbar-front');
-    back.appendChild(progress);
+    progress.setAttribute('tabindex', '-1');
 
     const wrapper = document.createElement('div');
-    wrapper.classList.add('h5p-interactive-book-status-progressbar');
-    wrapper.appendChild(back);
+    wrapper.classList.add('h5p-interactive-book-status-progressbar-back');
+    wrapper.appendChild(progress);
 
     return {
       wrapper,
-      back,
-      progress,
+      progress
     };
   }
 
@@ -295,17 +275,18 @@ class StatusBar extends H5P.EventDispatcher {
    * @return {HTMLElement} Button.
    */
   createToTopButton() {
-    const toTopButton = document.createElement('button');
-    toTopButton.classList.add('icon-up');
-    toTopButton.classList.add('h5p-interactive-book-status-to-top');
-    toTopButton.classList.add('h5p-interactive-book-status-button');
-    toTopButton.setAttribute('title', this.params.l10n.navigateToTop);
-    toTopButton.setAttribute('aria-label', this.params.l10n.navigateToTop);
-    toTopButton.onclick = () => {
-      this.parent.trigger('scrollToTop', true);
-    };
+    const button = document.createElement('button');
+    button.classList.add('icon-up');
 
-    return toTopButton;
+    button.classList.add('h5p-interactive-book-status-to-top');
+    button.classList.add('h5p-interactive-book-status-button');
+    button.setAttribute('aria-label', this.params.l10n.navigateToTop);
+    button.addEventListener('click', () => {
+      this.parent.trigger('scrollToTop');
+      document.querySelector('.h5p-interactive-book-status-menu').focus();
+    });
+
+    return button;
   }
 
   /**
