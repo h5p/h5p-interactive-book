@@ -72,7 +72,7 @@ class StatusBar extends H5P.EventDispatcher {
 
     if (this.params.displayFullScreenButton && H5P.fullscreenSupported) {
       this.fullscreenButton = this.createFullScreenButton();
-      this.wrapper.appendChild(this.fullscreenButton);
+      this.navigationWrapper.appendChild(this.fullscreenButton);
     }
 
     this.on('updateStatusBar', this.updateStatusBar);
@@ -192,6 +192,10 @@ class StatusBar extends H5P.EventDispatcher {
         textualProgress: this.params.l10n.page + ' @current / @total',
       },
     });
+
+    const pattern = document.createElement('div');
+    pattern.classList.add('h5p-theme-pattern');
+    navigation.appendChild(pattern);
 
     // Store reference to navigation component for API calls
     this.navigationComponent = navigation;

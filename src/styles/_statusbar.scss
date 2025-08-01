@@ -108,7 +108,6 @@
     container-type: inline-size;
     container-name: h5p-navigation;
 
-    // Override H5P.Components.Navigation CSS to match original IB nav
     &.h5p-navigation {
       display: grid !important;
       grid-template-columns: min-content 1fr min-content !important;
@@ -120,6 +119,7 @@
       box-shadow: none !important;
       background-color: transparent !important;
       min-height: auto !important;
+      position: relative !important;
 
       &:has(.h5p-interactive-book-status-fullscreen) {
         grid-template-columns: min-content 1fr min-content min-content !important;
@@ -130,23 +130,30 @@
       z-index: 1;
     }
 
-    .progress-container {
+    .progress-wrapper {
       display: flex;
       flex-direction: column;
       align-items: center;
       line-height: 1;
       overflow: hidden;
+      z-index: 2;
+
+      .title {
+        color: var(--h5p-theme-text-secondary);
+        font-family: var(--h5p-theme-font-name);
+        font-size: var(--h5p-theme-font-size-m);
+        font-weight: 700;
+        line-height: 1.1;
+        margin: 0;
+        overflow: hidden;
+        text-decoration: none solid $mud;
+        text-overflow: ellipsis;
+      }
 
       .progress-text {
         margin: 0;
         white-space: nowrap;
-        padding: calc(var(--h5p-theme-spacing-xxs)/2) var(--h5p-theme-spacing-xxs);
-        margin-bottom: var(--h5p-theme-spacing-xxs);
-
-        &:first-of-type {
-          display: inline-block;
-          margin-right: calc(var(--h5p-theme-spacing-xxs)/2);
-        }
+        padding: 0;
       }
 
       .title {
@@ -169,11 +176,7 @@
       white-space: nowrap;
       padding: calc(var(--h5p-theme-spacing-xxs)/2) var(--h5p-theme-spacing-xxs);
       margin-bottom: var(--h5p-theme-spacing-xxs);
-
-      span:first-of-type {
-        display: inline-block;
-        margin-right: calc(var(--h5p-theme-spacing-xxs)/2);
-      }
+      background-color: var(--h5p-theme-contrast-cta-light);
 
       .hidden-but-read {
         border: 0;
@@ -203,28 +206,17 @@
         white-space: nowrap;
         max-width: 100%;
 
-        .title {
-          color: var(--h5p-theme-text-secondary);
-          font-family: var(--h5p-theme-font-name);
-          font-size: var(--h5p-theme-font-size-m);
-          font-weight: 700;
-          line-height: 1.1;
-          margin: 0;
-          overflow: hidden;
-          text-decoration: none solid $mud;
-          text-overflow: ellipsis;
-        }
       }
     }
   }
 
   .h5p-interactive-book-status-fullscreen {
-    position: absolute;
-    right: var(--h5p-theme-spacing-s);
-    top: 50%;
-    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
-    z-index: 2;
+    margin-left: var(--h5p-theme-spacing-xs);
+    z-index: 1;
 
     &.h5p-interactive-book-enter-fullscreen {
       &::before {
@@ -314,18 +306,41 @@
       z-index: 1;
       background-color: var(--h5p-theme-contrast-cta);
     }
+
+    .h5p-interactive-book-status-main.h5p-navigation {
+      background-color: var(--h5p-theme-main-cta-dark) !important;
+    }
   }
 
   .h5p-interactive-book-status-main {
-    padding: var(--h5p-theme-spacing-s) var(--h5p-theme-spacing-s) calc(var(--h5p-theme-spacing-xl)*1.5) var(--h5p-theme-spacing-s);
+    padding: var(--h5p-theme-spacing-s) var(--h5p-theme-spacing-s) calc(var(--h5p-theme-spacing-xl)*1.5) var(--h5p-theme-spacing-s) !important;
+    
+    &.h5p-navigation {
+      padding: var(--h5p-theme-spacing-s) var(--h5p-theme-spacing-s) calc(var(--h5p-theme-spacing-xl)*1.5) var(--h5p-theme-spacing-s) !important;
+    }
   }
 
   &:has(.h5p-interactive-book-status-menu-active) .h5p-interactive-book-status-main {
     background-color: var(--h5p-theme-main-cta-base);
 
-    .h5p-theme-pattern {
+    > .h5p-theme-pattern {
       display: block;
     }
+
+    &.h5p-navigation {
+      background-color: var(--h5p-theme-main-cta-base) !important;
+    }
+  }
+
+  .h5p-interactive-book-status-main .h5p-theme-pattern {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 0;
   }
 
   .h5p-interactive-book-status-fullscreen {
