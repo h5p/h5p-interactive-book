@@ -54,6 +54,21 @@
           "description": "När aktiverat så kommer en sida utan uppgifter att betraktas som genomförd när den är visad.En sida med uppgifter är genomförd när alla uppgifter är genomförda. När inaktiverat så kommer det finnas en knapp längst ned på varje sida där användaren kan klicka när denne är färdig med sidan."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Visa sammanfattning",
           "description": "När aktiverat så kan användaren se en sammanfattning och skicka in sina framsteg/ svar."
         },
@@ -198,6 +213,10 @@
         {
           "label": "Etikett för att expandera/komprimera navigeringsmenyn",
           "default": "Växla läge på navigationsmeny"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

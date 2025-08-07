@@ -54,6 +54,21 @@
           "description": "Se abilitato, una pagina senza compiti è considerata fatta quando è stata visualizzata; viceversa, una pagina con compiti lo è quando tutti sono stati portati a termine. Se disabilitato, in fondo a ogni pagina ci sarà un pulsante su cui l'utente può cliccare quando ha finito con quella pagina"
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Mostra sommario",
           "description": "Quando attivo, l'utente può vedere un sommario e inviare la risposta o andare avanti"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Etichetta per espandere/ridurre il menu di navigazione",
           "default": "Mostra/Nascondi il menu di navigazione"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

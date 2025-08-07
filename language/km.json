@@ -54,6 +54,21 @@
           "description": "If enabled a page without tasks is considered done when viewed. A page with tasks when all tasks are done. If disabled there will be a button at the bottom of every page for the user to click when done with the page."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Display summary",
           "description": "When enabled the user can see a summary and submit the progress/answers"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Label for expanding/collapsing navigation menu",
           "default": "បិទបើកម៉ឺនុយផ្លាស់ទី"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

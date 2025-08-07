@@ -54,6 +54,21 @@
           "description": "Indien geaktiveer, word 'n bladsy sonder take as afgehandel beskou. 'n Bladsy met take wanneer alle take gedoen is. Indien gedeaktiveer, sal daar onderaan elke bladsy 'n knoppie wees waarop die gebruiker kan klik as hy klaar is met die bladsy."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Vertoon opsomming",
           "description": "Indien dit geaktiveer is, kan die gebruiker 'n opsomming sien en die vordering/antwoorde indien"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Etiket vir uitbreiding/invou navigasie menu",
           "default": "Skakel navigasie menu"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

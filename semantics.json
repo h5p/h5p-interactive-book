@@ -173,6 +173,27 @@
         }
       },
       {
+        "name": "navigationRestrictionMode",
+        "type": "select",
+        "label": "Navigation restriction mode",
+        "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+        "options": [
+          {
+            "label": "No restriction",
+            "value": "none"
+          },
+          {
+            "label": "Page finished to progress",
+            "value": "finished"
+          },
+          {
+            "label": "Full score to progress",
+            "value": "success"
+          }
+        ],
+        "default": "none"
+      },
+      {
         "name": "displaySummary",
         "type": "boolean",
         "label": "Display summary",
@@ -481,6 +502,12 @@
         "type": "text",
         "label": "Label for expanding/collapsing navigation menu",
         "default": "Toggle navigation menu"
+      },
+      {
+        "name": "newChapterCanBeAccessed",
+        "type": "text",
+        "label": "\"A new chapter can be accessed\"",
+        "default": "A new chapter can be accessed."
       }
     ]
   }

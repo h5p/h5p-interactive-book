@@ -54,6 +54,21 @@
           "description": "Dacă este activat, o pagină fără sarcini este considerată finalizată la vizualizare. O pagină cu sarcini este considerată finalizată când toate sarcinile sunt terminate. Dacă este dezactivat, va exista un buton în partea de jos a fiecărei pagini pe care utilizatorul îl poate apăsa când a terminat pagina."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Afișează rezumatul",
           "description": "Când este activat, utilizatorul poate vedea un rezumat și poate trimite progresul/răspunsurile"
         },
@@ -160,8 +175,8 @@
       "default": "Punctaj"
     },
     {
-      "label": "Etichetă pentru butonul „Rezumat & trimitere”",
-      "default": "Rezumat & trimitere"
+      "label": "Etichetă pentru butonul „Rezumat &amp; trimitere”",
+      "default": "Rezumat &amp; trimitere"
     },
     {
       "label": "Traducere pentru „Nu ați interacționat cu nicio pagină.”",
@@ -198,6 +213,10 @@
         {
           "label": "Etichetă pentru extinderea/restrângerea meniului de navigare",
           "default": "Comută meniul de navigare"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

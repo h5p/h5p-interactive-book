@@ -54,6 +54,21 @@
           "description": "Se está activado, considerarase rematada calquera páxina que non conteña tarefas ao vela e calquera páxina que conteña tarefas cando todas as tarefas estean rematadas. Se está desactivado, haberá un botón no pé de cada páxina para que usuario prema nel cando remate con ela."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Amosar resumo",
           "description": "Se está activado, o ususario pode ver un resumo e enviar o seu progreso ou respostas"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Etiqueta para expandir/colapsar o menú de navegación",
           "default": "Alternar o menú de navegación"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

@@ -607,5 +607,72 @@ class SideBar extends H5P.EventDispatcher {
       }
     });
   }
+
+  /**
+   * Toggle chapter.
+   * @param {number} chapterIndex Chapter Index.
+   * @param {boolean} collapse If true, will collapse chapter.
+   */
+  toggleChapterEnabled(chapterIndex, enabled) {
+    const button = this.chapterNodes[chapterIndex].querySelector('.h5p-interactive-book-navigation-chapter-button');
+    if (!button) {
+      return;
+    }
+
+    if (button.disabled === !enabled) {
+      return;
+    }
+
+    button.disabled = !enabled;
+    if (enabled) {
+      this.animate(button, 'pulse');
+
+      this.parent.read('newChapterCanBeAccessed');
+    }
+
+    const sections = button.nextSibling?.querySelectorAll('.section-button');
+    sections?.forEach(sectionButton => {
+      sectionButton.disabled = !enabled;
+    });
+  }
+
+  animate(element, animationName = '') {
+    if (!element) {
+      return;
+    }
+
+    if (animationName === null) {
+      element.dispatchEvent(new Event('animationend'));
+      return;
+    }
+    else if (typeof animationName !== 'string') {
+      return;
+    }
+
+    // Determine mediaQuery result for prefers-reduced-motion preference
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)')?.matches;
+      if (reduceMotion) {
+      return;
+    }
+
+    const className = `animate-${animationName}`;
+
+    const listener = (event) => {
+      if (
+        event.animationName !== animationName &&
+        event.animationName !== undefined // Clearing animation.
+      ) {
+        return;
+      }
+
+      element.classList.remove('animate');
+      element.classList.remove(className);
+    };
+
+    element.addEventListener('animationend', listener, { once: true });
+
+    element.classList.add('animate');
+    element.classList.add(className);
+  }
 }
 export default SideBar;

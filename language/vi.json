@@ -54,6 +54,21 @@
           "description": "Nếu được bật, một trang không có nhiệm vụ được coi là hoàn thành khi xem. Một trang với các nhiệm vụ khi tất cả các nhiệm vụ được hoàn thành. Nếu bị vô hiệu hóa, sẽ có một nút ở cuối mỗi trang để người dùng nhấp vào khi hoàn tất trang."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Hiển thị tóm tắt",
           "description": "Khi được bật, người dùng có thể xem tóm tắt và gửi tiến trình / câu trả lời"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Label for expanding/collapsing navigation menu",
           "default": "Toggle navigation menu"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

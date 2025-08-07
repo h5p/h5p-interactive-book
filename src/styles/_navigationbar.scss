@@ -67,6 +67,15 @@
       border: 0;
       padding: 0 1.125em;
       max-width: 100%;
+
+      &[disabled] {
+        cursor: not-allowed;
+      }
+
+      &:hover:not([disabled]) {
+        color: var(--color-base, $base-color);
+        cursor: pointer;
+      }
     }
 
     .h5p-interactive-book-navigation-section-icon {
@@ -91,11 +100,6 @@
       text-overflow: ellipsis;
       white-space: nowrap;
     }
-  }
-
-  :hover {
-    color: var(--color-base, $base-color);
-    cursor: pointer;
   }
 }
 
@@ -127,6 +131,7 @@
   border: 0;
   border-bottom: solid 1px $ghost-white;
   color: $mud;
+  cursor: pointer;
   display: flex;
   font-family: Arial;
   height: 3.438em;
@@ -144,7 +149,17 @@
 
   &:hover {
     background-color: var(--color-base-5, $base-color-5);
-    cursor: pointer;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+  &.animate-pulse {
+    animation: pulse;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
   }
 
   .h5p-interactive-book-navigation-chapter-title-text {
@@ -184,7 +199,7 @@
     top: 17px;
   }
 
-  &:active {
+  &:active:not([disabled]) {
     background-color: var(--color-base-10, $base-color-10);
   }
 }
@@ -203,5 +218,19 @@
     padding-left: 1.25em;
     text-decoration: none solid var(--color-text, $background-color);
     text-overflow: ellipsis;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
   }
 }
