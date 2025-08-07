@@ -132,7 +132,7 @@
 
 .h5p-interactive-book-navigation-closed {
   .h5p-interactive-book-navigation-chapter-button:not(.h5p-theme-show-results) {
-    background-color: var(--color-base-10, $background-color);
+    background-color: var(--h5p-theme-ui-base);
 
     .h5p-interactive-book-navigation-chapter-title-text {
       color: var(--h5p-theme-text-secondary);
@@ -153,7 +153,7 @@
 
 .h5p-interactive-book-navigation-chapter-button:not(.h5p-theme-show-results) {
   align-items: center;
-  background-color: var(--color-base-10, $base-color-10);
+  background-color: var(--h5p-theme-ui-base);
   background-size: cover;
   border: 0;
   color: var(--h5p-theme-text-primary);
