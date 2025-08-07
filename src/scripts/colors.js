@@ -134,6 +134,61 @@ export default class Colors {
       --color-contrast: ${Colors.computeContrastColor(Colors.colorBase, Colors.DEFAULT_COLOR_BG)};
     }`;
   }
+
+  /**
+   * Compute a color that has a specific contrast ratio against another color.
+   *
+   * @param {string} hueSourceColor Color to adjust (hex).
+   * @param {number} targetRatio Desired contrast ratio.
+   * @param {string} contrastAgainstColor Color to compare contrast against (hex).
+   * @returns {string} Hex color string with desired contrast.
+   */
+  static getColorWithContrastRatio(hueSourceColor, targetRatio, contrastAgainstColor) {
+    const hueSource = Color(hueSourceColor);
+    const against = Color(contrastAgainstColor || hueSourceColor);
+
+    const hsl = hueSource.hsl().object();
+    const isLight = against.luminosity() > 0.5;
+
+    let low = 0;
+    let high = 100;
+    let bestColor = null;
+    let bestRatioDiff = Infinity;
+
+    while (high - low > 0.5) {
+      const mid = (low + high) / 2;
+
+      const testColor = Color({ h: hsl.h, s: hsl.s, l: mid });
+      const ratio = testColor.contrast(against);
+      const diff = Math.abs(ratio - targetRatio);
+
+      if (diff < bestRatioDiff) {
+        bestRatioDiff = diff;
+        bestColor = testColor.hex();
+        if (diff < 0.05) break;
+      }
+
+      if (ratio < targetRatio) {
+        if (isLight) {
+          high = mid;
+        } else {
+          low = mid;
+        }
+      } else {
+        if (isLight) {
+          low = mid;
+        } else {
+          high = mid;
+        }
+      }
+    }
+
+    if (!bestColor || bestRatioDiff > 1.0) {
+      return Color({ h: hsl.h, s: hsl.s, l: isLight ? 15 : 85 }).hex();
+    }
+
+    return bestColor;
+  }
 }
 
 /** @const {string} Preferred default color as defined in SCSS */

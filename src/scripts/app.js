@@ -4,6 +4,7 @@ import StatusBar from './statusbar';
 import Cover from './cover';
 import PageContent from './pagecontent';
 import Colors from './colors';
+import tinycolor from 'tinycolor2';
 
 export default class InteractiveBook extends H5P.EventDispatcher {
   /**
@@ -24,16 +25,49 @@ export default class InteractiveBook extends H5P.EventDispatcher {
       config && config.behaviour && config.behaviour.baseColor &&
       !Colors.isBaseColor(config.behaviour.baseColor)
     ) {
-      Colors.setBase(config.behaviour.baseColor);
+      const baseColor = config.behaviour.baseColor;
+      Colors.setBase(baseColor);
 
       const style = document.createElement('style');
       if (style.styleSheet) {
         style.styleSheet.cssText = Colors.getCSS();
-      }
-      else {
+      } else {
         style.appendChild(document.createTextNode(Colors.getCSS()));
       }
       document.head.appendChild(style);
+
+      try {
+        const prefix = '--h5p-theme-';
+        const variables = {};
+        variables[prefix + 'main-cta-base'] = baseColor;
+
+        const mainCtaColor = tinycolor(baseColor);
+
+        // +5% lightness
+        variables[prefix + 'main-cta-light'] = mainCtaColor.clone().lighten(5).toHexString();
+
+        // -5% lightness
+        variables[prefix + 'main-cta-dark'] = mainCtaColor.clone().darken(5).toHexString();
+
+        // Contrast against itself
+        variables[prefix + 'contrast-cta'] = Colors.getColorWithContrastRatio(baseColor, 4.6, baseColor);
+
+        // Mix with ui-base (defaulting to white if not defined yet)
+        const base = tinycolor(variables[prefix + 'ui-base'] || '#ffffff');
+        variables[prefix + 'contrast-cta-light'] = tinycolor.mix(mainCtaColor, base, 90).toHexString();
+
+        // Contrast against ui-base and dark backgrounds
+        variables[prefix + 'contrast-cta-white'] = Colors.getColorWithContrastRatio(baseColor, 4.6, variables[prefix + 'ui-base'] || '#ffffff');
+        variables[prefix + 'contrast-cta-dark'] = Colors.getColorWithContrastRatio(baseColor, 4.6, '#282836');
+
+        // Inject into :root as CSS variables
+        const root = document.documentElement;
+        Object.entries(variables).forEach(([key, value]) => {
+          root.style.setProperty(key, value);
+        });
+      } catch (e) {
+        console.warn('Could not apply derived CTA colors', e);
+      }
     }
 
     this.activeChapter = 0;
