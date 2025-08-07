@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "color": "^4.2.3",
-    "jquery-circle-progress": "^1.2.2"
+    "jquery-circle-progress": "^1.2.2",
+    "tinycolor2": "^1.6.0"
   }
 }
