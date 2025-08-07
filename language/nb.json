@@ -1,57 +1,57 @@
 {
   "semantics": [
     {
-      "label": "Enable book cover",
-      "description": "A cover that shows info regarding the book before access"
+      "label": "Bruk forside",
+      "description": "Ei forside som viser informasjon om boka"
     },
     {
-      "label": "Cover Page",
+      "label": "Forside",
       "fields": [
         {
-          "label": "Cover description",
-          "description": "This text will be the description of your book."
+          "label": "Tekst på forsida",
+          "description": "Denne teksten beskriver boka di."
         },
         {
-          "label": "Cover media",
-          "description": "Optional media to display on the cover."
+          "label": "Medieinnhold på forsida",
+          "description": "Valgfritt medieinnhold på forsida"
         }
       ]
     },
     {
-      "label": "Pages",
-      "entity": "Page",
+      "label": "Sider",
+      "entity": "Side",
       "widgets": [
         {
-          "label": "Default"
+          "label": "Standard"
         }
       ],
       "field": {
-        "label": "Item",
+        "label": "Element",
         "fields": [
           {
-            "label": "Page"
+            "label": "Side"
           }
         ]
       }
     },
     {
-      "label": "Behavioural settings",
+      "label": "Oppgaveinnstillinger",
       "fields": [
         {
-          "label": "Base color",
-          "description": "Set the base color that will define the overall color scheme of the book. Please ensure a high enough contrast."
+          "label": "Gjennomgående farge",
+          "description": "Velg gjennomgående farge for boka. Sørg for tilstrekkelig fargekontrast."
         },
         {
-          "label": "Display table of contents as default",
-          "description": "When enabled the table of contents is showed when opening the book"
+          "label": "Vis innholdsliste",
+          "description": "Velg dette om innholdslista skal vises når boka åpnes."
         },
         {
-          "label": "Display Progress Indicators",
-          "description": "When enabled there will be indicators per page showing the user if he is done with the page or not."
+          "label": "Vis framdriftsindikator",
+          "description": "Når innstillinga er aktivert, vil en indikator på sida vise om bruker er ferdig med den eller ikke."
         },
         {
-          "label": "Enable automatic progress",
-          "description": "If enabled a page without tasks is considered done when viewed. A page with tasks when all tasks are done. If disabled there will be a button at the bottom of every page for the user to click when done with the page."
+          "label": "Aktiver automatisk framdrift",
+          "description": "Når innstillinga er aktivert, blir ei side uten oppgaver regna som ferdig når den vises. Ei side med oppgaver blir regna som ferdig når alle oppgavene er gjennomført. Når innstillinga er deaktivert, må brukeren trykke på en knapp nederst på sida når hen er ferdig med den."
         },
         {
           "label": "Navigation restriction mode",
@@ -70,149 +70,149 @@
         },
         {
           "label": "Vis sammendrag",
-          "description": "When enabled the user can see a summary and submit the progress/answers"
+          "description": "Når innstillinga er valgt, kan bruker se et sammendrag og sende inn framdrift eller svar."
         },
         {
-          "label": "Enable \"Restart\" button",
-          "description": "When enabled the user can initiate a restart on the summary page."
+          "label": "Aktiver \"Prøv igjen\"-knapp",
+          "description": "Når innstillinga er valgt, får brukeren tilbud om å starte på nytt på sammendragssida."
         }
       ]
     },
     {
-      "label": "Translation for \"Read\"",
-      "default": "Read"
+      "label": "Oversettelse for \"Read\"",
+      "default": "Les"
     },
     {
-      "label": "Translation for \"Display 'Table of contents'\"",
-      "default": "Display 'Table of contents'"
+      "label": "Oversettelse for \"Display table of contents\"",
+      "default": "Vis innholdsliste"
     },
     {
-      "label": "Translation for \"Hide 'Table of contents'\"",
-      "default": "Hide 'Table of contents'"
+      "label": "Oversettelse for \"Hide table of contents\"",
+      "default": "Skjul innholdsliste"
     },
     {
-      "label": "Translation for \"Next page\"",
+      "label": "Oversettelse for \"Next page\"",
       "default": "Neste side"
     },
     {
-      "label": "Translation for \"Previous page\"",
+      "label": "Oversettelse for \"Previous page\"",
       "default": "Forrige side"
     },
     {
-      "label": "Translation for \"Page completed!\"",
-      "default": "Kapittel ferdig!"
+      "label": "Oversettelse for \"Page completed!\"",
+      "default": "Fullført side"
     },
     {
-      "label": "Translation for \"@pages of @total completed\" (@pages and @total will be replaced by actual values)",
-      "default": "@pages of @total completed"
+      "label": "Oversettelse for \"@pages of @total completed\" (Variablene @pages og @total vil bli erstatta av reelle verdier.)",
+      "default": "@pages av @total fullført"
     },
     {
-      "label": "Translation for \"Incomplete page\"",
-      "default": "Ikke fullført kapittel"
+      "label": "Oversettelse for \"Incomplete page\"",
+      "default": "Delvis fullført side"
     },
     {
-      "label": "Translation for \"Navigate to the top\"",
+      "label": "Oversettelse for \"Navigate to the top\"",
       "default": "Gå til toppen"
     },
     {
-      "label": "Translation for \"I have finished this page\"",
-      "default": "Jeg er ferdig med siden"
+      "label": "Oversettelse for \"I have finished this page\"",
+      "default": "Jeg er ferdig med sida"
     },
     {
-      "label": "Fullscreen button label",
+      "label": "Tekst for fullskjermknapp",
       "default": "Fullskjerm"
     },
     {
-      "label": "Exit fullscreen button label",
-      "default": "Lukk fullskjerm"
+      "label": "Tekst for knapp for å gå ut av fullskjerm",
+      "default": "Avslutt fullskjerm"
     },
     {
-      "label": "Page progress in book",
-      "description": "\"@count\" will be replaced by page count, and \"@total\" with the total number of pages",
-      "default": "@count of @total pages"
+      "label": "Framdrift sider",
+      "description": "\"@count\" erstattes med aktuelt sidenummer, \"@total\" erstattes med totalt antall sider.",
+      "default": "@count av @total sider"
     },
     {
-      "label": "Interaction progress",
-      "description": "\"@count\" will be replaced by interaction count, and \"@total\" with the total number of interactions",
+      "label": "Framdrift oppgaver",
+      "description": "\"@count\" blir erstatta med oppgavenummer, \"@total\" blir erstatta med totalt antall oppgaver.",
       "default": "@count av @total oppgaver"
     },
     {
-      "label": "Oversettelse for \"Levér rapport\"",
-      "default": "Levér rapport"
+      "label": "Oversettelse for \"Submit report\"",
+      "default": "Send inn rapport"
     },
     {
-      "label": "Label for \"restart\" button",
-      "default": "Restart"
+      "label": "Namn på \"Prøv igjen\"-knapp",
+      "default": "Prøv igjen"
     },
     {
-      "label": "Summary header",
-      "default": "Summary"
+      "label": "Tittel på sammendrag",
+      "default": "Sammendrag"
     },
     {
-      "label": "Translation for \"All interactions\"",
-      "default": "All interactions"
+      "label": "Oversettelse for \"All interactions\"",
+      "default": "Alle oppgavene"
     },
     {
-      "label": "Translation for \"Unanswered interactions\"",
-      "default": "Unanswered interactions"
+      "label": "Oversettelse for \"Unanswered interactions\"",
+      "default": "Uløste oppgaver"
     },
     {
-      "label": "Score",
-      "description": "\"@score\" will be replaced with current score, and \"@maxscore\" will be replaced with max achievable score",
+      "label": "Poengsum",
+      "description": "@score blir erstatta av oppnådd poengsum, @maxscore blir erstatta av mulig poengsum.",
       "default": "@score / @maxscore"
     },
     {
-      "label": "Per page interactions completion",
-      "description": "\"@left\" will be replaced with remaining interactions, and \"@max\" will be replaced with total number of interactions on the page",
-      "default": "@left of @max interactions completed"
+      "label": "Fullførte oppgaver per side",
+      "description": "@left blir erstatta med antall gjenstående oppgaver, @max blir erstatta med samla antall oppgaver på sida.",
+      "default": "@left av @max oppgaver fullført"
     },
     {
-      "label": "Translation for \"No interactions\"",
-      "default": "No interactions"
+      "label": "Oversettelse for \"No interactions\"",
+      "default": "Ingen oppgaver"
     },
     {
-      "label": "Translation for \"Score\"",
-      "default": "Score"
+      "label": "Oversettelse for \"Score\"",
+      "default": "Poengsum"
     },
     {
-      "label": "Label for \"Summary &amp; submit\" button",
-      "default": "Summary &amp; submit"
+      "label": "Navn på \"Sammendrag\"-knappen",
+      "default": "Lag sammendrag og send inn"
     },
     {
-      "label": "Translation for \"You have not interacted with any pages.\"",
-      "default": "You have not interacted with any pages."
+      "label": "Oversettelse for \"You have not interacted with any pages.\"",
+      "default": "Du har ikke vært aktiv på noen sider."
     },
     {
-      "label": "Translation for \"You have to interact with at least one page before you can see the summary.\"",
-      "default": "You have to interact with at least one page before you can see the summary."
+      "label": "Oversettelse for \"You have to interact with at least one page before you can see the summary.\"",
+      "default": "Du må være aktiv på minst éi side før du kan se sammendraget."
     },
     {
-      "label": "Translation for \"Your answers are submitted for review!\"",
-      "default": "Your answers are submitted for review!"
+      "label": "Oversettelse for \"Your answers are submitted for review!\"",
+      "default": "Svara dine er sendt inn til vurdering."
     },
     {
-      "label": "Summary progress label",
-      "default": "Book progress"
+      "label": "Tekst for framdrift i boka",
+      "default": "Framdrift i boka"
     },
     {
-      "label": "Interactions progress label",
-      "default": "Interactions progress"
+      "label": "Tekst for framdrift i oppgaver",
+      "default": "Framdrift i oppgaver"
     },
     {
-      "label": "Total score label",
-      "default": "Total score"
+      "label": "Tekst for samla poengsum",
+      "default": "Samla poengsum"
     },
     {
-      "label": "Accessibility texts",
+      "label": "Tekster for tilgjengelighet",
       "fields": [
         {
-          "label": "Page progress textual alternative",
-          "description": "An alternative text for the visual page progress. @page and @total variables available.",
-          "default": "Page @page of @total."
+          "label": "Tekstalternativ for sideframdrift",
+          "description": "Tekstalternativ til grafisk visning av sideframdrift. Variablene @page og @total kan brukes.",
+          "default": "Side @page av @total"
         },
         {
-          "label": "Label for expanding/collapsing navigation menu",
-          "default": "Toggle navigation menu"
+          "label": "Tekstalternativ til knappen som utvider eller skjuler navigasjonsmenyen",
+          "default": "Utvid eller skjul navigasjonsmeny"
         },
         {
           "label": "\"A new chapter can be accessed\"",

@@ -1,0 +1,205 @@
+{
+  "semantics": [
+    {
+      "label": "Activează coperta cărții",
+      "description": "O copertă care afișează informații despre carte înainte de acces"
+    },
+    {
+      "label": "Copertă",
+      "fields": [
+        {
+          "label": "Descrierea copertei",
+          "description": "Acest text va fi descrierea cărții tale."
+        },
+        {
+          "label": "Media pentru copertă",
+          "description": "Media opțională de afișat pe copertă."
+        }
+      ]
+    },
+    {
+      "label": "Pagini",
+      "entity": "Pagină",
+      "widgets": [
+        {
+          "label": "Implicit"
+        }
+      ],
+      "field": {
+        "label": "Element",
+        "fields": [
+          {
+            "label": "Pagină"
+          }
+        ]
+      }
+    },
+    {
+      "label": "Setări de comportament",
+      "fields": [
+        {
+          "label": "Culoare de bază",
+          "description": "Setați culoarea de bază care va defini schema generală de culori a cărții. Vă rugăm să asigurați un contrast suficient de ridicat."
+        },
+        {
+          "label": "Afișează cuprinsul în mod implicit",
+          "description": "Când este activat, cuprinsul este afișat la deschiderea cărții"
+        },
+        {
+          "label": "Afișează indicatorii de progres",
+          "description": "Când este activat, vor exista indicatori pe fiecare pagină care îi arată utilizatorului dacă a terminat sau nu pagina respectivă."
+        },
+        {
+          "label": "Activează progresul automat",
+          "description": "Dacă este activat, o pagină fără sarcini este considerată finalizată la vizualizare. O pagină cu sarcini este considerată finalizată când toate sarcinile sunt terminate. Dacă este dezactivat, va exista un buton în partea de jos a fiecărei pagini pe care utilizatorul îl poate apăsa când a terminat pagina."
+        },
+        {
+          "label": "Afișează rezumatul",
+          "description": "Când este activat, utilizatorul poate vedea un rezumat și poate trimite progresul/răspunsurile"
+        },
+        {
+          "label": "Activează butonul „Reia”",
+          "description": "Când este activat, utilizatorul poate iniția o reluare pe pagina de rezumat."
+        }
+      ]
+    },
+    {
+      "label": "Traducere pentru „Citește”",
+      "default": "Citește"
+    },
+    {
+      "label": "Traducere pentru „Afișează 'Cuprins'”",
+      "default": "Afișează 'Cuprins'"
+    },
+    {
+      "label": "Traducere pentru „Ascunde 'Cuprins'”",
+      "default": "Ascunde 'Cuprins'"
+    },
+    {
+      "label": "Traducere pentru „Pagina următoare”",
+      "default": "Pagina următoare"
+    },
+    {
+      "label": "Traducere pentru „Pagina anterioară”",
+      "default": "Pagina anterioară"
+    },
+    {
+      "label": "Traducere pentru „Pagină finalizată!”",
+      "default": "Pagină finalizată!"
+    },
+    {
+      "label": "Traducere pentru „@pages din @total finalizate” (@pages și @total vor fi înlocuite cu valori reale)",
+      "default": "@pages din @total finalizate"
+    },
+    {
+      "label": "Traducere pentru „Pagină incompletă”",
+      "default": "Pagină incompletă"
+    },
+    {
+      "label": "Traducere pentru „Navighează sus”",
+      "default": "Navighează sus"
+    },
+    {
+      "label": "Traducere pentru „Am terminat această pagină”",
+      "default": "Am terminat această pagină"
+    },
+    {
+      "label": "Etichetă buton Ecran complet",
+      "default": "Ecran complet"
+    },
+    {
+      "label": "Etichetă buton Ieșire din ecran complet",
+      "default": "Ieșire din ecran complet"
+    },
+    {
+      "label": "Progres pagini în carte",
+      "description": "„@count” va fi înlocuit cu numărul paginii, iar „@total” cu numărul total de pagini",
+      "default": "@count din @total pagini"
+    },
+    {
+      "label": "Progres interacțiuni",
+      "description": "„@count” va fi înlocuit cu numărul interacțiunii, iar „@total” cu numărul total de interacțiuni",
+      "default": "@count din @total interacțiuni"
+    },
+    {
+      "label": "Traducere pentru „Trimite raport”",
+      "default": "Trimite Raport"
+    },
+    {
+      "label": "Etichetă pentru butonul „reia”",
+      "default": "Reia"
+    },
+    {
+      "label": "Antet rezumat",
+      "default": "Rezumat"
+    },
+    {
+      "label": "Traducere pentru „Toate interacțiunile”",
+      "default": "Toate interacțiunile"
+    },
+    {
+      "label": "Traducere pentru „Interacțiuni fără răspuns”",
+      "default": "Interacțiuni fără răspuns"
+    },
+    {
+      "label": "Punctaj",
+      "description": "„@score” va fi înlocuit cu punctajul curent, iar „@maxscore” va fi înlocuit cu punctajul maxim posibil",
+      "default": "@score / @maxscore"
+    },
+    {
+      "label": "Finalizare interacțiuni pe pagină",
+      "description": "„@left” va fi înlocuit cu interacțiunile rămase, iar „@max” cu numărul total de interacțiuni de pe pagină",
+      "default": "@left din @max interacțiuni finalizate"
+    },
+    {
+      "label": "Traducere pentru „Nicio interacțiune”",
+      "default": "Nicio interacțiune"
+    },
+    {
+      "label": "Traducere pentru „Punctaj”",
+      "default": "Punctaj"
+    },
+    {
+      "label": "Etichetă pentru butonul „Rezumat & trimitere”",
+      "default": "Rezumat & trimitere"
+    },
+    {
+      "label": "Traducere pentru „Nu ați interacționat cu nicio pagină.”",
+      "default": "Nu ați interacționat cu nicio pagină."
+    },
+    {
+      "label": "Traducere pentru „Trebuie să interacționați cu cel puțin o pagină înainte de a putea vedea rezumatul.”",
+      "default": "Trebuie să interacționați cu cel puțin o pagină înainte de a putea vedea rezumatul."
+    },
+    {
+      "label": "Traducere pentru „Răspunsurile tale au fost trimise spre revizuire!”",
+      "default": "Răspunsurile tale au fost trimise spre revizuire!"
+    },
+    {
+      "label": "Etichetă progres carte",
+      "default": "Progres carte"
+    },
+    {
+      "label": "Etichetă progres interacțiuni",
+      "default": "Progres interacțiuni"
+    },
+    {
+      "label": "Etichetă punctaj total",
+      "default": "Punctaj total"
+    },
+    {
+      "label": "Texte de accesibilitate",
+      "fields": [
+        {
+          "label": "Alternativă textuală pentru progresul paginii",
+          "description": "Un text alternativ pentru progresul vizual al paginii. Variabilele @page și @total sunt disponibile.",
+          "default": "Pagina @page din @total."
+        },
+        {
+          "label": "Etichetă pentru extinderea/restrângerea meniului de navigare",
+          "default": "Comută meniul de navigare"
+        }
+      ]
+    }
+  ]
+}

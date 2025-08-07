@@ -3,7 +3,7 @@
  * Constructor function.
  */
 class SideBar extends H5P.EventDispatcher {
-  constructor(config, contentId, mainTitle, parent) {
+  constructor(config, contentId, mainTitle, parent, chapters) {
     super();
 
     this.id = contentId;
@@ -14,7 +14,7 @@ class SideBar extends H5P.EventDispatcher {
     this.container = this.addSideBar();
     this.l10n = config.l10n;
 
-    this.chapters = this.findAllChapters(config.chapters);
+    this.chapters = this.findAllChapters(chapters);
     this.chapterNodes = this.getChapterNodes();
 
     if (mainTitle) {
@@ -204,7 +204,8 @@ class SideBar extends H5P.EventDispatcher {
    */
   findSectionsInChapter(columnData) {
     const sectionsData = [];
-    const sections = columnData.params.content;
+    const sections = columnData.sections;
+
     for (let j = 0; j < sections.length; j++) {
       const content = sections[j].content;
 
@@ -223,6 +224,7 @@ class SideBar extends H5P.EventDispatcher {
       }
 
       sectionsData.push({
+        ...sections[j],
         title: title,
         id: content.subContentId ? `h5p-interactive-book-section-${content.subContentId}` : undefined
       });
@@ -239,26 +241,17 @@ class SideBar extends H5P.EventDispatcher {
    */
   findAllChapters(columnsData) {
     const chapters = [];
+
     for (let i = 0; i < columnsData.length; i++) {
-      const sections = this.findSectionsInChapter(columnsData[i]);
-      const chapterTitle = columnsData[i].metadata.title;
-      const id = `h5p-interactive-book-chapter-${columnsData[i].subContentId}`;
       chapters.push({
-        sections: sections,
-        title: chapterTitle,
-        id: id,
-        isSummary: false,
+        ...columnsData[i],
+        id: (columnsData[i].isSummary) ?
+          `h5p-interactive-book-chapter-summary` :
+          `h5p-interactive-book-chapter-${columnsData[i].instance.subContentId}`,
+        sections: this.findSectionsInChapter(columnsData[i])
       });
     }
 
-    if ( this.parent.hasSummary()) {
-      chapters.push({
-        sections: [],
-        title: this.l10n.summaryHeader,
-        id: `h5p-interactive-book-chapter-summary`,
-        isSummary: true,
-      });
-    }
     return chapters;
   }
 
@@ -405,7 +398,7 @@ class SideBar extends H5P.EventDispatcher {
     const sectionsDivId = 'h5p-interactive-book-sectionlist-' + chapterId;
     chapterNode.classList.add('h5p-interactive-book-navigation-chapter');
 
-    if ( chapter.isSummary) {
+    if (chapter.isSummary) {
       chapterNode.classList.add('h5p-interactive-book-navigation-summary-button');
       const summary = this.parent.chapters[chapterId];
       const summaryButton = summary.instance.summaryMenuButton;
@@ -493,8 +486,7 @@ class SideBar extends H5P.EventDispatcher {
       if (!this.parent.chapters[chapterId].sections[i].isTask) {
 
         // Check text content for headers
-        const chapterParams = this.parent.params.chapters[chapterId];
-        const sectionParams = chapterParams.params.content[i].content;
+        const sectionParams = this.chapters[chapterId].sections[i].content;
         const isText = sectionParams.library.split(' ')[0] === 'H5P.AdvancedText';
 
         if (isText) {
