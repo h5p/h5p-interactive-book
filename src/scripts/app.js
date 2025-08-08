@@ -60,6 +60,17 @@ export default class InteractiveBook extends H5P.EventDispatcher {
         variables[prefix + 'contrast-cta-white'] = Colors.getColorWithContrastRatio(baseColor, 4.6, variables[prefix + 'ui-base'] || '#ffffff');
         variables[prefix + 'contrast-cta-dark'] = Colors.getColorWithContrastRatio(baseColor, 4.6, '#282836');
 
+        // Hardcoded theme variables from daylight theme
+        variables[prefix + 'ui-base'] = '#FFFFFF';
+        variables[prefix + 'alternative-base'] = '#eff5fb';
+        variables[prefix + 'secondary-cta-light'] = '#0d0d0d';
+        variables[prefix + 'secondary-cta-dark'] = '#000000';
+        variables[prefix + 'secondary-contrast-cta'] = '#767676';
+        variables[prefix + 'secondary-contrast-cta-hover'] = '#fefefe';
+        variables[prefix + 'alternative-light'] = '#f8fbfe';
+        variables[prefix + 'alternative-dark'] = '#dcebfa';
+        variables[prefix + 'alternative-darker'] = '#cedeee';
+
         // Inject into :root as CSS variables
         const root = document.documentElement;
         Object.entries(variables).forEach(([key, value]) => {
