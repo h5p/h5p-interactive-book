@@ -75,14 +75,6 @@ button {
   background-color: var(--color-base-80, #014876);
 }
 
-// H5P.Audio
-.h5p-audio-inner .h5p-audio-minimal-button {
-  background: var(--color-base, rgb(100, 152, 254));
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, var(--color-base, rgba(100, 152, 254, 1))), color-stop(100%, var(--color-base-90, rgba(4, 104, 206, 1))));
-  background: -webkit-linear-gradient(top, var(--color-base, rgba(100, 152, 254, 1)) 0%, var(--color-base-90, rgba(4, 104, 206, 1)) 100%);
-  color: var(--color-text, #fff);
-}
-
 // H5P.CoursePresentation
 .h5p-course-presentation {
   .h5p-progressbar .h5p-progressbar-part-show {
