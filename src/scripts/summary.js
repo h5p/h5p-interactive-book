@@ -37,6 +37,47 @@ class Summary extends H5P.EventDispatcher {
         }
       }
     });
+
+    // Track and react to fullscreen changes so we only attach the scroll
+    // listener when the book is in fullscreen mode.
+    this._progressScrollAttached = false;
+    this._shouldAttachOnFullscreen = false;
+    this._progressScrollHandler = () => { };
+
+    parent.on('enterFullScreen', () => {
+      this._shouldAttachOnFullscreen = true;
+      this._setProgressScrollAttached(true);
+    });
+
+    parent.on('exitFullScreen', () => {
+      this._shouldAttachOnFullscreen = false;
+      this._setProgressScrollAttached(false);
+    });
+  }
+
+  /**
+   * Attach the progress scroll listener
+   *
+   */
+  _setProgressScrollAttached(shouldAttach) {
+    this._progressScrollTarget = this._findScrollParent(this.wrapper);
+
+    if (shouldAttach) {
+      if (this._progressScrollAttached) {
+        return;
+      }
+
+      this._progressScrollTarget.addEventListener('scroll', this._progressScrollHandler, { passive: true });
+      this._progressScrollAttached = true;
+      return;
+    }
+
+    if (!this._progressScrollAttached) {
+      return;
+    }
+
+    this._progressScrollTarget.removeEventListener('scroll', this._progressScrollHandler);
+    this._progressScrollAttached = false;
   }
 
   /**
@@ -669,7 +710,99 @@ class Summary extends H5P.EventDispatcher {
 
     container.append(this.wrapper);
 
+    // Fade-out progress container on scroll
+    // This is only needed if the book is in fullscreen mode
+    // Fade-in progress container on scroll to top
+    // Cleanup previous listeners if any
+    // Cleanup previous handler (if any). We'll reattach only when in
+    // fullscreen. The attach/detach logic is centralized in helper
+    // methods so that it can be triggered from fullscreen events.
+    this._setProgressScrollAttached(false);
+
+    this._progressScrollTarget = this._findScrollParent(this.wrapper);
+    this._scrollStartFired = false;
+    const THRESHOLD_TOP = 8; // Arbitrary threshold to determine if the user has scrolled back to the top
+
+    // Define handler once and reuse when attaching/detaching
+    this._progressScrollHandler = () => {
+      let scrollTop = 0;
+      try {
+        if (this._progressScrollTarget === window) {
+          scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+        }
+        else {
+          scrollTop = this._progressScrollTarget.scrollTop || 0;
+        }
+      }
+      catch (e) {
+        scrollTop = 0;
+      }
+
+      // If user scrolls back to top, show container
+      if (scrollTop <= THRESHOLD_TOP) {
+        this._scrollStartFired = false;
+        this.fadeProgressContainer('in');
+        return;
+      }
+
+      // On first scroll event after idle, call fadeProgressContainer('out')
+      if (!this._scrollStartFired) {
+        this._scrollStartFired = true;
+        this.fadeProgressContainer('out');
+        return;
+      }
+    };
+
+    // If the IB is already fullscreen when this summary page is added,
+    // attach the listener immediately. Otherwise it will be attached when
+    // the 'enterFullScreen' event fires.
+    if (H5P.isFullscreen === true || this.parent.isFullscreen === true || this._shouldAttachOnFullscreen) {
+      this._shouldAttachOnFullscreen = true;
+      this._setProgressScrollAttached(true);
+    }
+
     return container;
+  }
+
+  /**
+   * Fade progress container 'in' or 'out'.
+   * @param {'in'|'out'} mode
+   */
+  fadeProgressContainer(mode) {
+    const progressContainer = this.wrapper && this.wrapper.querySelector && this.wrapper.querySelector('.h5p-interactive-box-summary-progress');
+    if (!progressContainer) {
+      return;
+    }
+
+    if (mode === 'in') {
+      progressContainer.classList.remove('fade-out');
+      progressContainer.classList.add('fade-in');
+      return;
+    }
+
+    // mode === 'out'
+    progressContainer.classList.remove('fade-in');
+    progressContainer.classList.add('fade-out');
+  }
+
+
+  /**
+   * Find nearest scrollable parent or return window
+   * @param {HTMLElement} node
+   * @returns {HTMLElement|Window}
+   */
+  _findScrollParent(node) {
+    if (!node) return window;
+    let parent = node.parentElement;
+    const overflowScrollRegex = /(auto|scroll|overlay)/;
+    while (parent && parent !== document.body && parent !== document.documentElement) {
+      const style = getComputedStyle(parent);
+      if (overflowScrollRegex.test(style.overflow + style.overflowY + style.overflowX)) {
+        return parent;
+      }
+      parent = parent.parentElement;
+    }
+    return window;
   }
 
   /**

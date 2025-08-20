@@ -60,6 +60,15 @@
     position: sticky;
     top: calc(var(--h5p-theme-spacing-xl)*2);
     z-index: 151; // Ensure it is above the header
+    
+    &.fade-in {
+      opacity: 1;
+      transition: opacity 0.5s ease-in;
+    }
+    &.fade-out {
+      opacity: 0;
+      transition: opacity 0.5s ease-out;
+    }
 
     .h5p-interactive-book-summary-progress-container {
       background-color: var(--h5p-theme-ui-base);
