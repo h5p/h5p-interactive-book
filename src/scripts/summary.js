@@ -747,7 +747,7 @@ class Summary extends H5P.EventDispatcher {
         return;
       }
 
-      // Stay visible between FADE_IN_THRESHOLD and FADE_OUT_DELTA scroll distance
+      // Stay visible between FADE_IN_THRESHOLD and FADE_OUT_THRESHOLD scroll distance
       if (scrollTop < FADE_OUT_THRESHOLD) {
         this.fadeProgressContainer('in');
         return;
