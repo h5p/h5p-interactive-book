@@ -720,8 +720,8 @@ class Summary extends H5P.EventDispatcher {
     this._setProgressScrollAttached(false);
     this._progressScrollTarget = this._findScrollParent(this.wrapper);
 
-    const FADE_IN_THRESHOLD = 8; // Arbitrary threshold to determine if the user has scrolled down
-    const FADE_OUT_THRESHOLD = 32; // Arbitrary threshold to determine if the user has scrolled back to the top
+    const FADE_OUT_THRESHOLD = 8; // Arbitrary threshold to determine if the user has scrolled back to the top
+    const FADE_IN_THRESHOLD = 32; // Arbitrary threshold to determine if the user has scrolled down
 
     // Initial state: visible
     this.fadeProgressContainer('in');
@@ -742,13 +742,13 @@ class Summary extends H5P.EventDispatcher {
       }
 
       // If user scrolls back to top, show container
-      if (scrollTop <= FADE_IN_THRESHOLD) {
+      if (scrollTop <= FADE_OUT_THRESHOLD) {
         this.fadeProgressContainer('in');
         return;
       }
 
       // Stay visible between FADE_IN_THRESHOLD and FADE_OUT_THRESHOLD scroll distance
-      if (scrollTop < FADE_OUT_THRESHOLD) {
+      if (scrollTop < FADE_IN_THRESHOLD) {
         this.fadeProgressContainer('in');
         return;
       }
