@@ -113,10 +113,6 @@
 .h5p-theme-show-results.h5p-interactive-book-navigation-chapter-button {
   width: 100%;
   margin-top: var(--h5p-theme-spacing-s);
-
-  &::before {
-    content: "\e90a"; // Folder icon instead of eye icon
-  }
 }
 
 .h5p-interactive-book-navigation-chapter-button {
