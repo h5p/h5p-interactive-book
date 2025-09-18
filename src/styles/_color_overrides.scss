@@ -19,7 +19,7 @@ button {
       color: var(--color-text, #fff);
     }
 
-    &:focus {
+    &:focus-visible {
       background: var(--color-base-85, #1f67a8);
       color: var(--color-text, #fff);
     }
@@ -38,7 +38,7 @@ button {
   color: var(--color-text, #fff);
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     background: var(--color-base-85, #1356a3);
     color: var(--color-text, #fff);
   }
@@ -55,7 +55,7 @@ button {
   color: var(--color-text, #fff);
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     background: var(--color-base-85, #1356a3);
     color: var(--color-text, #fff);
   }
@@ -143,7 +143,7 @@ button {
   color: var(--color-text, #fff);
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     background: var(--color-base-85, #1356a3);
   }
 
@@ -160,7 +160,7 @@ button {
 }
 
 .h5p-gotoquestion-button[aria-disabled=false]:hover,
-.h5p-gotoquestion-button[aria-disabled=false]:focus {
+.h5p-gotoquestion-button[aria-disabled=false]:focus-visible {
   color: var(--color-base, #018d82);
 
   &:after {
@@ -174,7 +174,7 @@ button {
   color: var(--color-text, #fff);
 
   &:hover,
-  &:focus {
+  &:focus-visible {
     background: var(--color-base-85, #1356a3);
   }
 }

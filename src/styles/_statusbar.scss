@@ -288,13 +288,13 @@
     border: none;
     cursor: pointer;
 
-    &:focus{
-      outline: 2px ridge var(--h5p-theme-main-cta-base);
+    &:focus-visible {
+      outline: 2px ridge var(--h5p-theme-contrast-cta-white);
       border-radius: 4px;
       outline-offset: 2px;
     }
 
-    &:hover{
+    &:hover-visible {
       background-color: color-mix(in srgb, var(--h5p-theme-contrast-cta-light), transparent 60%);
     }
 
