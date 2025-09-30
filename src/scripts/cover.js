@@ -7,8 +7,21 @@ class Cover extends H5P.EventDispatcher {
     super();
 
     this.parent = parent;
-
     this.params = params;
+
+    let showCoverImage = false;
+    let coverLibrary = (this.params.coverMedium?.library || '').split(' ')[0];
+
+    switch (coverLibrary) {
+      case 'H5P.Video' :
+        showCoverImage = (this.params.coverMedium?.params?.sources?.[0]?.path) ? true : false;
+        break;
+
+      case 'H5P.Image' :
+        showCoverImage = (this.params.coverMedium?.params?.file?.path) ? true : false;
+        break;
+    }
+
     this.contentId = contentId;
     this.container = H5P.Components.CoverPage({
       title: titleText,
@@ -18,7 +31,7 @@ class Cover extends H5P.EventDispatcher {
         this.removeCover(true);
       },
       icon: 'book',
-      useMediaContainer: true,
+      useMediaContainer: showCoverImage,
     });
 
     this.visuals = this.container.querySelector('.h5p-theme-cover-img');
