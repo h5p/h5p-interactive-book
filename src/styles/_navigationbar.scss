@@ -1,6 +1,7 @@
 .h5p-interactive-book-navigation {
   max-height: 100%;
   overflow-y: auto;  
+  scrollbar-width: none;
   background-color: $background-color;
   background-size: cover;
   box-shadow: .625em .625em 1.875em $dark-grey-20;
