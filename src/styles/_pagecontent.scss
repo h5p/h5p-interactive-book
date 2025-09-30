@@ -32,6 +32,8 @@
 }
 
 .h5p-interactive-book-content {
+  max-height: 100%; 
+  overflow-y: auto;    
   margin: var(--h5p-theme-spacing-s) var(--h5p-theme-spacing-xl) var(--h5p-theme-spacing-xl);
   position: relative;
   width: 100%;
