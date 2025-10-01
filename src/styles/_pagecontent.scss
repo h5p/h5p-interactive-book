@@ -32,10 +32,6 @@
 }
 
 .h5p-interactive-book-content {
-  /** Set max height to avoid extremely tall content and to allow the content to be scrollable independently*/
-  max-height: 70rem; 
-  overflow-y: auto;  
-  scrollbar-width: none;  
   margin: var(--h5p-theme-spacing-s) var(--h5p-theme-spacing-xl) var(--h5p-theme-spacing-xl);
   position: relative;
   width: 100%;
@@ -56,6 +52,13 @@
       }
     }
   }
+}
+
+.h5p-interactive-book-content.scrollable {
+  /** Set max height to avoid extremely tall content and to allow the content to be scrollable independently*/
+  max-height: 70rem;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 
 .h5p-interactive-book-status-progress-marker {

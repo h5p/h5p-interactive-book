@@ -1,5 +1,5 @@
-import URLTools from './urltools';
 import Summary from "./summary";
+import URLTools from './urltools';
 
 class PageContent extends H5P.EventDispatcher {
   /**
@@ -65,6 +65,16 @@ class PageContent extends H5P.EventDispatcher {
     }
   }
 
+  updateContentScrollState(currentId, content) {
+    if (!content) return;
+    if (this.chapters[currentId]?.isSummary) {
+      content.classList.remove('scrollable');
+    }
+    else {
+      content.classList.add('scrollable');
+    }
+  }
+
   /**
    * Create page content.
    *
@@ -76,8 +86,10 @@ class PageContent extends H5P.EventDispatcher {
     this.columnNodes.forEach(element => {
       content.appendChild(element);
     });
+    let currentId = this.parent.getActiveChapter();
 
-    this.setChapterOrder(this.parent.getActiveChapter());
+    this.setChapterOrder(currentId);
+    this.updateContentScrollState(currentId, content);
 
     return content;
   }
@@ -469,6 +481,7 @@ class PageContent extends H5P.EventDispatcher {
 
           this.redirectSection(this.targetPage.section, this.targetPage.headerNumber);
 
+          this.updateContentScrollState(chapterIdNew, this.parent.pageContent.content);
           this.parent.trigger('resize');
         }, 250);
       }
