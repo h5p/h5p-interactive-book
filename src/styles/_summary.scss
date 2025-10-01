@@ -58,7 +58,7 @@
     color: #273C59;
     margin-top: calc(-1 * var(--h5p-theme-spacing-xl)*2);
     position: sticky;
-    top:calc(var(--h5p-theme-spacing-xl)*2);
+    top: calc(var(--h5p-theme-spacing-xl)*2);
     z-index: 151; // Ensure it is above the header
     
     &.fade-in {
