@@ -12,6 +12,7 @@
   grid-template-columns: min-content 1fr;
 
   &.h5p-interactive-book-status-header {
+    background-color: var(--h5p-theme-ui-base);
     @include prefix(position, sticky, webkit);
     pointer-events: none;
     background: none;
