@@ -32,7 +32,8 @@
 }
 
 .h5p-interactive-book-content {
-  max-height: 100vh; 
+  /** Set max height to avoid extremely tall content and to allow the content to be scrollable independently*/
+  max-height: 70rem; 
   overflow-y: auto;  
   scrollbar-width: none;  
   margin: var(--h5p-theme-spacing-s) var(--h5p-theme-spacing-xl) var(--h5p-theme-spacing-xl);
