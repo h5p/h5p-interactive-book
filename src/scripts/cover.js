@@ -9,18 +9,8 @@ class Cover extends H5P.EventDispatcher {
     this.parent = parent;
     this.params = params;
 
-    let showCoverImage = false;
-    let coverLibrary = (this.params.coverMedium?.library || '').split(' ')[0];
-
-    switch (coverLibrary) {
-      case 'H5P.Video' :
-        showCoverImage = (this.params.coverMedium?.params?.sources?.[0]?.path) ? true : false;
-        break;
-
-      case 'H5P.Image' :
-        showCoverImage = (this.params.coverMedium?.params?.file?.path) ? true : false;
-        break;
-    }
+    // Check whether an actual video or image has been added to the cover
+    let showCoverImage = !((this.params.coverMedium?.params?.sources?.[0]?.path || this.params.coverMedium?.params?.file?.path) == null);
 
     this.contentId = contentId;
     this.container = H5P.Components.CoverPage({
