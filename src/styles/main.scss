@@ -127,7 +127,8 @@ $fullscreen-button-size: 1.8em;
 .h5p-fullscreen,
 .h5p-semi-fullscreen {
   .h5p-interactive-book {
-    overflow-y: auto !important;
+    overflow-y: hidden !important;
+    scrollbar-width: none;
 
     &.edge-18 .h5p-interactive-book-status {
       padding-right: 9em;
@@ -135,9 +136,21 @@ $fullscreen-button-size: 1.8em;
   }
 
   .h5p-interactive-book-main {
-    overflow-x: hidden;
+    padding-top: 5rem;
+    height: calc(100% - ((4 * var(--h5p-theme-spacing-s)) + 100px));
+  }
+
+  .h5p-interactive-book-content {
     overflow-y: auto;
-    min-height: calc(100% - ((4 * var(--h5p-theme-spacing-s)) + 100px));
+    min-height: 0;
+  }
+
+  .h5p-interactive-book-status.h5p-interactive-book-status-header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
   }
 
   .h5p-interactive-book-status-footer {
