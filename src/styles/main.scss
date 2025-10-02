@@ -133,6 +133,19 @@ $fullscreen-button-size: 1.8em;
       padding-right: 9em;
     }
   }
+
+  .h5p-interactive-book-main {
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: calc(100% - ((4 * var(--h5p-theme-spacing-s)) + 100px));
+  }
+
+  .h5p-interactive-book-status-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+  }
 }
 
 @import 'pagecontent';
