@@ -411,12 +411,6 @@ class StatusBar extends H5P.EventDispatcher {
 
     this.parent.on('exitFullScreen', () => {
       this.parent.isFullscreen = false;
-
-      // let H5P.isFullscreen become false
-      setTimeout(() => {
-        this.parent.trigger('resize');
-      }, 10);
-
       fullScreenButton.classList.remove('h5p-interactive-book-exit-fullscreen');
       fullScreenButton.classList.add('h5p-interactive-book-enter-fullscreen');
       fullScreenButton.setAttribute('title', this.params.l10n.fullscreen);

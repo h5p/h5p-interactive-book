@@ -482,9 +482,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
         // Resize if necessary and not animating
         if (this.pageContent.content.style.height !== `${currentNode.offsetHeight}px` && !currentNode.classList.contains('h5p-interactive-book-animate')) {
           this.pageContent.content.style.height = `${currentNode.offsetHeight}px`;
-          if(H5P.isFullscreen) {
-            this.pageContent.content.style.height =  '';
-          }
+
           // Add some slack time before resizing again.
           setTimeout(() => {
             this.isBubblingUpToCore = true;
