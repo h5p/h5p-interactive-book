@@ -37,47 +37,6 @@ class Summary extends H5P.EventDispatcher {
         }
       }
     });
-
-    // Track and react to fullscreen changes so we only attach the scroll
-    // listener when the book is in fullscreen mode.
-    this._progressScrollAttached = false;
-    this._shouldAttachOnFullscreen = false;
-    this._progressScrollHandler = () => { };
-
-    parent.on('enterFullScreen', () => {
-      this._shouldAttachOnFullscreen = true;
-      this._setProgressScrollAttached(true);
-    });
-
-    parent.on('exitFullScreen', () => {
-      this._shouldAttachOnFullscreen = false;
-      this._setProgressScrollAttached(false);
-    });
-  }
-
-  /**
-   * Attach the progress scroll listener
-   *
-   */
-  _setProgressScrollAttached(shouldAttach) {
-    this._progressScrollTarget = this._findScrollParent(this.wrapper);
-
-    if (shouldAttach) {
-      if (this._progressScrollAttached) {
-        return;
-      }
-
-      this._progressScrollTarget.addEventListener('scroll', this._progressScrollHandler, { passive: true });
-      this._progressScrollAttached = true;
-      return;
-    }
-
-    if (!this._progressScrollAttached) {
-      return;
-    }
-
-    this._progressScrollTarget.removeEventListener('scroll', this._progressScrollHandler);
-    this._progressScrollAttached = false;
   }
 
   /**
@@ -141,7 +100,7 @@ class Summary extends H5P.EventDispatcher {
       const filteredSectionList = sectionList.filter(section => !section.classList.contains('h5p-interactive-book-summary-no-interactions'));
       if (filteredSectionList.length) {
         filteredSectionList[0].classList.add('h5p-interactive-book-summary-top-section');
-        filteredSectionList[filteredSectionList.length-1].classList.add('h5p-interactive-book-summary-bottom-section');
+        filteredSectionList[filteredSectionList.length - 1].classList.add('h5p-interactive-book-summary-bottom-section');
       }
       else {
         emptyContainer.style.display = 'block';
@@ -261,7 +220,7 @@ class Summary extends H5P.EventDispatcher {
 
     const container = document.createElement("div");
     container.appendChild(box);
-    container.appendChild(this.createCircle(progressCounter/progressTotal));
+    container.appendChild(this.createCircle(progressCounter / progressTotal));
 
     return container;
   }
@@ -709,85 +668,8 @@ class Summary extends H5P.EventDispatcher {
     Array.from(document.querySelectorAll('.h5p-interactive-book-summary-footer')).forEach(element => element.remove());
 
     container.append(this.wrapper);
-
-    // Fade-out progress container on scroll
-    // This is only needed if the book is in fullscreen mode
-    // Fade-in progress container on scroll to top
-    // Cleanup previous listeners if any
-    // Cleanup previous handler (if any). We'll reattach only when in
-    // fullscreen. The attach/detach logic is centralized in helper
-    // methods so that it can be triggered from fullscreen events.
-    this._setProgressScrollAttached(false);
-    this._progressScrollTarget = this._findScrollParent(this.wrapper);
-
-    const FADE_IN_THRESHOLD = 8; // Arbitrary threshold to determine if the user has scrolled back to top
-    const FADE_OUT_THRESHOLD = 32; // Arbitrary threshold to determine if the user has scrolled down
-
-    // Initial state: visible
-    this.fadeProgressContainer('in');
-
-    // Define handler once and reuse when attaching/detaching
-    this._progressScrollHandler = () => {
-      let scrollTop = 0;
-      try {
-        if (this._progressScrollTarget === window) {
-          scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
-        }
-        else {
-          scrollTop = this._progressScrollTarget.scrollTop || 0;
-        }
-      }
-      catch (e) {
-        scrollTop = 0;
-      }
-
-      // If user scrolls back to top, show container
-      if (scrollTop <= FADE_IN_THRESHOLD) {
-        this.fadeProgressContainer('in');
-        return;
-      }
-
-      // Stay visible between FADE_IN_THRESHOLD and FADE_OUT_THRESHOLD scroll distance
-      if (scrollTop < FADE_OUT_THRESHOLD) {
-        this.fadeProgressContainer('in');
-        return;
-      }
-
-      this.fadeProgressContainer('out');
-    };
-
-    // If the IB is already fullscreen when this summary page is added,
-    // attach the listener immediately. Otherwise it will be attached when
-    // the 'enterFullScreen' event fires.
-    if (H5P.isFullscreen === true || this.parent.isFullscreen === true || this._shouldAttachOnFullscreen) {
-      this._shouldAttachOnFullscreen = true;
-      this._setProgressScrollAttached(true);
-    }
-
     return container;
   }
-
-  /**
-   * Fade progress container 'in' or 'out'.
-   * @param {'in'|'out'} mode
-   */
-  fadeProgressContainer(mode) {
-    const progressContainer = this.wrapper && this.wrapper.querySelector && this.wrapper.querySelector('.h5p-interactive-box-summary-progress');
-    if (!progressContainer) {
-      return;
-    }
-
-    if (mode === 'in') {
-      progressContainer.classList.remove('fade-out');
-      progressContainer.classList.add('fade-in');
-      return;
-    }
-
-    // mode === 'out'
-    progressContainer.classList.remove('fade-in');
-    progressContainer.classList.add('fade-out');
-  }
-
 
   /**
    * Find nearest scrollable parent or return window
