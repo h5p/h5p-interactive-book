@@ -672,25 +672,6 @@ class Summary extends H5P.EventDispatcher {
   }
 
   /**
-   * Find nearest scrollable parent or return window
-   * @param {HTMLElement} node
-   * @returns {HTMLElement|Window}
-   */
-  _findScrollParent(node) {
-    if (!node) return window;
-    let parent = node.parentElement;
-    const overflowScrollRegex = /(auto|scroll|overlay)/;
-    while (parent && parent !== document.body && parent !== document.documentElement) {
-      const style = getComputedStyle(parent);
-      if (overflowScrollRegex.test(style.overflow + style.overflowY + style.overflowX)) {
-        return parent;
-      }
-      parent = parent.parentElement;
-    }
-    return window;
-  }
-
-  /**
    * Verify that submit button should be enabled
    * Compare previous and current states of children to notice changes
    */

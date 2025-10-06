@@ -270,10 +270,6 @@
     }
   }
 
-  .h5p-interactive-book-status-main {
-    padding: var(--h5p-theme-spacing-s) var(--h5p-theme-spacing-s) calc(var(--h5p-theme-spacing-xl)*1.5) var(--h5p-theme-spacing-s);
-  }
-
   &:has(.h5p-interactive-book-status-menu-active) .h5p-interactive-book-status-main {
     background-color: var(--h5p-theme-main-cta-base);
 
