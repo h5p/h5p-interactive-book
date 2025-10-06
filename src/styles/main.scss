@@ -133,20 +133,16 @@ $fullscreen-button-size: 1.8em;
 
   .h5p-interactive-book-main {
     height: calc(100% - ((4 * var(--h5p-theme-spacing-s)) + 100px));
-  }
 
-  .h5p-interactive-book-navigation {
-    max-height: 100%;
-    overflow-y: auto; 
-  }
+    .h5p-interactive-book-navigation,
+    .h5p-interactive-book-content {
+      max-height: 100%;
+      overflow-y: auto;
+    }
 
-   &.h5p-interactive-book-navigation-open .h5p-interactive-book-navigation {
-    width: 100%;
-  }
-
-  .h5p-interactive-book-content {
-    max-height: 100%;
-    overflow-y: auto;
+    &.h5p-interactive-book-navigation-open .h5p-interactive-book-navigation {
+      width: 100%;
+    }
   }
 
   .h5p-interactive-book-status-footer,

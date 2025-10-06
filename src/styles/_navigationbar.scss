@@ -26,13 +26,6 @@
   }
 }
 
-.h5p-interactive-book-large,
-.h5p-interactive-book-medium {
-  &.h5p-showing-summary .navigation-list {
-    top: calc(-2 * var(--h5p-theme-spacing-l));
-  }
-}
-
 .h5p-interactive-book-navigation-sectionlist {
   background-color: $background-color;
   background-size: cover;
