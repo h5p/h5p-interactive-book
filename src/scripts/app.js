@@ -92,7 +92,6 @@ export default class InteractiveBook extends H5P.EventDispatcher {
     this.mainWrapper = null;
     this.currentRatio = null;
     this.smallSurface = 'h5p-interactive-book-small';
-    this.mediumSurface = 'h5p-interactive-book-medium';
     this.largeSurface = 'h5p-interactive-book-large';
 
     this.chapters = [];
@@ -769,10 +768,6 @@ export default class InteractiveBook extends H5P.EventDispatcher {
         {
           "className": this.smallSurface,
           "shouldAdd": ratio => ratio < 43,
-        },
-        {
-          "className": this.mediumSurface,
-          "shouldAdd": ratio => ratio >= 43 && ratio < 60,
         },
         {
           "className": this.largeSurface,

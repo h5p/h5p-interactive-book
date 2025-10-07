@@ -35,13 +35,6 @@
   margin: 0.7rem auto;
 }
 
-/* Stack summary boxes vertically if container < ~1000px (no specific reason for 1000 exactly) to avoid squishing */
-@container interactive-book (max-width: 1000px) {
-  .h5p-interactive-box-summary-progress {
-    flex-direction: column;
-  }
-}
-
 .h5p-theme-show-results {
   &[data-book-completed="true"],
   &:active {
@@ -424,3 +417,22 @@
 .h5p-showing-summary.h5p-showing-summary .h5p-interactive-book-status:not(.h5p-interactive-book-status-footer) .h5p-interactive-book-status-main .h5p-theme-progress {
   color: var(--h5p-theme-contrast-cta) !important;
 }
+
+.h5p-showing-summary.h5p-showing-summary .h5p-interactive-book-status-main,
+.h5p-showing-summary.h5p-showing-summary .h5p-interactive-book-status .h5p-interactive-book-status-side {
+  align-items: flex-start;
+}
+
+/* Stack summary boxes vertically if container < ~1029px (breakpoint made through ratio in js) to avoid squishing */
+@container interactive-book (max-width: 1029px) {
+  .h5p-fullscreen {
+    .h5p-interactive-box-summary-progress {
+      position: inherit;
+      margin-top: initial;
+    }
+  }
+  .h5p-interactive-box-summary-progress {
+    flex-direction: column;
+  }
+}
+

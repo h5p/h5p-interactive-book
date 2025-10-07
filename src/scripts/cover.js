@@ -7,8 +7,11 @@ class Cover extends H5P.EventDispatcher {
     super();
 
     this.parent = parent;
-
     this.params = params;
+
+    // Check whether an actual video or image has been added to the cover
+    let showCoverImage = !((this.params.coverMedium?.params?.sources?.[0]?.path || this.params.coverMedium?.params?.file?.path) == null);
+
     this.contentId = contentId;
     this.container = H5P.Components.CoverPage({
       title: titleText,
@@ -18,7 +21,7 @@ class Cover extends H5P.EventDispatcher {
         this.removeCover(true);
       },
       icon: 'book',
-      useMediaContainer: true,
+      useMediaContainer: showCoverImage,
     });
 
     this.visuals = this.container.querySelector('.h5p-theme-cover-img');
