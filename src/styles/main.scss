@@ -141,15 +141,6 @@ $fullscreen-button-size: 1.8em;
       overflow-y: auto;
     }
   }
-
-  .h5p-interactive-book-status-footer,
-  .h5p-interactive-book-status.h5p-interactive-book-status-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    left: 0;
-  }
-
 }
 
 @import 'pagecontent';
