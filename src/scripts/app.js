@@ -1,10 +1,10 @@
-import URLTools from './urltools';
-import SideBar from './sidebar';
-import StatusBar from './statusbar';
+import tinycolor from 'tinycolor2';
+import Colors from './colors';
 import Cover from './cover';
 import PageContent from './pagecontent';
-import Colors from './colors';
-import tinycolor from 'tinycolor2';
+import SideBar from './sidebar';
+import StatusBar from './statusbar';
+import URLTools from './urltools';
 
 export default class InteractiveBook extends H5P.EventDispatcher {
   /**
@@ -31,7 +31,8 @@ export default class InteractiveBook extends H5P.EventDispatcher {
       const style = document.createElement('style');
       if (style.styleSheet) {
         style.styleSheet.cssText = Colors.getCSS();
-      } else {
+      }
+      else {
         style.appendChild(document.createTextNode(Colors.getCSS()));
       }
       document.head.appendChild(style);
@@ -76,7 +77,8 @@ export default class InteractiveBook extends H5P.EventDispatcher {
         Object.entries(variables).forEach(([key, value]) => {
           root.style.setProperty(key, value);
         });
-      } catch (e) {
+      }
+      catch (e) {
         console.warn('Could not apply derived CTA colors', e);
       }
     }
@@ -533,8 +535,8 @@ export default class InteractiveBook extends H5P.EventDispatcher {
 
     this.on('scrollToTop', event => {
       if (H5P.isFullscreen === true) {
-        const container = this.pageContent.container;
-        container.scrollBy(0, -container.scrollHeight);
+        const container = this.pageContent.container.getElementsByClassName('h5p-interactive-book-content')[0];
+        container.scrollTop = 0;
       }
       else {
         if (event.data !== false) { // Note: undefined is treated as true here
@@ -993,7 +995,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
      */
     const urlFragments = URLTools.extractFragmentsFromURL(
       this.validateFragments, this.hashWindow
-      );
+    );
 
     this.shouldShowCover = this.params.showCoverPage &&
       !(

@@ -111,7 +111,7 @@ class StatusBar extends H5P.EventDispatcher {
 
       if (event.data.direction === 'next') {
         if (this.parent.activeChapter + 1 < this.parent.chapters.length) {
-          eventInput.chapter = `h5p-interactive-book-chapter-${this.parent.chapters[this.parent.activeChapter+1].instance.subContentId}`;
+          eventInput.chapter = `h5p-interactive-book-chapter-${this.parent.chapters[this.parent.activeChapter + 1].instance.subContentId}`;
         }
         else if (this.parent.hasSummary() && this.parent.activeChapter + 1 === this.parent.chapters.length) {
           this.parent.trigger('viewSummary', eventInput);
@@ -119,7 +119,7 @@ class StatusBar extends H5P.EventDispatcher {
       }
       else if (event.data.direction === 'prev') {
         if (this.parent.activeChapter > 0) {
-          eventInput.chapter = `h5p-interactive-book-chapter-${this.parent.chapters[this.parent.activeChapter-1].instance.subContentId}`;
+          eventInput.chapter = `h5p-interactive-book-chapter-${this.parent.chapters[this.parent.activeChapter - 1].instance.subContentId}`;
         }
       }
       if (eventInput.chapter) {
