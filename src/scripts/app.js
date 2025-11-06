@@ -44,21 +44,28 @@ export default class InteractiveBook extends H5P.EventDispatcher {
 
         const mainCtaColor = tinycolor(baseColor);
 
-        // +5% lightness
-        variables[prefix + 'main-cta-light'] = mainCtaColor.clone().lighten(5).toHexString();
+        // RULE:  h5p-theme-main-cta-base +5% lightness unless brightness is above 230 of 255, if so -5% lightness
+        if (mainCtaColor.getBrightness() < 230) {
+          variables[prefix + 'main-cta-light'] = mainCtaColor.clone().lighten(5).toHexString();
+        }
+        else {
+          variables[prefix + 'main-cta-light'] = mainCtaColor.clone().darken(5).toHexString();
+        }
 
-        // -5% lightness
+        // RULE: h5p-theme-main-cta-base -5% lightness
         variables[prefix + 'main-cta-dark'] = mainCtaColor.clone().darken(5).toHexString();
 
-        // Contrast against itself
+        // RULE: h5p-theme-main-cta-base +/- lightness until the color has 4.6:1 contrast ratio against --h5p-theme-main-cta-base
         variables[prefix + 'contrast-cta'] = Colors.getColorWithContrastRatio(baseColor, 4.6, baseColor);
 
-        // Mix with ui-base (defaulting to white if not defined yet)
+        // RULE: 10% opacity of --h5p-theme-main-cta-base
         const base = tinycolor(variables[prefix + 'ui-base'] || '#ffffff');
         variables[prefix + 'contrast-cta-light'] = tinycolor.mix(mainCtaColor, base, 90).toHexString();
 
-        // Contrast against ui-base and dark backgrounds
+        // RULE: --h5p-theme-main-cta-base +/- lightness until the color has 4.6:1 contrast ratio against --h5p-theme-ui-base
         variables[prefix + 'contrast-cta-white'] = Colors.getColorWithContrastRatio(baseColor, 4.6, variables[prefix + 'ui-base'] || '#ffffff');
+        
+        // RULE: --h5p-theme-main-cta-base +/- lightness until the color has 4.6:1 contrast ratio against #282836
         variables[prefix + 'contrast-cta-dark'] = Colors.getColorWithContrastRatio(baseColor, 4.6, '#282836');
 
         // Hardcoded theme variables from daylight theme
