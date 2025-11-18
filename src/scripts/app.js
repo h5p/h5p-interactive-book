@@ -71,10 +71,11 @@ export default class InteractiveBook extends H5P.EventDispatcher {
         // Hardcoded theme variables from daylight theme
         variables[prefix + 'ui-base'] = '#FFFFFF';
         variables[prefix + 'alternative-base'] = '#eff5fb';
-        variables[prefix + 'secondary-cta-light'] = '#0d0d0d';
-        variables[prefix + 'secondary-cta-dark'] = '#000000';
-        variables[prefix + 'secondary-contrast-cta'] = '#767676';
-        variables[prefix + 'secondary-contrast-cta-hover'] = '#fefefe';
+        variables[prefix + 'secondary-cta-base'] = '#202122';
+        variables[prefix + 'secondary-cta-light'] = '#222324';
+        variables[prefix + 'secondary-cta-dark'] = '#1F1F20';
+        variables[prefix + 'secondary-contrast-cta'] = '#E3E9F1';
+        variables[prefix + 'secondary-contrast-cta-hover'] = '#FFFFFF';
         variables[prefix + 'alternative-light'] = '#f8fbfe';
         variables[prefix + 'alternative-dark'] = '#dcebfa';
         variables[prefix + 'alternative-darker'] = '#cedeee';
