@@ -9,16 +9,18 @@ class StatusBar extends H5P.EventDispatcher {
 
     this.params = params || {};
 
-    this.params.l10n = Object.assign({
+    this.params.l10n = {
       page: 'Page',
       next: 'Next',
-      previous: 'Previous'
-    }, params.l10n || {});
+      previous: 'Previous',
+      ...params.l10n || {},
+    };
 
-    this.params.a11y = Object.assign({
+    this.params.a11y = {
       progress: 'Page @page of @total',
       menu: 'Toggle navigation menu',
-    }, this.params.a11y || {});
+      ...this.params.a11y || {},
+    };
 
     this.totalChapters = totalChapters;
     this.arrows = this.addArrows();
@@ -103,7 +105,7 @@ class StatusBar extends H5P.EventDispatcher {
      */
     this.on('seqChapter', (event) => {
       const eventInput = {
-        h5pbookid: this.parent.contentId
+        h5pbookid: this.parent.contentId,
       };
       if (event.data.toTop) {
         eventInput.section = 'top';
@@ -170,7 +172,7 @@ class StatusBar extends H5P.EventDispatcher {
 
     this.chapterTitle.text.setAttribute('title', chapterTitle);
 
-    //assure that the buttons are valid in terms of chapter edges
+    // assure that the buttons are valid in terms of chapter edges
     if (this.parent.activeChapter <= 0) {
       this.setButtonStatus('Previous', true);
     }
@@ -197,10 +199,10 @@ class StatusBar extends H5P.EventDispatcher {
       icon: 'previous',
       onClick: () => {
         this.trigger('seqChapter', {
-          direction:'prev',
-          toTop: true
+          direction: 'prev',
+          toTop: true,
         });
-      }
+      },
     });
 
     acm.buttonNext = H5P.Components.Button({
@@ -209,10 +211,10 @@ class StatusBar extends H5P.EventDispatcher {
       icon: 'next',
       onClick: () => {
         this.trigger('seqChapter', {
-          direction:'next',
-          toTop: true
+          direction: 'next',
+          toTop: true,
         });
-      }
+      },
     });
 
     return acm;
@@ -266,7 +268,7 @@ class StatusBar extends H5P.EventDispatcher {
 
     return {
       wrapper,
-      progress
+      progress,
     };
   }
 
@@ -284,7 +286,7 @@ class StatusBar extends H5P.EventDispatcher {
     wrapper.appendChild(text);
     return {
       wrapper,
-      text
+      text,
     };
   }
 
@@ -353,7 +355,7 @@ class StatusBar extends H5P.EventDispatcher {
       total,
       divider,
       progressText,
-      hiddenButRead
+      hiddenButRead,
     };
   }
 
@@ -365,10 +367,10 @@ class StatusBar extends H5P.EventDispatcher {
    */
   setButtonStatus(target, disable) {
     if (disable) {
-      this.arrows['button' + target].setAttribute('disabled', 'disabled');
+      this.arrows[`button${target}`].setAttribute('disabled', 'disabled');
     }
     else {
-      this.arrows['button' + target].removeAttribute('disabled');
+      this.arrows[`button${target}`].removeAttribute('disabled');
     }
   }
 
@@ -419,6 +421,5 @@ class StatusBar extends H5P.EventDispatcher {
 
     return fullScreenButton;
   }
-
 }
 export default StatusBar;

@@ -10,7 +10,7 @@ class Cover extends H5P.EventDispatcher {
     this.params = params;
 
     // Check whether an actual video or image has been added to the cover
-    let showCoverImage = !((this.params.coverMedium?.params?.sources?.[0]?.path || this.params.coverMedium?.params?.file?.path) == null);
+    const showCoverImage = !((this.params.coverMedium?.params?.sources?.[0]?.path || this.params.coverMedium?.params?.file?.path) == null);
 
     this.contentId = contentId;
     this.container = H5P.Components.CoverPage({
@@ -37,24 +37,20 @@ class Cover extends H5P.EventDispatcher {
       return;
     }
 
-    const coverMedium = this.params.coverMedium;
+    const { coverMedium } = this.params;
 
     // Preparation
     if ((coverMedium.library || '').split(' ')[0] === 'H5P.Video') {
       coverMedium.params.visuals.fit = false;
     }
 
-    const instance = H5P.newRunnable(coverMedium, this.contentId, H5P.jQuery(this.visuals), false, { metadata: coverMedium.medatata } );
+    const instance = H5P.newRunnable(coverMedium, this.contentId, H5P.jQuery(this.visuals), false, { metadata: coverMedium.medatata });
 
     // Resize parent when children resize
-    this.bubbleUp(
-      instance, 'resize', this.parent
-    );
+    this.bubbleUp(instance, 'resize', this.parent);
 
     // Resize children to fit inside parent
-    this.bubbleDown(
-      this.parent, 'resize', [instance]
-    );
+    this.bubbleDown(this.parent, 'resize', [instance]);
   }
 
   /**

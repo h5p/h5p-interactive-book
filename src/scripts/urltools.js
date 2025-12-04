@@ -13,7 +13,7 @@ class URLTools {
     // Convert fragment string to object with properties
     const fragments = {};
     hashWindow.location.hash.replace('#', '').split('&')
-      .forEach(fragment => {
+      .forEach((fragment) => {
         if (fragment.indexOf('=') === -1) {
           return; // Skip if incomplete pair
         }
@@ -36,7 +36,7 @@ class URLTools {
    * @return {string} Fragments string.
    */
   static createFragmentsString(fragments) {
-    let parts = [];
+    const parts = [];
     for (const fragment in fragments) {
       parts.push(`${fragment}=${fragments[fragment]}`);
     }
