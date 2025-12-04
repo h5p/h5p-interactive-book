@@ -487,33 +487,6 @@ export default class InteractiveBook extends H5P.EventDispatcher {
         if (!this.bubblingUpwards) {
           this.pageContent.chapters[currentChapterId].instance.trigger('resize');
         }
-
-        // Resize if necessary and not animating
-        if (this.pageContent.content.style.height !== `${currentNode.offsetHeight}px` && !currentNode.classList.contains('h5p-interactive-book-animate')) {
-          this.pageContent.content.style.height = `${currentNode.offsetHeight}px`;
-
-          // Add some slack time before resizing again.
-          setTimeout(() => {
-            this.isBubblingUpToCore = true;
-            this.trigger('resize');
-            this.isBubblingUpToCore = false;
-          }, 10);
-
-          /*
-           * H5P content may using H5P.Question and hide all buttons, but H5P.
-           * Question doesn't trigger a `resize` even though the buttons
-           * sections got emptied. This could be changed in H5P.Question, but
-           * then we might get a lot of resize events.
-           * Enforcing one extra resize here if the page content height changed.
-           * @see HFP-3913.
-           */
-          window.clearTimeout(this.extraResizeTimeout);
-          this.extraResizeTimeout = window.setTimeout(() => {
-            this.isBubblingUpToCoreNo2 = true;
-            this.trigger('resize');
-            this.isBubblingUpToCoreNo2 = false;
-          }, 200); // Transition time of H5P.Question hiding buttons: 150ms
-        }
       }
     };
 
