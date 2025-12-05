@@ -463,10 +463,6 @@ export default class InteractiveBook extends H5P.EventDispatcher {
      * Handle resizing of the content
      */
     this.resize = () => {
-      if (this.isBubblingUpToCore || this.isBubblingUpToCoreNo2) {
-        return;
-      }
-
       if (!this.pageContent || !this.hasValidChapters() || !this.mainWrapper) {
         return;
       }
