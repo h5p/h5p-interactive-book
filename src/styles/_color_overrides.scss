@@ -137,22 +137,6 @@ button {
   color: var(--color-text, #fff);
 }
 
-// H5P.GuessTheAnswer
-.h5p-guess-answer .show-solution-button {
-  background-color: var(--color-base, #1a73d9);
-  color: var(--color-text, #fff);
-
-  &:hover,
-  &:focus-visible {
-    background: var(--color-base-85, #1356a3);
-  }
-
-  &:active {
-    background: var(--color-base-80, #104888);
-    box-shadow: inset 0 4px 0 var(--color-base-75, #0e407a);
-  }
-}
-
 // H5P.GoToQuestion
 .h5p-gotoquestion-text {
   background: var(--color-base, #018d82);
