@@ -152,17 +152,6 @@ button {
   }
 }
 
-// H5P.MemoryGame
-.h5p-memory-reset {
-  background: var(--color-base, #1a73d9);
-  color: var(--color-text, #fff);
-
-  &:hover,
-  &:focus-visible {
-    background: var(--color-base-85, #1356a3);
-  }
-}
-
 // H5P.OpenEndedQuestion
 .h5p-questionnaire .h5p-open-ended-question-question {
   background: var(--color-base, #2880d0);
