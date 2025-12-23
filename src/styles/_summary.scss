@@ -3,15 +3,6 @@
   container-name: interactive-book;
 
   &.h5p-interactive-book-small {
-    .h5p-interactive-box-summary-progress {
-      display: block;
-
-      & > div {
-        width: 100%;
-        margin-bottom: 0.6rem;
-      }
-    }
-
     .h5p-interactive-book-summary-score-bar {
       margin-top: 1.25rem;
     }
@@ -23,10 +14,7 @@
 
   .h5p-interactive-book-summary-buttons {
     display: flex;
-
-    .h5p-theme-primary-cta.h5p-theme-show-results{
-      margin-right: 0.5em;
-    }
+    gap: var(--h5p-theme-spacing-s);
   }
 }
 
@@ -57,7 +45,7 @@
   .h5p-interactive-box-summary-progress {
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
+    gap: var(--h5p-theme-spacing-s);
     color: #273C59;
     
     .h5p-interactive-book-summary-progress-container {
@@ -143,11 +131,7 @@
       .h5p-interactive-book-summary-submitted {
         transform: translateY(0);
         opacity: 1;
-        position: static;
-        button {
-          display: flex;
-        }
-        margin-right: 0.5rem;
+        padding-right: var(--h5p-theme-spacing-s);
       }
 
       .h5p-interactive-book-summary-restart-button {
