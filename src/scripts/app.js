@@ -4,6 +4,7 @@ import StatusBar from './statusbar';
 import Cover from './cover';
 import PageContent from './pagecontent';
 import Colors from './colors';
+import Screenreader from './screenreader.js';
 
 export default class InteractiveBook extends H5P.EventDispatcher {
   /**
@@ -35,6 +36,8 @@ export default class InteractiveBook extends H5P.EventDispatcher {
       }
       document.head.appendChild(style);
     }
+
+    document.body.append(Screenreader.getDOM());
 
     this.activeChapter = 0;
     this.newHandler = {};
@@ -188,6 +191,8 @@ export default class InteractiveBook extends H5P.EventDispatcher {
         this.setActivityStarted(true);
         this.pageContent.resetChapters();
         this.sideBar.resetIndicators();
+
+        this.instantiateNavigationRestrictions(1);
       }
     };
 
@@ -270,6 +275,9 @@ export default class InteractiveBook extends H5P.EventDispatcher {
         currentState.score = this.getScore();
         currentState.maxScore = this.getMaxScore();
       }
+
+      currentState.firstRestrictedChapter = this.chapters.findIndex(chapter => chapter.isAccessRestricted);
+
       return currentState;
     };
 
@@ -681,7 +689,6 @@ export default class InteractiveBook extends H5P.EventDispatcher {
       // New chapter completed
       if (!chapter.completed) {
         chapter.completed = true;
-        chapter.instance.triggerXAPIScored(chapter.instance.getScore(), chapter.instance.getMaxScore(), 'completed');
       }
 
       // All chapters completed
@@ -765,7 +772,8 @@ export default class InteractiveBook extends H5P.EventDispatcher {
         'interacted',
         'attempted',
       ];
-      const isActionVerb = actionVerbs.indexOf(event.getVerb()) > -1;
+      const xAPIEventVerb = event.getVerb();
+      const isActionVerb = actionVerbs.indexOf(xAPIEventVerb) > -1;
       // Some content types may send xAPI events when they are initialized,
       // so check that chapter is initialized before setting any section change
       const isInitialized = self.chapters.length;
@@ -777,7 +785,12 @@ export default class InteractiveBook extends H5P.EventDispatcher {
           return;
         }
 
+        const chapterSubcontentId = self.chapters[self.activeChapter].instance.subContentId;
+        const xAPIEventIsFromChapter = this.subContentId === chapterSubcontentId;
+        const chapterXAPICompleted = xAPIEventIsFromChapter && xAPIEventVerb === 'completed';
+
         self.setSectionStatusByID(sectionUUID, self.activeChapter);
+        self.updateNavigationRestrictions(self.activeChapter, chapterXAPICompleted);
       }
     });
 
@@ -790,6 +803,11 @@ export default class InteractiveBook extends H5P.EventDispatcher {
      * @param {string} target.section Section UUID.
      */
     this.redirectChapter = (target) => {
+      const targetChapter = this.chapters.find(chapter => target.chapter.endsWith(chapter.instance.subContentId));
+      if (targetChapter?.isAccessRestricted) {
+        return;
+      }
+
       /**
        * If true, we already have information regarding redirect in newHandler
        * When using browser history, a convert is neccecary
@@ -835,6 +853,116 @@ export default class InteractiveBook extends H5P.EventDispatcher {
           this.updateChapterProgress(chapterId);
         }
       });
+    };
+
+    /**
+     * Update navigation restrictions.
+     * @param {number} targetChapterIndex Index of chapter to update restrictions for.
+     * @param {boolean} wasXAPICompleted True if chapter was completed by xAPI.
+     */
+    this.updateNavigationRestrictions = (targetChapterIndex, wasXAPICompleted = false) => {
+      if (this.params.behaviour.navigationRestrictionMode === 'none') {
+        return;
+      }
+
+      if (this.areNavigationRestrictionsMet(targetChapterIndex, wasXAPICompleted)) {
+        this.cascadeNavigationRestrictions(targetChapterIndex + 1, true);
+        this.statusBarHeader.updateStatusBar();
+        this.statusBarFooter.updateStatusBar();
+      }
+    }
+
+    /**
+     * Check if navigation restrictions are met for a chapter.
+     * @param {number} chapterIndex Index of chapter to check.
+     * @param {boolean} wasXAPICompleted True if chapter was completed by xAPI.
+     * @return {boolean} True if navigation restrictions are met and chapter can be accessed.
+     */
+    this.areNavigationRestrictionsMet = (chapterIndex, wasXAPICompleted = false) => {
+      const chapter = this.chapters[chapterIndex];
+      if (!chapter) {
+        return false;
+      }
+
+      if (chapter.isSummary) {
+        return false;
+      }
+
+      let mayProgressToNextChapter = false;
+
+      if (chapter.maxTasks === 0) {
+        mayProgressToNextChapter = true;
+      }
+      else if (this.params.behaviour.navigationRestrictionMode === 'finished') {
+        mayProgressToNextChapter = chapter.completed;
+      }
+      else if (wasXAPICompleted && this.params.behaviour.navigationRestrictionMode === 'success') {
+        mayProgressToNextChapter =
+          chapter.completed && chapter.instance.getScore() === chapter.instance.getMaxScore();
+      }
+
+      return mayProgressToNextChapter;
+    };
+
+    /**
+     * Toggle chapter navigation.
+     * @param {number} chapterIndex Index of chapter to toggle navigation for.
+     * @param {boolean} enable True to enable navigation, false to disable.
+     */
+    this.toggleChapterNavigation = (chapterIndex, enable) => {
+      this.chapters[chapterIndex].isAccessRestricted = !enable;
+      this.sideBar.toggleChapterEnabled(chapterIndex, enable);
+      this.statusBarHeader.updateStatusBar();
+      this.statusBarFooter.updateStatusBar();
+    };
+
+    /**
+     * Instantiate navigation restrictions.
+     * @param {number} firstRestrictedChapter Index of first restricted chapter.
+     */
+    this.instantiateNavigationRestrictions = (firstRestrictedChapter) => {
+      if (this.params.behaviour.navigationRestrictionMode === 'none') {
+        return;
+      }
+
+      if (typeof firstRestrictedChapter !== 'number') {
+        firstRestrictedChapter = this.previousState?.firstRestrictedChapter || 1;
+      }
+
+      if (firstRestrictedChapter < 0 || firstRestrictedChapter >= this.chapters.length) {
+        return;
+      }
+
+      this.cascadeNavigationRestrictions(firstRestrictedChapter, false);
+    };
+
+    /**
+     * Cascade navigation restrictions.
+     * @param {number} index Index of chapter to start cascading from.
+     * @param {boolean} enable True to enable navigation, false to disable.
+     */
+    this.cascadeNavigationRestrictions = (index, enable) => {
+      if (index < 0 || index >= this.chapters.length) {
+        return;
+      }
+
+      this.toggleChapterNavigation(index, enable);
+
+      const nextEnableState = enable ? this.areNavigationRestrictionsMet(index) : false;
+      this.cascadeNavigationRestrictions(index + 1, nextEnableState);
+    }
+
+    /**
+     * Read text using screen reader.
+     * @param {string} a11yId Id of a11y item.
+     */
+    this.read = (a11yId) => {
+      const text = this.params.a11y[a11yId];
+      if (!text) {
+        return;
+      }
+
+      Screenreader.read(text);
     };
 
     /**
@@ -1036,9 +1164,19 @@ export default class InteractiveBook extends H5P.EventDispatcher {
     }
 
     if ( this.hasValidChapters() ) {
-      // Kickstart the statusbar
       this.statusBarHeader.updateStatusBar();
       this.statusBarFooter.updateStatusBar();
+      this.instantiateNavigationRestrictions();
+
+      // Go back to first chapter if trying to access restricted chapter via URL
+      if (this.chapters[this.activeChapter].isAccessRestricted) {
+        const newChapter = {
+          h5pbookid: this.contentId,
+          chapter: `h5p-interactive-book-chapter-${this.chapters[0].instance.subContentId}`
+        };
+
+        this.trigger('newChapter', newChapter);
+      }
     }
   }
 
@@ -1091,6 +1229,7 @@ export default class InteractiveBook extends H5P.EventDispatcher {
       .filter(chapter => chapter.params.content && chapter.params.content.length > 0);
 
     config.behaviour.displaySummary = config.behaviour.displaySummary === undefined || config.behaviour.displaySummary;
+    config.behaviour.navigationRestrictionMode = config.behaviour.navigationRestrictionMode || 'none';
 
     config.l10n = {
       read,
@@ -1124,6 +1263,10 @@ export default class InteractiveBook extends H5P.EventDispatcher {
       interactionsProgress,
       totalScoreLabel,
     };
+
+    config.a11y.progress = config.a11y.progress ?? 'Page @page of @total.';
+    config.a11y.menu = config.a11y.menu ?? 'Toggle navigation menu';
+    config.a11y.newChapterCanBeAccessed = config.a11y.newChapterCanBeAccessed ?? 'A new chapter can be accessed.';
 
     return config;
   }

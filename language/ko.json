@@ -54,6 +54,21 @@
           "description": "활성화하면 과제없는 페이지는 페이지를 보았을 때 완료된 것으로 간주됨. 과제가 있는 경우 과제 완료시 페이지 완료 표시. 비활성화시 모든 페이지 하단에 사용자가 페이지 과제를 마쳤을 때 클릭할 수 있는 버튼이 있음."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "요약 표시",
           "description": "활성화되면 요약 정보를 보고 학습진도/정답을 제출할 수 있음."
         },
@@ -198,6 +213,10 @@
         {
           "label": "네비게이션 메뉴 확장/축소 레이블",
           "default": "네비게이션 메뉴 온 오프"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

@@ -54,6 +54,21 @@
           "description": "Ha engedélyezve van, a feladatok nélküli oldal megtekintésekor késznek tekintendő. Egy feladatokat tartalmazó oldal, ha minden feladat kész. Ha kikapcsolva van, akkor minden oldal alján lesz egy gomb, amelyre a felhasználó kattinthat, ha végzett az oldallal."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Összefoglaló megjelenítése",
           "description": "Ha engedélyezve van, a felhasználó láthatja az összefoglalót és elküldheti a haladást/válaszokat."
         },
@@ -198,6 +213,10 @@
         {
           "label": "Címke a navigációs menü bővítéséhez/összehúzásához",
           "default": "Navigációs menü átkapcsolása"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

@@ -54,6 +54,21 @@
           "description": "Jei įjungta, puslapis be užduočių laikomas atliktu kai peržiūrimas. Puslapis su užduotimis, kai visos užduotys yra atliktos. Jei išjungta, kiekvieno puslapio apačioje bus mygtukas, kurį vartotojas galės spustelėti baigęs dirbti su puslapiu."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Rodyti santrauką",
           "description": "Kai įjungta, naudotojas gali matyti santrauką ir pateikti pažangą/atsakymus"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Label for expanding/collapsing navigation menu",
           "default": "Toggle navigation menu"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

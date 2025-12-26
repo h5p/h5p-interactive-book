@@ -54,6 +54,21 @@
           "description": "Gaituz gero zereginik gabeko orri bat ikusitakoan osatutzat emango da. Zereginak dituen orri bat zeregin guztiak osatzean osatuko da. Desgaituz gero orri bakoitzaren amaieran botoi bat agertuko da erabiltzaileak orria amaitzean klik egin dezan."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Erakutsi laburpena",
           "description": "Gaituz gero erabiltzaileak laburpen bat ikusi eta aurrerapena/erantzunako bidali ditzake"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Nabigazio-menua zabaldu edo tolesteko etiketa",
           "default": "Zabaldu/Tolestu nabigazio-menua"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

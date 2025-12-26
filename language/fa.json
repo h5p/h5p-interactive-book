@@ -54,6 +54,21 @@
           "description": "در صورت فعال‌سازی، یک صفحه بدون تکلیف پس از اینکه مشاهده شود، انجام شده در نظر گرفته می‌شود. یک صفحه با تکلیف هم وقتی انجام شده در نظر گرفته می‌شود که همه تکلیف‌ها انجام شود. در صورت غیرفعال‌سازی، دکمه‌ای در زیر هر صفحه قرار خواهد گرفت تا کاربر در صورت اتمام کار در آن صفحه روی آن کلیک کند."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "نمایش جمع‌بندی",
           "description": "در صورت فعال‌سازی، کاربر می‌تواند جمع‌بندی را ببیند و پیشرفت/پاسخ‌ها را ارسال کند"
         },
@@ -198,6 +213,10 @@
         {
           "label": "برچسب بازکردن/بستن منوی راهبری",
           "default": "بازکردن/بستن منوی راهبری"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

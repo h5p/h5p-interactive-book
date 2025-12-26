@@ -54,6 +54,21 @@
           "description": "Ja iespējots, lappuse bez uzdevumiem tiek uzskatīta par pabeigtu, kad tiek skatīta. Lappuse ar uzdevumiem - kad visi uzdevumi ir paveikti. Ja atspējots, katras lapas apakšā būs poga, uz kuras lietotājs var noklikšķināt, kad būs pabeidzis lappusi."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Parādīt kopsavilkumu",
           "description": "Kad iespējots, lietotājs var redzēt kopsavilkumu un iesniegt progresu/atbildes"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Etiķete navigācijas izvēlnes izvēršanai/sakļaušanai",
           "default": "Pārslēgt navigācijas izvēlni"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

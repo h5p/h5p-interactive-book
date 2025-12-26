@@ -54,6 +54,21 @@
           "description": "Når innstillinga er aktivert, blir ei side uten oppgaver regna som ferdig når den vises. Ei side med oppgaver blir regna som ferdig når alle oppgavene er gjennomført. Når innstillinga er deaktivert, må brukeren trykke på en knapp nederst på sida når hen er ferdig med den."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Vis sammendrag",
           "description": "Når innstillinga er valgt, kan bruker se et sammendrag og sende inn framdrift eller svar."
         },
@@ -198,6 +213,10 @@
         {
           "label": "Tekstalternativ til knappen som utvider eller skjuler navigasjonsmenyen",
           "default": "Utvid eller skjul navigasjonsmeny"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

@@ -54,6 +54,21 @@
           "description": "Kui on lubatud, siis ülesanneteta lehekülg loetakse vaatamisel läbituks, ülesannetega lehekülg peale kõigi ülesannete täitmist. Kui keelatud, siis on iga lehe all nupp, mida kasutaja peab lehe läbituks märkimiseks vajutama."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Kuva kokkuvõtet",
           "description": "Kui lubatud, siis kasutaja näeb kokkuvõtet ning saab oma tulemused edastada/vaadata"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Silt navigeerimismenüü avamiseks ja sulgemiseks",
           "default": "Ava või sulge navigeerimismenüü"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

@@ -54,6 +54,21 @@
           "description": "Se activado, as páginas sem actividades são marcadas como Feito quando são visualizadas. Uma página com tarefas quando todas as tarefas forem realizadas. Se desactivado, exibe um botão no rodapé das páginas para o utilizador indicar os conteúdos feitos."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Mostrar resumo",
           "description": "Quando activado, o utilizador pode ver um resumo e enviar os progressos/respostas"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Etiqueta para expandir/contrair o menu de navegação",
           "default": "Exibir/Ocultar menu de navegação"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

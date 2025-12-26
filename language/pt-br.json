@@ -54,6 +54,21 @@
           "description": "Se ativado, as páginas sem atividades são marcadas como concluídas quando são visualizadas, enquanto as páginas com atividades são marcadas apenas quando o usuário envia todas as atividades. Se desativado, exibe um botão no rodapé das páginas para o usuário indicar os conteúdos concluídos."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Mostrar resumo",
           "description": "Quando ativado, o usuário pode ver um resumo e enviar os progressos/respostas"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Texto para expandir/contrair o menu de navegação",
           "default": "Exibir/Ocultar menu de navegação"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

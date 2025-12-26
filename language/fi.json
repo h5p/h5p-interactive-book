@@ -54,6 +54,21 @@
           "description": "Merkitsee heti katselun yhteydessä suoritetuksi kappaleen, jolla ei ole tehtäviä. Tehtäviä sisältävät kappaleet merkitään suoritetuiksi, kun kaikki tehtävät on tehty. Jos tämä asetus on poissa käytöstä, jokaisen kappaleen alareunassa on painike, jota klikkaamalla käyttäjä merkitsee kappaleen suoritetuksi."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Näytä yhteenveto",
           "description": "Näyttää käyttäjälle yhteenvedon vastauksista, ennen kuin ne lähetetään tarkistettavaksi."
         },
@@ -198,6 +213,10 @@
         {
           "label": "Näytä/piilota navigaatiovalikko -painikkeen teksti",
           "default": "Näytä/piilota navigaatiovalikko"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

@@ -54,6 +54,21 @@
           "description": "Όταν είναι ενεργό μια σελίδα που δεν περιέχει δραστηριότητες θεωρείται ολοκληρωμένη μόλις προβληθεί. Μια σελίδα που περιέχει δραστηριότητες θεωρείται ολοκληρωμένη όταν ολοκληρωθούν όλες οι δραστηριότητες. Αν δεν είναι ενεργό, στο κάτω μέρος κάθε σελίδας θα εμφανίζεται ένα κουμπί που θα πρέπει να πατήσει ο/η χρήστης μόλις ολοκληρώσει την ενασχόλησή του/της με τη συγκεκριμένη σελίδα."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Προβολή σύνοψης",
           "description": "Όταν είναι ενεργό, ο/η χρήστης μπορεί να δει μια σύνοψη και να καταχωρεί τις απαντήσεις/πρόοδό του/της"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Ετικέτα για την επέκταση / σύμπτυξη του μενού πλοήγησης",
           "default": "Εναλλαγή μενού πλοήγησης"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

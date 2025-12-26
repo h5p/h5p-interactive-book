@@ -54,6 +54,21 @@
           "description": "Brez samodejnega beleženja napredovanja, morajo udeleženci napredovanje potrditi s pomočjo potrditvenega polja."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Prikaži stran s povzetkom",
           "description": "Udeležencem se na dodatni strani prikaže povzetek interakcij oz. napredovanja."
         },
@@ -198,6 +213,10 @@
         {
           "label": "Besedilo za kazalo vsebine",
           "default": "Kazalo vsebine za navigacijo"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }

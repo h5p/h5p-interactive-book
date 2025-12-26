@@ -54,6 +54,21 @@
           "description": "Если включено, то страница без заданий отмечается пройденной сразу после просмотра, а страница с заданиями - после из выполнения. Если выключено - требуется подтверждать выполнение кнопкой внизу каждой страницы."
         },
         {
+          "label": "Navigation restriction mode",
+          "description": "Set what restrictions you want to impose on the user to be able to progress through the book.",
+          "options": [
+            {
+              "label": "No restriction"
+            },
+            {
+              "label": "Page finished to progress"
+            },
+            {
+              "label": "Full score to progress"
+            }
+          ]
+        },
+        {
           "label": "Показывать страницу Итоги",
           "description": "Если включено, добавляется страница с результатами прохождения и кнопкой их отправки"
         },
@@ -198,6 +213,10 @@
         {
           "label": "Label for expanding/collapsing navigation menu",
           "default": "Toggle navigation menu"
+        },
+        {
+          "label": "\"A new chapter can be accessed\"",
+          "default": "A new chapter can be accessed."
         }
       ]
     }
