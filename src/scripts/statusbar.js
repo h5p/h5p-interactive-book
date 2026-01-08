@@ -13,6 +13,8 @@ class StatusBar extends H5P.EventDispatcher {
       page: 'Page',
       next: 'Next',
       previous: 'Previous',
+      fullscreen: 'Fullscreen',
+      exitFullScreen: 'Exit fullscreen',
       ...params.l10n || {},
     };
 
@@ -393,8 +395,9 @@ class StatusBar extends H5P.EventDispatcher {
     fullScreenButton.classList.add('h5p-interactive-book-status-fullscreen');
     fullScreenButton.classList.add('h5p-interactive-book-status-button');
     fullScreenButton.classList.add('h5p-interactive-book-enter-fullscreen');
-    fullScreenButton.setAttribute('title', this.params.l10n.fullscreen);
     fullScreenButton.setAttribute('aria-label', this.params.l10n.fullscreen);
+    H5P.Tooltip(fullScreenButton);
+
     fullScreenButton.addEventListener('click', toggleFullScreen);
     fullScreenButton.addEventListener('keyPress', (event) => {
       if (event.which === 13 || event.which === 32) {
@@ -407,15 +410,13 @@ class StatusBar extends H5P.EventDispatcher {
       this.parent.isFullscreen = true;
       fullScreenButton.classList.remove('h5p-interactive-book-enter-fullscreen');
       fullScreenButton.classList.add('h5p-interactive-book-exit-fullscreen');
-      fullScreenButton.setAttribute('title', this.params.l10n.exitFullscreen);
-      fullScreenButton.setAttribute('aria-label', this.params.l10n.exitFullScreen);
+      fullScreenButton.setAttribute('aria-label', this.params.l10n.exitFullscreen);
     });
 
     this.parent.on('exitFullScreen', () => {
       this.parent.isFullscreen = false;
       fullScreenButton.classList.remove('h5p-interactive-book-exit-fullscreen');
       fullScreenButton.classList.add('h5p-interactive-book-enter-fullscreen');
-      fullScreenButton.setAttribute('title', this.params.l10n.fullscreen);
       fullScreenButton.setAttribute('aria-label', this.params.l10n.fullscreen);
     });
 
