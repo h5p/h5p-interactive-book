@@ -13,8 +13,6 @@ class StatusBar extends H5P.EventDispatcher {
       page: 'Page',
       next: 'Next',
       previous: 'Previous',
-      fullscreen: 'Fullscreen',
-      exitFullScreen: 'Exit fullscreen',
       ...params.l10n || {},
     };
 
