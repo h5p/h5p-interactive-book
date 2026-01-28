@@ -59,6 +59,11 @@ class StatusBar extends H5P.EventDispatcher {
       const title = document.createElement('h2');
       title.textContent = params.title;
       sidebarTitle.appendChild(title);
+      new H5P.Tooltip(title, {
+        text: params.title,
+        ariaHidden: true,
+        position: 'bottom',
+      });
     }
 
     this.progressBar = this.createProgressBar();
