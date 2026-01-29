@@ -279,9 +279,9 @@
   }
 
   .h5p-interactive-book-status-fullscreen {
-    background-color: var(--h5p-theme-contrast-cta-light);
+    background-color: var(--h5p-theme-contrast-cta);
     border-radius: var(--h5p-theme-border-radius-large);
-    color: var(--h5p-theme-contrast-cta);
+    color: var(--h5p-theme-main-cta-base);
     border: none;
     cursor: pointer;
 
@@ -291,12 +291,12 @@
       outline-offset: 2px;
     }
 
-    &:hover-visible {
-      background-color: color-mix(in srgb, var(--h5p-theme-contrast-cta-light), transparent 60%);
+    &:hover {
+      background-color: var(--h5p-theme-contrast-cta-dark);
     }
 
     &:active{
-      background-color: color-mix(in srgb, var(--h5p-theme-contrast-cta-light), transparent 80%);
+      background-color: var(--h5p-theme-contrast-cta-light);
     }
   }
 }

@@ -400,7 +400,8 @@
 }
 
 .h5p-showing-summary.h5p-showing-summary .h5p-interactive-book-status:not(.h5p-interactive-book-status-footer) .h5p-interactive-book-status-main .h5p-theme-progress {
-  color: var(--h5p-theme-contrast-cta) !important;
+  color: var(--h5p-theme-main-cta-base);
+  background-color: var(--h5p-theme-contrast-cta);
 }
 
 .h5p-showing-summary.h5p-showing-summary .h5p-interactive-book-status-main,
