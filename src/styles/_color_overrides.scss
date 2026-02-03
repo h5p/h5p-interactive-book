@@ -75,51 +75,6 @@ button {
   background-color: var(--color-base-80, #014876);
 }
 
-// H5P.CoursePresentation
-.h5p-course-presentation {
-  .h5p-progressbar .h5p-progressbar-part-show {
-    background: var(--color-base, #0097fd);
-    background-image: -webkit-linear-gradient(top, var(--color-base, #0097fd), var(--color-base-90, #096bcb));
-    background-image: -moz-linear-gradient(top, var(--color-base, #0097fd), var(--color-base-90, #096bcb));
-    background-image: linear-gradient(to bottom, var(--color-base, #0097fd), var(--color-base-90, #096bcb));
-  }
-
-  .h5p-element-button {
-    background: var(--color-base, #00f);
-    border-color: var(--color-base-90, #70b0ff);
-    color: var(--color-text, #fff);
-
-    &:hover {
-      background: var(--color-base-85, #003fdf);
-      border-color: var(--color-base, #70b0ff);
-    }
-  }
-
-  .h5p-keywords-wrapper > [role=menu] {
-    &::-webkit-scrollbar-thumb {
-      background: var(--color-base, rgb(0, 151, 253));
-
-      &:hover {
-        background: var(--color-base-85, rgb(34, 161, 249));
-      }
-    }
-
-    &> [role=menuitem]:hover span {
-      color: var(--color-base, #1d74c8);
-    }
-  }
-
-  .h5p-element .h5p-element-outer::-webkit-scrollbar-thumb,
-  .h5p-element .h5p-element-outer .h5p-element-inner::-webkit-scrollbar-thumb,
-  .h5p-summary-table-pages::-webkit-scrollbar-thumb {
-    background: var(--color-base, rgb(0, 151, 253));
-
-    &:hover {
-      background: var(--color-base-85, rgb(34, 161, 249));
-    }
-  }
-}
-
 // H5P.DocumentationTool
 .h5p-documentation-tool-nav-button {
   &:before {
