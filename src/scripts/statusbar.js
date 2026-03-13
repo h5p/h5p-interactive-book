@@ -9,12 +9,9 @@ class StatusBar extends H5P.EventDispatcher {
 
     this.params = params || {};
 
-    this.params.l10n = {
-      page: 'Page',
-      next: 'Next',
-      previous: 'Previous',
-      ...params.l10n || {},
-    };
+    this.preventScrollToTop = params.preventScrollToTop;
+
+    this.params.l10n = params.l10n;
 
     this.params.a11y = {
       progress: 'Page @page of @total',
@@ -129,6 +126,11 @@ class StatusBar extends H5P.EventDispatcher {
           eventInput.chapter = `h5p-interactive-book-chapter-${this.parent.chapters[this.parent.activeChapter - 1].instance.subContentId}`;
         }
       }
+
+      if (this.preventScrollToTop) {
+        eventInput.preventScrollToTop = true;
+      }
+
       if (eventInput.chapter) {
         this.parent.trigger('newChapter', eventInput);
       }
