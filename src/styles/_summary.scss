@@ -386,6 +386,12 @@
       margin-left: auto;
       font-size: 0.5rem;
     }
+
+    &:focus-visible {
+      outline: 2px ridge var(--h5p-theme-contrast-cta-white);
+      border-radius: 4px;
+      outline-offset: -2px;    
+    }
   }
 }
 
