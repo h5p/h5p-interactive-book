@@ -76,20 +76,20 @@
       "default": "Inhaltsverzeichnis ausblenden"
     },
     {
-      "label": "Label for page counter",
-      "default": "Page"
+      "label": "Beschriftung für Seitenzähler",
+      "default": "Seite"
     },
     {
-      "label": "Label for forwards navigation button",
-      "default": "Next"
+      "label": "Beschriftung für \"Vorwärts\"-Navigationsbutton",
+      "default": "Nächste Seite"
     },
     {
       "label": "Beschriftung für \"Nächste Seite\"",
       "default": "Nächste Seite"
     },
     {
-      "label": "Label for backwards navigation button",
-      "default": "Previous"
+      "label": "Beschriftung für \"Zurück\"-Navigationsbutton",
+      "default": "Vorherige Seite"
     },
     {
       "label": "Beschriftung für \"Vorherige Seite\"",
