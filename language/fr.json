@@ -12,8 +12,8 @@
           "description": "Ce texte sera la description de votre livre"
         },
         {
-          "label": "Cover media",
-          "description": "Optional media to display on the cover."
+          "label": "Média de couverture",
+          "description": "Média optionnel à afficher sur la couverture."
         }
       ]
     },
@@ -26,7 +26,7 @@
         }
       ],
       "field": {
-        "label": "Item",
+        "label": "Élément",
         "fields": [
           {
             "label": "Page"
@@ -38,8 +38,8 @@
       "label": "Paramètres comportementaux",
       "fields": [
         {
-          "label": "Base color",
-          "description": "Set the base color that will define the overall color scheme of the book. Please ensure a high enough contrast."
+          "label": "Couleur de base",
+          "description": "Définissez la couleur de base qui définira le schéma de couleurs global du livre. Veuillez vous assurer d'un contraste suffisamment élevé."
         },
         {
           "label": "Afficher la table des matières par défaut",
@@ -58,8 +58,8 @@
           "description": "Lorsqu'il est activé, l'utilisateur peut voir un résumé et soumettre les progrès/réponses"
         },
         {
-          "label": "Enable \"Restart\" button",
-          "description": "When enabled the user can initiate a restart on the summary page."
+          "label": "Activer le bouton \"Recommencer\"",
+          "description": "Si activé, l'utilisateur peut relancer le livre depuis la page de résumé."
         }
       ]
     },
