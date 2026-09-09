@@ -101,10 +101,9 @@
     align-items: center;
 
     .h5p-interactive-book-summary-submitted {
-      opacity: 0;
       border-radius: 4px;
       background-color: #d3ede9;
-      display: flex;
+      display: none;
       align-items: center;
       flex: auto;
 
@@ -130,7 +129,7 @@
 
       .h5p-interactive-book-summary-submitted {
         transform: translateY(0);
-        opacity: 1;
+        display: flex;
         padding-right: var(--h5p-theme-spacing-s);
       }
 
