@@ -205,8 +205,8 @@
     border: none;
     cursor: pointer;
 
-    &:focus{
-      outline: 2px ridge var(--h5p-theme-main-cta-base);
+    &:focus-visible{
+      outline: 2px ridge var(--h5p-theme-contrast-cta-white);
       border-radius: 4px;
       outline-offset: 2px;
     }
@@ -286,7 +286,7 @@
     cursor: pointer;
 
     &:focus-visible {
-      outline-color: var(--h5p-theme-ui-base);
+      outline: solid var(--h5p-theme-ui-base);
     }
 
     &:hover {
@@ -300,7 +300,7 @@
 
   .h5p-theme-nav-button {
     &:focus-visible {
-      outline-color: var(--h5p-theme-ui-base);
+      outline: solid var(--h5p-theme-ui-base);
     }
   }
 }
