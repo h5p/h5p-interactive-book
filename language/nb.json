@@ -47,19 +47,19 @@
         },
         {
           "label": "Vis framdriftsindikator",
-          "description": "Når innstillinga er aktivert, vil en indikator på sida vise om bruker er ferdig med den eller ikke."
+          "description": "Når innstillingen er aktivert, vil en indikator på sida vise om brukeren er ferdig med den eller ikke."
         },
         {
           "label": "Aktiver automatisk framdrift",
-          "description": "Når innstillinga er aktivert, blir ei side uten oppgaver regna som ferdig når den vises. Ei side med oppgaver blir regna som ferdig når alle oppgavene er gjennomført. Når innstillinga er deaktivert, må brukeren trykke på en knapp nederst på sida når hen er ferdig med den."
+          "description": "Når innstillingen er aktivert, blir ei side uten oppgaver regnet som ferdig når den vises. Ei side med oppgaver blir regnet som ferdig når alle oppgavene er gjennomført. Når innstillingen er deaktivert, må brukeren trykke på en knapp nederst på sida når hen er ferdig med den."
         },
         {
           "label": "Vis sammendrag",
-          "description": "Når innstillinga er valgt, kan bruker se et sammendrag og sende inn framdrift eller svar."
+          "description": "Når innstillingen er valgt, kan brukeren se et sammendrag og sende inn framdrift eller svar."
         },
         {
           "label": "Aktiver \"Prøv igjen\"-knapp",
-          "description": "Når innstillinga er valgt, får brukeren tilbud om å starte på nytt på sammendragssida."
+          "description": "Når innstillingen er valgt, får brukeren tilbud om å starte på nytt på sammendragssida."
         }
       ]
     },
@@ -76,23 +76,23 @@
       "default": "Skjul innholdsliste"
     },
     {
-      "label": "Label for page counter",
+      "label": "Etikett for sideteller",
       "default": "Side"
     },
     {
-      "label": "Label for forwards navigation button",
+      "label": "Etikett for knappen Neste",
       "default": "Neste"
     },
     {
-      "label": "Translation for \"Next page\"",
+      "label": "Oversettelse for \"Next page\"",
       "default": "Neste side"
     },
     {
-      "label": "Label for backwards navigation button",
+      "label": "Etikett for knappen Forrige",
       "default": "Forrige"
     },
     {
-      "label": "Translation for \"Previous page\"",
+      "label": "Oversettelse for \"Previous page\"",
       "default": "Forrige side"
     },
     {
@@ -100,7 +100,7 @@
       "default": "Fullført side"
     },
     {
-      "label": "Oversettelse for \"@pages of @total completed\" (Variablene @pages og @total vil bli erstatta av reelle verdier.)",
+      "label": "Oversettelse for \"@pages of @total completed\" (Variablene @pages og @total vil bli erstattet av reelle verdier.)",
       "default": "@pages av @total fullført"
     },
     {
@@ -130,7 +130,7 @@
     },
     {
       "label": "Framdrift oppgaver",
-      "description": "\"@count\" blir erstatta med oppgavenummer, \"@total\" blir erstatta med totalt antall oppgaver.",
+      "description": "\"@count\" blir erstattet med oppgavenummer, \"@total\" blir erstattet med totalt antall oppgaver.",
       "default": "@count av @total oppgaver"
     },
     {
@@ -138,7 +138,7 @@
       "default": "Send inn rapport"
     },
     {
-      "label": "Namn på \"Prøv igjen\"-knapp",
+      "label": "Navn på \"Prøv igjen\"-knapp",
       "default": "Prøv igjen"
     },
     {
@@ -155,12 +155,12 @@
     },
     {
       "label": "Poengsum",
-      "description": "@score blir erstatta av oppnådd poengsum, @maxscore blir erstatta av mulig poengsum.",
+      "description": "@score blir erstattet av oppnådd poengsum, @maxscore blir erstattet av mulig poengsum.",
       "default": "@score / @maxscore"
     },
     {
       "label": "Fullførte oppgaver per side",
-      "description": "@left blir erstatta med antall gjenstående oppgaver, @max blir erstatta med samla antall oppgaver på sida.",
+      "description": "@left blir erstattet med antall gjenstående oppgaver, @max blir erstattet med samlet antall oppgaver på sida.",
       "default": "@left av @max oppgaver fullført"
     },
     {
@@ -181,11 +181,11 @@
     },
     {
       "label": "Oversettelse for \"You have to interact with at least one page before you can see the summary.\"",
-      "default": "Du må være aktiv på minst éi side før du kan se sammendraget."
+      "default": "Du må være aktiv på minst én side før du kan se sammendraget."
     },
     {
       "label": "Oversettelse for \"Your answers are submitted for review!\"",
-      "default": "Svara dine er sendt inn til vurdering."
+      "default": "Svarene dine er sendt inn til vurdering."
     },
     {
       "label": "Tekst for framdrift i boka",
@@ -196,8 +196,8 @@
       "default": "Framdrift i oppgaver"
     },
     {
-      "label": "Tekst for samla poengsum",
-      "default": "Samla poengsum"
+      "label": "Tekst for samlet poengsum",
+      "default": "Samlet poengsum"
     },
     {
       "label": "Tekster for tilgjengelighet",
