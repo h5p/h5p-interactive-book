@@ -1,19 +1,19 @@
 {
   "semantics": [
     {
-      "label": "Bruk framside",
-      "description": "Ei framside som viser informasjon om boka"
+      "label": "Bruk forside",
+      "description": "Ei forside som viser informasjon om boka"
     },
     {
-      "label": "Framside",
+      "label": "Forside",
       "fields": [
         {
-          "label": "Tekst på framsida",
+          "label": "Tekst på forsida",
           "description": "Denne teksten beskriv boka di."
         },
         {
-          "label": "Medieinnhald på framsida",
-          "description": "Valfritt medieinnhald på framsida"
+          "label": "Medieinnhald på forsida",
+          "description": "Valfritt medieinnhald på forsida"
         }
       ]
     },
@@ -43,23 +43,23 @@
         },
         {
           "label": "Vis innhaldsliste",
-          "description": "Vel dette om innhaldslista skal bli vist når boka bli opna."
+          "description": "Vel dette om innhaldslista skal visast når boka blir opna."
         },
         {
           "label": "Vis framdriftsindikator",
-          "description": "Når innstillinga er aktivert, vil ein indikator på sida vise om brukaren er ferdig med sida eller ikkje."
+          "description": "Når innstillinga er aktivert, vil ein indikator på sida vise om brukaren er ferdig med ho eller ikkje."
         },
         {
           "label": "Aktiver automatisk framdrift",
-          "description": "Dersom innstillinga er aktivert, blir ei side utan oppgåver rekna som ferdig når ho er opna. Ei side med oppgåver blir rekna som ferdig når alle oppgåvene er gjennomførte. Dersom innstillinga er deaktivert, må brukaren trykke på ein knapp nedst på sida når hen er ferdig med ho."
+          "description": "Når innstillinga er aktivert, vert ei side utan oppgåver rekna som ferdig når ho visast. Ei side med oppgåver vert rekna som ferdig når alle oppgåvene er gjennomførde. Når innstillinga er deaktivert, må brukaren trykkje på ein knapp nedst på sida når hen er ferdig med ho."
         },
         {
           "label": "Vis samandrag",
-          "description": "Når innstillinga er valt, kan brukaren sjå eit samandrag og sende inn framdrift eller svar."
+          "description": "Når innstillinga er vald, kan brukaren sjå eit samandrag og sende inn framdrift eller svar."
         },
         {
           "label": "Aktiver \"Prøv igjen\"-knapp",
-          "description": "Når innstillinga er valt, får brukaren tilbod om å starte på nytt på samandragssida."
+          "description": "Når innstillinga er vald, får brukaren tilbod om å starte på nytt på samandragssida."
         }
       ]
     },
@@ -72,35 +72,35 @@
       "default": "Vis innhaldsliste"
     },
     {
-      "label": "Omsetjing for \"Hide Table of contents\"",
-      "default": "Skjul innhaldsliste"
+      "label": "Omsetjing for \"Hide table of contents\"",
+      "default": "Gøym innhaldsliste"
     },
     {
-      "label": "Label for page counter",
-      "default": "Page"
+      "label": "Etikett for sideteljar",
+      "default": "Side"
     },
     {
-      "label": "Label for forwards navigation button",
-      "default": "Next"
+      "label": "Etikett for knappen Neste",
+      "default": "Neste"
     },
     {
-      "label": "Translation for \"Next page\"",
+      "label": "Omsetjing for \"Next page\"",
       "default": "Neste side"
     },
     {
-      "label": "Label for backwards navigation button",
-      "default": "Previous"
+      "label": "Etikett for knappen Førre",
+      "default": "Førre"
     },
     {
-      "label": "Translation for \"Previous page\"",
+      "label": "Omsetjing for \"Previous page\"",
       "default": "Førre side"
     },
     {
-      "label": "Omsetjing for \"Page completed\"",
+      "label": "Omsetjing for \"Page completed!\"",
       "default": "Fullført side"
     },
     {
-      "label": "Omsetjing for\"@pages of @total completed\" (Variablane @pages og @total kjem til å bli erstatta av reelle verdiar.)",
+      "label": "Omsetjing for \"@pages of @total completed\" (Variablane @pages og @total vert erstatta av reelle verdiar.)",
       "default": "@pages av @total fullført"
     },
     {
@@ -125,12 +125,12 @@
     },
     {
       "label": "Framdrift sider",
-      "description": "\"@count\" blir erstatta med sidenummer, \"@total\" blir erstatta med samla sidetal.",
+      "description": "\"@count\" vert erstatta med aktuelt sidenummer, \"@total\" vert erstatta med totalt antal sider.",
       "default": "@count av @total sider"
     },
     {
       "label": "Framdrift oppgåver",
-      "description": "\"@count\" blir erstatta med oppgåvenummer, \"@total\" blir erstatta med det samla talet på oppgåver.",
+      "description": "\"@count\" vert erstatta med oppgåvenummer, \"@total\" vert erstatta med totalt antal oppgåver.",
       "default": "@count av @total oppgåver"
     },
     {
@@ -155,13 +155,13 @@
     },
     {
       "label": "Poengsum",
-      "description": "@score blir erstatta av oppnådd poengsum, og @maxscore blir erstatta av mogleg poengsum.",
+      "description": "@score vert erstatta av oppnådd poengsum, @maxscore vert erstatta av mogleg poengsum.",
       "default": "@score / @maxscore"
     },
     {
       "label": "Fullførte oppgåver per side",
-      "description": "@left blir erstatta med talet på gjenståande oppgåver, og @max blir erstatta med samla tal på oppgåver på sida.",
-      "default": "@left av @max oppgåver fullførte"
+      "description": "@left vert erstatta med antal gjenståande oppgåver, @max vert erstatta med samla antal oppgåver på sida.",
+      "default": "@left av @max oppgåver fullført"
     },
     {
       "label": "Omsetjing for \"No interactions\"",
@@ -185,7 +185,7 @@
     },
     {
       "label": "Omsetjing for \"Your answers are submitted for review!\"",
-      "default": "Svara dine er sende inn til vurdering"
+      "default": "Svara dine er sende inn til vurdering."
     },
     {
       "label": "Tekst for framdrift i boka",
@@ -193,7 +193,7 @@
     },
     {
       "label": "Tekst for framdrift i oppgåver",
-      "default": "Framdrift i oppgåvene"
+      "default": "Framdrift i oppgåver"
     },
     {
       "label": "Tekst for samla poengsum",
@@ -204,12 +204,12 @@
       "fields": [
         {
           "label": "Tekstalternativ for sideframdrift",
-          "description": "Tekstalternativ til grafisk visning av sideframdrift. Variablane @page og @total kan brukast.",
+          "description": "Tekstalternativ til grafisk vising av sideframdrift. Variablane @page og @total kan brukast.",
           "default": "Side @page av @total"
         },
         {
-          "label": "Tekstalternativ til knappen som utvidar eller skjuler navigasjonsmenyen",
-          "default": "Utvid eller skjul navigasjonsmeny"
+          "label": "Tekstalternativ til knappen som utvidar eller gøymer navigasjonsmenyen",
+          "default": "Utvid eller gøym navigasjonsmeny"
         }
       ]
     }
