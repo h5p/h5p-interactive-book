@@ -58,8 +58,8 @@
           "description": "Quando ativado, o usuário pode ver um resumo e enviar os progressos/respostas"
         },
         {
-          "label": "Enable \"Restart\" button",
-          "description": "When enabled the user can initiate a restart on the summary page."
+          "label": "Habilitar \"Reiniciar\" botão",
+          "description": "Quando habilitado, o usuário pode reiniciar a página de resumo."
         }
       ]
     },
@@ -76,20 +76,20 @@
       "default": "Ocultar 'Tabela de conteúdos'"
     },
     {
-      "label": "Label for page counter",
+      "label": "Rótulo para contador de páginas",
       "default": "Page"
     },
     {
-      "label": "Label for forwards navigation button",
-      "default": "Next"
+      "label": "Rótulo para o botão de navegação próximo",
+      "default": "Próximo"
     },
     {
       "label": "Tradução para \"Próxima página\"",
       "default": "Próxima página"
     },
     {
-      "label": "Label for backwards navigation button",
-      "default": "Previous"
+      "label": "Rótulo para o botão de navegação anterior",
+      "default": "Anterior"
     },
     {
       "label": "Tradução para \"Página anterior\"",
