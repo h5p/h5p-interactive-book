@@ -1,4 +1,20 @@
 /**
+ * Strips html tags and converts special characters.
+ * Example: "<div>Me &amp; you</div>" is converted to "Me & you".
+ *
+ * @param {String} text The text to be parsed
+ * @returns {String} The parsed text
+ */
+const parseString = (text) => {
+  if (text === null || text === undefined) {
+    return '';
+  }
+  const div = document.createElement('div');
+  div.innerHTML = text;
+  return div.textContent;
+};
+
+/**
  * Constructor function.
  */
 class StatusBar extends H5P.EventDispatcher {
@@ -54,7 +70,7 @@ class StatusBar extends H5P.EventDispatcher {
 
     if (params.title) {
       const title = document.createElement('h2');
-      title.textContent = params.title;
+      title.textContent = parseString(params.title);
       sidebarTitle.appendChild(title);
       new H5P.Tooltip(title, {
         text: params.title,
