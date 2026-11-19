@@ -218,7 +218,7 @@ class PageContent extends H5P.EventDispatcher {
       const columnNode = document.createElement('div');
 
       const instanceContentData = {
-        parent: self,
+        parent: this.parent,
         previousState: (previousState) ? previousState.chapters[i].state : {},
       };
       const newInstance = H5P.newRunnable(config.chapters[i], contentId, undefined, undefined, instanceContentData);
